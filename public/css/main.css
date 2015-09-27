@@ -1,0 +1,645 @@
+@CHARSET "EUC-KR";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.wrapper
+{
+	width:1170px;
+	margin-left:auto;
+	margin-right:auto;
+	height:135px;
+	position:relative;
+	font-size:16px;
+
+}
+.nav
+{
+	position:relative;
+	width:100%;
+	margin:0;
+	padding:0;
+	z-index:100;
+}
+
+.nav li
+{
+	list-style:none;
+	float:left;
+	margin:0;
+	display:block;
+	margin-top:62px;
+	margin-right:65px;
+	font-weight:bold;
+}
+.nav li.facebook
+{
+	list-style:none;
+	float:left;
+	margin:0;
+	display:block;
+	margin-top:56px;
+	margin-right:34px;
+}
+
+.nav li.logo
+{
+	width:280px;
+	float:left;
+	margin:0;
+	padding:0;
+	display:block;
+	margin-top:39px;
+	margin-right:300px;
+}
+
+
+.nav a
+{
+	text-decoration:none;
+	display:block;
+	text-align:center;
+	color:#3a3a3a;
+}
+.nav a.logo
+{
+	text-decoration:none;
+	display:block;
+	padding:0;
+}
+
+.nav a:hover
+{
+	color:#c03737;
+}
+
+.nav li ul
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+	height:auto;
+	display:none;
+	clear:both;
+}
+.nav li ul li
+{
+	clear:both;
+	background-color:blue;
+	margin:0;
+	padding:0;
+}
+
+.nav li:hover ul
+{
+	display:block;
+}
+
+.container
+{
+	width:1170px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.mainImageContainer
+{
+	width:1170px;
+	height:632px;
+	position:relative;
+	margin-top:1%;
+	margin-right:auto;
+	margin-left:auto;
+	background: url('/images/image1.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative;
+	border: 1px #c9c9c9 solid;
+
+}
+
+.mainImagePrevButtonContainer
+{
+	height:auto;
+	float:left;
+	position:absolute;
+	z-index:50;
+	margin-top:278px;
+}
+.mainImagePrevButton
+{
+	background-image:url('/images/banner_left_arrow.png');
+	width: 38px;
+	height: 76px;
+}
+.mainImagePrevButton:hover
+{
+	background-image:url('/images/banner_left_arrow_over.png');
+}
+
+
+.mainPrevImageButton:hover
+{
+	background:rgba(255,0,0, 0.3);
+}
+.mainPrevImageButton
+{
+	background:rgba(46,46,46, 0.4);
+	border:none !important;
+	-webkit-transform:scale(2,5);
+	-moz-transform:scale(2,5);
+	-o-transform:scale(2,5);
+	transform:scale(1,6);
+	font-size:20px;
+	padding-right:20px;
+	padding-left:10px;
+	outline:none;
+	border-top-right-radius:3px;
+	border-bottom-right-radius:2px;
+}
+
+.mainNextImageButton:hover
+{
+	background:rgba(255,0,0, 0.3);
+}
+.mainNextImageButton
+{
+	background:rgba(255,255,255, 0.3);
+	border:none !important;
+	-webkit-transform:scale(2,5);
+	-moz-transform:scale(2,5);
+	-o-transform:scale(2,5);
+	transform:scale(1,6);
+	font-size:20px;
+	padding-left:20px;
+	padding-right:10px;
+	outline:none;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:2px;
+}
+.mainImageNextButtonContainer
+{
+	height:auto;
+	float:right;
+	right:0;
+	position:absolute;
+	z-index:50;
+	margin-top:278px;
+}
+.mainImageNextButton
+{
+	background-image:url('/images/banner_right_arrow.png');
+	width: 38px;
+	height: 76px;
+}
+.mainImageNextButton:hover
+{
+	background-image:url('/images/banner_right_arrow_over.png');
+}
+
+.mainImageContent
+{
+	width:80%;
+	height:100%;
+	position:absolute;
+	margin-left:10%;
+	margin-right:10%;
+	color:white;
+	float:left;
+}
+.mainImageTitle
+{
+	font-size:46px;
+	margin-top:20%;
+	margin-left:20%;
+	margin-right:20%;
+}
+.mainImageTitleButton
+{
+	margin-top:5%;
+	margin-left:35%;
+	width:30%;
+	margin-right:35%;
+	background:transparent;
+	border-color:white;
+	border-radius:5px;
+	color:white;
+	font-size:25px;
+	outline:none;
+}
+.middleContentContainer
+{
+	margin-top: 37px;
+	position:relative;
+	float:left;
+	width:100%;
+	z-index:0;
+	display:block;
+}
+
+.middleContent
+{
+	width:369px;
+	height:300px;
+	float:left;
+	display:block;
+}
+
+.middleContentFiller
+{
+	width:30px;
+	float:left;
+}
+
+.sermon
+{
+	width:100%;
+	background-color:#247ba0;
+	height:100%;
+	float:left;
+	display:block;
+	color:white;
+}
+.sermon hr
+{
+	margin-right:2%;
+	margin-left:2%;
+}
+.sermonHeader
+{
+	font-size:16px;
+	height:21px;
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:12px;
+	font-weight:bold;
+	
+}
+.sermonTitle
+{
+	float:left;
+}
+.sermonDate
+{
+	float:right;
+}
+.sermonBody
+{
+	font-size:14px;
+	line-height:1.5em;
+	height: 182px;
+	margin-top:22px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:40px;
+	
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display:block;
+	-webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.contentHead
+{
+	font-weight:bold;
+	font-size:12px;
+}
+
+.mainGallry
+{
+	height:100%;
+	float:left;
+	width:100%;
+	display:block;
+	border: solid 1px #ebebeb;
+}
+.mainGallryImage
+{
+	width:100%;
+	height:211px;
+}
+.mainGallryBody
+{
+	height:89px;
+	font-size:14px;
+}
+.mainGallaryDescription
+{
+	float:left;
+	margin-top:38px;
+	margin-left:30px;
+	width:90%;
+	font-weight:bold;
+}
+.mainGallaryDescription:after
+{
+	float:right;
+	margin-right:16px;
+	content:url('/images/icon_arrow.png');
+}
+.helper
+{
+	background-color:#70c1b3;
+	height:100%;
+	float:left;
+	display:block;
+	color:white;
+	width:100%;
+}
+hr.Line
+{
+	margin-right:2%;
+	margin-left:2%;
+	border: 1px;
+	border-color: #ffffff;
+	border-style:solid;
+}
+hr.transLine
+{
+	margin-right:2%;
+	margin-left:2%;
+	border-width:1px;
+	border-color: rgba(255, 255, 255, 0.25);
+	border-style:solid;
+}
+.helperHeader
+{
+	height:21px;
+	padding-top:20px;
+	padding-left:20px;;
+	padding-right:20px;
+	font-size:16px;
+	font-weight:bold;
+}
+.helperHeader:after
+{
+	content:"신청하기";
+	border:solid 2px;
+	border-color:white;
+	float:right;
+	font-size:14px;
+	padding:2px;
+}
+.helperHeader hr
+{
+	margin-right:2%;
+	margin-left:2%;
+
+}
+.helperBody
+{
+	padding-left:20px;
+	padding-top: 22px;
+	padding-right: 20px;
+	line-height:1.5em;
+	font-size:14px;
+}
+.helperBody1
+{
+	padding-left:20px;
+	padding-top: 15px;
+	padding-right: 20px;
+	line-height:1.5em;
+	font-size:14px;
+}
+
+.middleContentInfoContainer
+{
+	margin-top: 2%;
+	position:relative;
+	float:left;
+	width:100%;
+	border:solid 1px #ebebeb;
+	height:348px;
+}
+.middleContentInfoContainer:before
+{
+	width:100%;
+	content:"\A0";
+	height:0;
+	margin:0;
+	padding:0;
+	height:9px;
+	background-color:#ac2222;
+	display:block;
+}
+.worship
+{
+	width:100%;
+	height:100%;
+}
+.worshipHeader
+{
+	font-size:30px;
+	margin-top:19px;
+	color:#ac2222;
+	font-family: Verdana;
+	font-weight:bold;
+	font-size:32pt;
+	letter-spacing:-2px;
+}
+.worshipBody
+{
+	color:#ac2222;
+	font-size:22px;
+	font-weight:bold;
+}
+.worshipMap
+{
+	margin-top:16px;
+	margin-left:20px;
+	margin-right:62px;
+	margin-bottom:18px;
+	height:212px;
+}
+.worshipHeaderWhere
+{
+	margin-top:19px;
+	color:#ac2222;
+	font-family: Verdana;
+	font-weight:bold;
+	font-size:32pt;
+}
+.worshipHeaderWhere:before
+{
+	display: inline-block;
+    width: 42px;
+    height: 43px;
+    content: " ";
+    background: url('/images/icon_where.jpg') no-repeat 0 0;
+    background-size: 100%;
+	vertical-align:middle;
+}
+.worshipInfoBodyWhere
+{
+	font-size:14px;
+	color:black;
+	line-height:14px;
+	margin-top:48px;
+}
+.worshipInfoBodyWhen
+{
+	font-size:14px;
+	color:black;
+	line-height:14px;
+	margin-top:38px;
+}
+.worshipHeaderWhen
+{
+	margin-top:10%;
+	color:#ac2222;
+	font-family: Verdana;
+	font-weight:bold;
+	font-size:32pt;
+}
+.worshipHeaderWhen:before
+{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    content: " ";
+    background: url('/images/icon_when.jpg') no-repeat 0 0;
+    background-size: 100%;
+	vertical-align:middle;
+}
+.AnnouncementBody
+{
+	width:100%;
+	height:212px;
+	margin-top:22px;
+}
+.AnnouncementBodyPart
+{
+	margin-top:11px;
+	margin-bottom:11px;
+	font-size:14px;
+}
+.AnnouncementDotContainer
+{
+	margin-right:4%;
+	margin-left:4%;
+	float:right;
+}
+.AnnouncementDot
+{
+	background-color: #d2d2d2;
+	border-radius:50%;
+	width:10px;
+	height:10px;
+	margin-left:4px;;
+	margin-right:4px;
+	float:left;
+}
+
+.event
+{
+	background-color:#f25f5c;
+	height:100%;
+	float:left;
+	display:block;
+	color:white;
+	width:100%;
+}
+.eventHeader
+{
+	font-size:16px;
+}
+
+.tail
+{
+	width:100%;
+	background-color:#2d2819;
+	height:155px;
+	float:left;
+	color:white;
+}
+.tailContainer
+{
+	width:1170px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	height:100%;
+}
+.tailInfo
+{
+	width:872px;
+	float:left;
+	height:100%;
+}
+.tailContact
+{
+	width:298px;
+	float:left;
+	height:100%;
+}
+.tailContactHeader
+{
+	font-family: Verdana;
+	font-size:30px;
+	font-weight: bold;
+	margin-top:26px;
+	
+}
+.tailContactPhone:before
+{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    content: " ";
+    background: url('/images/footer_icon_phone.png') no-repeat 0 0;
+    background-size: 100%;
+	vertical-align:middle;
+}
+.tailContactPhone
+{
+	margin-top:5px;
+	font-size:24px;
+	font-weight:bold;
+	color:#acaba8;
+}
+.tailLogo
+{
+	margin-top:26px;
+	height:61px;
+	width:280px;
+}
+.tailContent
+{
+	font-size:14px;
+	margin-top:30px;
+	margin-bottom:13px;
+}
+.tailBody
+{
+	margin-bottom:15px;
+	font-size:14px;
+	margin-top:5px;
+}
+
+.eventBody
+{
+	font-size:14px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:15px;
+}
+
+.EventDotContainer
+{
+	position: absolute;
+	float:right;
+	bottom:18px;
+	margin-left:279px;
+}
+.EventDot
+{
+	background-color: #d2d2d2;
+	border-radius:50%;
+	width:10px;
+	height:10px;
+	margin-left:4px;;
+	margin-right:4px;
+	float:left;
+}

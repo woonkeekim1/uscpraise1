@@ -6,6 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/main.css">
+@yield('cssExtend')
 <style>
 body, html{
   width:100%;
@@ -25,7 +26,13 @@ body{
 <div class="wrapper">
 	<ul class="nav">
 		<li class="logo"><a href={!! url('/') !!} class="logo"><img src="images/logo.png" width="100%" height="61px"></a></li>
-		<li><a href={!! action('AboutController@aboutUs') !!}>교회소개</a></li>
+		<li><a href={!! action('AboutController@aboutUs') !!}>교회소개</a>
+			<ul>
+				<li><a href={!! url('/about#churchVision') !!}>교회비전</a></li>
+				<li><a href={!! url('/about#aboutPastor') !!}>교역자 소개</a></li>
+				<li><a href={!! url('/about#churchHistory') !!}>교회현역</a></li>
+			</ul>
+		</li>
 		<li><a href={!! action('GalleryController@index') !!}>겔러리</a>
 			<ul>
 				<li><a href="#">갤러리1</a></li>

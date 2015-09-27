@@ -28,6 +28,7 @@
 	margin-top:62px;
 	margin-right:65px;
 	font-weight:bold;
+	background-color:green;
 }
 .nav li.facebook
 {
@@ -82,9 +83,9 @@
 .nav li ul li
 {
 	clear:both;
-	background-color:blue;
+	background-color:red;
 	margin:0;
-	padding:0;
+	padding:20px;
 }
 
 .nav li:hover ul

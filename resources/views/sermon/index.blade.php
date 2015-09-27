@@ -1,224 +1,6 @@
 @extends('app')
-@section('css')
-.fullWidth
-{
-	width:100%;
-	display:block;
-}
-.sermonImageContainer
-{
-	width:1170px;
-	height:632px;
-	position:relative;
-	margin-right:auto;
-	margin-left:auto;
-	background: url('/images/image1.jpg') no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	position:relative;
-	border: 1px #c9c9c9 solid;
-}
-.sermonNav li.sermonNavLogo
-{
-	width:280px;
-	float:left;
-	margin:0;
-	padding:0;
-	display:block;
-	margin-right:100px;
-}
-.sermonNav li
-{
-	list-style:none;
-	float:left;
-	margin:0;
-	display:block;
-	margin-top:20px;
-	margin-right:65px;
-	font-weight:bold;
-	color:white;
-}
-.sermonNav li a
-{
-	text-decoration:none;
-	color:white;
-}
-.sermonNav li a:hover
-{
-	color:yellow;
-}
-.sermonWrapper
-{
-	width:1170px;
-	margin-left:auto;
-	margin-right:auto;
-	height:61px;
-	position:relative;
-	font-size:16px;
-	background-color:red;
-}
-.sermonNav
-{
-	position:relative;
-	width:100%;
-	margin:0;
-	padding:0;
-}
-.fixedNavBar
-{
-	position:fixed;
-	z-index:10;
-	top:0;
-}
-.sundaySermonTable
-{
-	width:100%;
-	border-spacing:0px;
-}
-.sundaySermonTable th
-{
-	background-color:red;
-	padding:0px;
-	border-style:none;
-	color:white;
-	border:0px;
-}
-.sundaySermonTable tr
-{
-	padding:0px;
-	border-style:none;
-}
-.sundaySermonTable th
-{
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.sundaySermonTable td
-{
-	border-top:solid 1px black;
-	padding-top:10px;
-	padding-bottom:10px;
-}
-.boardPageListWrapper
-{
-	float:left;
-	width:100%;
-	margin-top:20px;
-	text-align:center;
-}
-.boardPageList
-{
-	margin:auto;
-	background-color:green;
-}
-.boardPageList a
-{
-	padding-right:7px;
-	text-decoration:none;
-	padding-left:7px;
-}
-.contentBlockDescription
-{
-	float:left;
-	margin-top:38px;
-	margin-left:30px;
-	width:90%;
-	font-weight:bold;
-}
-.announceContentContainer
-{
-	border:2px solid red;
-	color:red;
-	width:100%:
-	display:block;
-	position:relative;
-}
-.announceContent
-{
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	padding:20px;
-	display:block;
-	font-size:32px;
-	font-weight:bold;
-}
-.circleImage
-{
-	border-radius:50%;
-	background-color:red;
-	height:211px;
-	width:211px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	background: url('/images/image1.jpg') no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;	
-}
-.circleImage1
-{
-	border-radius:50%;
-	background-color:red;
-	height:211px;
-	width:211px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	background: url('/images/image2.jpg') no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;	
-}
-.circleImage2
-{
-	border-radius:50%;
-	background-color:red;
-	height:211px;
-	width:211px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	background: url('/images/image3.jpg') no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;	
-}
-.circleImageDescriptionContainer
-{
-	width:100%;
-}
-.circleImageDescriptionFirstLine
-{
-	background-color:red;
-	color:white;
-	width:100px;
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	margin-bottom:3px;
-	margin-top:6px;
-	padding:10px;
-	font-weight:bold;
-}
-.circleImageDescriptionSecondLine
-{
-	background-color:red;
-	color:white;
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	margin-top:3px;
-	padding:10px;
-	font-weight:bold;
-}
-
+@section('cssExtend')
+<link rel="stylesheet" type="text/css" href="css/subPage.css">
 @endsection
 @section('content')
 <div class="fullWidth" style="background-color:gray">
@@ -243,7 +25,9 @@
 </div>
 <div class="fullWidth" style="background-color:white;height:700px;">
 	<div class="container">
-		<font size="10px" color="red" style="font-weight:bold">주일예배</font>
+		<div class="fullWidth">
+			<font size="10px" color="red" style="font-weight:bold">주일 예배</font>
+		</div>
 		<table class="sundaySermonTable" style="margin-top:20px">
 			<tr>
 				<th>설교 일자</th>
@@ -274,9 +58,9 @@
 				@endif
 				@for($returnArray['start']=$returnArray['start']+1; $returnArray['start'] <= $returnArray['end']; $returnArray['start']++)
 					@if($returnArray['start'] == $returnArray['curPage'])
-						<a id="listPage{!! $returnArray['start'] !!}"><font color="white">{{$returnArray['start'] + 1}}</font></a>
+						| <a id="listPage{!! $returnArray['start'] !!}"><font color="white">{{$returnArray['start'] + 1}}</font></a>
 					@else
-						<a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
+						| <a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
 					@endif
 				@endfor
 				@if($returnArray['totalPage'] > $returnArray['end'])
@@ -292,7 +76,9 @@
 </div>
 <div class="fullWidth" style="background-color:yellow;height:700px;">
 	<div class="container">
-		<font size="10px" color="red" style="font-weight:bold">아침예배</font>
+		<div class="fullWidth">
+			<font size="10px" color="red" style="font-weight:bold">아침 예배</font>
+		</div>
 		<div class="middleContentContainer">
 			<div class="middleContent" style="background-color:white">
 				<div class="mainGallry">
@@ -366,7 +152,9 @@
 </div>
 <div class="fullWidth" style="background-color:white;height:700px;">
 	<div class="container">
-		<font size="10px" color="red" style="font-weight:bold">금요예배</font>
+		<div class="fullWidth">
+			<font size="10px" color="red" style="font-weight:bold">금요 예배</font>
+		</div>
 		<div class="middleContentContainer">
 			<div class="middleContent">
 				<div class="circleImage">
@@ -422,25 +210,8 @@
 </div>
 @endsection
 @section('script')
+<script src="/scripts/myScript.js"></script>
 <script>
-$(window).scroll(function(){
-	var scollHeight = $(window).scrollTop();
-	if(scollHeight > 632)
-	{
-		if(!$("#sermonNavBar").hasClass("fixedNavBar"))
-		{
-			$("#sermonNavBar").addClass("fixedNavBar")
-		}
-	}
-	else
-	{
-		if($("#sermonNavBar").hasClass("fixedNavBar"))
-		{
-			$("#sermonNavBar").removeClass("fixedNavBar")
-		}
-	}
-});
-
 
 $(document).on('click', "[id^=listPage]", function(){
 		var $listPage = $(this).prop('id');
@@ -483,9 +254,9 @@ $(document).on('click', "[id^=listPage]", function(){
 				for($myVar = data.start+1; $myVar <= data.end; $myVar++)
 				{
 					if($myVar == data.curPage)
-						$boardPageList += '<a id="listPage' + $myVar + '"><font color="white">' + eval($myVar+1)+'</font></a>';
+						$boardPageList += '| <a id="listPage' + $myVar + '"><font color="white">' + eval($myVar+1)+'</font></a>';
 					else
-						$boardPageList += '<a id="listPage' + $myVar + '">' + eval($myVar+1)+'</a>';
+						$boardPageList += '| <a id="listPage' + $myVar + '">' + eval($myVar+1)+'</a>';
 				}
 				if(data.totalPage > data.end+1)
 					$boardPageList += '<a id="listPage' + eval(data.start+5) + '">></a>';				

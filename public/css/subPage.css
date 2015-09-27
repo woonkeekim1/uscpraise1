@@ -1,0 +1,219 @@
+@CHARSET "EUC-KR";
+.fullWidth
+{
+	width:100%;
+	display:block;
+}
+.sermonImageContainer
+{
+	width:1170px;
+	height:632px;
+	position:relative;
+	margin-right:auto;
+	margin-left:auto;
+	background: url('/images/image1.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative;
+	border: 1px #c9c9c9 solid;
+}
+.sermonNav li.sermonNavLogo
+{
+	width:280px;
+	float:left;
+	margin:0;
+	padding:0;
+	display:block;
+	margin-right:100px;
+}
+.sermonNav li
+{
+	list-style:none;
+	float:left;
+	margin:0;
+	display:block;
+	margin-top:20px;
+	margin-right:65px;
+	font-weight:bold;
+	color:white;
+}
+.sermonNav li a
+{
+	text-decoration:none;
+	color:white;
+}
+.sermonNav li a:hover
+{
+	color:yellow;
+}
+.sermonWrapper
+{
+	width:1170px;
+	margin-left:auto;
+	margin-right:auto;
+	height:61px;
+	position:relative;
+	font-size:16px;
+	background-color:red;
+}
+.sermonNav
+{
+	position:relative;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.fixedNavBar
+{
+	position:fixed;
+	z-index:10;
+	top:0;
+}
+.sundaySermonTable
+{
+	width:100%;
+	border-spacing:0px;
+}
+.sundaySermonTable th
+{
+	background-color:red;
+	padding:0px;
+	border-style:none;
+	color:white;
+	border:0px;
+}
+.sundaySermonTable tr
+{
+	padding:0px;
+	border-style:none;
+}
+.sundaySermonTable th
+{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.sundaySermonTable td
+{
+	border-top:solid 1px black;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.boardPageListWrapper
+{
+	float:left;
+	width:100%;
+	margin-top:20px;
+	text-align:center;
+}
+.boardPageList
+{
+	margin:auto;
+	background-color:green;
+}
+.boardPageList a
+{
+	padding-right:7px;
+	text-decoration:none;
+	padding-left:7px;
+}
+.contentBlockDescription
+{
+	float:left;
+	margin-top:38px;
+	margin-left:30px;
+	width:90%;
+	font-weight:bold;
+}
+.announceContentContainer
+{
+	border:2px solid red;
+	color:red;
+	width:100%:
+	display:block;
+	position:relative;
+}
+.announceContent
+{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding:20px;
+	display:block;
+	font-size:32px;
+	font-weight:bold;
+}
+.circleImage
+{
+	border-radius:50%;
+	background-color:red;
+	height:211px;
+	width:211px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	background: url('/images/image1.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+.circleImage1
+{
+	border-radius:50%;
+	background-color:red;
+	height:211px;
+	width:211px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	background: url('/images/image2.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+.circleImage2
+{
+	border-radius:50%;
+	background-color:red;
+	height:211px;
+	width:211px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	background: url('/images/image3.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+.circleImageDescriptionContainer
+{
+	width:100%;
+}
+.circleImageDescriptionFirstLine
+{
+	background-color:red;
+	color:white;
+	width:100px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-bottom:3px;
+	margin-top:6px;
+	padding:10px;
+	font-weight:bold;
+}
+.circleImageDescriptionSecondLine
+{
+	background-color:red;
+	color:white;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-top:3px;
+	padding:10px;
+	font-weight:bold;
+}

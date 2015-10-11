@@ -18,6 +18,10 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size:18px;
 }
+.testcolor
+{
+	color:blue;
+}
 @yield('css')
 
 </style>
@@ -26,29 +30,31 @@ body{
 <div class="wrapper">
 	<ul class="nav">
 		<li class="logo"><a href={!! url('/') !!} class="logo"><img src="images/logo.png" width="100%" height="61px"></a></li>
-		<li><a href={!! action('AboutController@aboutUs') !!}>교회소개</a>
+		<li style="width:82px"><a href={!! action('AboutController@aboutUs') !!}>교회소개<img src="images/btn_category_arrow_off.png" style="padding-left:11px;"></img></a>
 			<ul>
-				<li><a href={!! url('/about#churchVision') !!}>교회비전</a></li>
-				<li><a href={!! url('/about#aboutPastor') !!}>교역자 소개</a></li>
-				<li><a href={!! url('/about#churchHistory') !!}>교회현역</a></li>
+				<li style="width:113px"><a href={!! url('/about#churchVision') !!}>교회비전</a></li>
+				<li style="width:113px"><a href={!! url('/about#aboutPastor') !!}>교역자 소개</a></li>
+				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>교회현역</a></li>
+				<li style="width:113px"><a href={!! url('/about#leaders') !!}>섬기는 사람들</a></li>
+				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>공지사항</a></li>
 			</ul>
 		</li>
-		<li><a href={!! action('GalleryController@index') !!}>겔러리</a>
+		<li style="width:70px"><a href={!! action('GalleryController@index') !!}>겔러리<img src="images/btn_category_arrow_off.png" style="padding-left:11px;"></img></a>
 			<ul>
-				<li><a href="#">갤러리1</a></li>
+				<li><a href="#" onMouseOver="hoverNav()">갤러리1</a></li>
 				<li><a href="#">갤러리 2</a></li>
 			</ul>
 		</li>
-		<li><a href={!! action('SermonController@index') !!}>설교</a>
+		<li style="width:51px"><a href={!! action('SermonController@index') !!}>설교<img src="images/btn_category_arrow_off.png" style="padding-left:11px;"></img></a>
 			<ul>
 				<li><a href={!! url('/sermon#sundayPray') !!}>주일 예배</a></li>
 				<li><a href={!! url('/sermon#morningPray') !!}>아침 예배</a></li>
 				<li><a href={!! url('/sermon#fridayPray') !!}>금요 예배</a></li>
 			</ul>
 		</li>
-		<li><a href="#">몰라</a></li>
+		<li><a href={!! action('AboutController@contactUs') !!}>문의</a></li>
 		<li class="facebook"><a href="#"><img src="images/facebook_logo.png"></a></li>
-		<li style="margin-right:0px"><a href="#">English</a>
+		<li style="margin-right:0px;width:67px;"><a href="#" style="font-weight:bold;font-size:14px;">English<img src="images/btn_category_arrow_off.png" style="padding-left:11px;"></img></a>
 			<ul>
 				<li><a href="#">Korean</a></li>
 				<li><a href="#">Espenol</a></li>
@@ -122,6 +128,10 @@ body{
                                 $("#ImgCircle" + curImag).addClass("ImgCircleSelected");
                                 $(".ImageBody").css("background-image", "url(" +mainImageList[curImag] + ")");
 								
+                }
+                function hoverNav()
+                {
+                    $(this).parent().parent().addClass(".testcolor");
                 }
 </script>
 </html>

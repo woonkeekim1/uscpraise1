@@ -18,7 +18,7 @@ class SundaySermonTable extends Migration
 			$table->text('body');
 			$table->String('audio');
 			$table->Integer('createdBy')->length(10)->unsigned();
-			$table->Datetime('sermonDate');
+			$table->timestamp('sermonDate');
             $table->timestamps();
             $table->foreign('createdBy')->references('id')->on('users');
         });

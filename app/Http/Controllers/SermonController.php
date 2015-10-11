@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 class SermonController extends Controller
 {
     //
+    
     public function index()
     {
     	$contentInPage = 10;
@@ -18,6 +19,8 @@ class SermonController extends Controller
     	$start = ($curPage % 5 < 0) ? 0 : $curPage - ceil($curPage % 5);
     	$end = ($totalPage < $start + 4) ? $totalPage : $start+4;
     	
+    	$contents = \App\SundaySermon::orderBy('sermonDate', 'desc')->take($contentInPage)
+    	->offset($curPage*$contentInPage)->get();
     	$returnArray = array(
     	'contentInPage' => $contentInPage,
     	'totalContent' => $totalContent,
@@ -25,9 +28,9 @@ class SermonController extends Controller
     	'totalPage' => $totalPage,
     	'start' => $start,
     	'end' => $end,
+    	'count'=> $contents->count(),
     	);
-    	$contents = \App\SundaySermon::orderBy('created_At', 'desc')->take($contentInPage)
-    				->offset($curPage*$contentInPage)->get();
+    	
     	return view('sermon.index', compact('returnArray', 'contents'));
     }
     
@@ -43,7 +46,7 @@ class SermonController extends Controller
     		return  "";
 
     	$contents = \App\SundaySermon::join('users', 'users.id', '=', 'SundaySermon.createdBy')
-    				->orderBy('SundaySermon.created_At', 'desc')->take($contentInPage)
+    				->orderBy('SundaySermon.sermonDate', 'desc')->take($contentInPage)
     				->offset($curPage*$contentInPage)->select('sermonDate', 'name', 'title', 'body', 'audio')->get();
     	
     	$returnArray = array(
@@ -54,8 +57,14 @@ class SermonController extends Controller
     			'start' => $start,
     			'end' => $end,
     			'contents' => $contents,
+    			'count'=> $contents->count(),
     	);
     	
     	return json_encode($returnArray);
+    }
+    
+    public function setSermondateAttribute($date)
+    {
+    	$this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
     }
 }

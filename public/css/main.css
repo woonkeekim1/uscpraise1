@@ -26,9 +26,9 @@
 	margin:0;
 	display:block;
 	margin-top:62px;
-	margin-right:65px;
+	margin-right:60px;
 	font-weight:bold;
-	background-color:green;
+	padding:0px;
 }
 .nav li.facebook
 {
@@ -37,7 +37,7 @@
 	margin:0;
 	display:block;
 	margin-top:56px;
-	margin-right:34px;
+	margin-right:23px;
 }
 
 .nav li.logo
@@ -56,7 +56,6 @@
 {
 	text-decoration:none;
 	display:block;
-	text-align:center;
 	color:#3a3a3a;
 }
 .nav a.logo
@@ -68,7 +67,7 @@
 
 .nav a:hover
 {
-	color:#c03737;
+	color:#bf1e2e;
 }
 
 .nav li ul
@@ -79,18 +78,32 @@
 	height:auto;
 	display:none;
 	clear:both;
+	margin-top:14px;
 }
 .nav li ul li
 {
 	clear:both;
-	background-color:red;
+	background-color:#bf1e2e;
 	margin:0;
-	padding:20px;
+	padding-left:24px;
+	padding-top:17px;
+	padding-bottom:17px;
+	width:113px;
 }
 
 .nav li:hover ul
 {
 	display:block;
+}
+.nav li ul li a
+{
+	color:white;
+	text-align:left;
+	font-size:14px;
+}
+.nav li ul li a:hover
+{
+	color:#ffde00;
 }
 
 .container

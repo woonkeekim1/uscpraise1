@@ -3,166 +3,36 @@
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
 @endsection
 @section('css')
-.aboutGrace
-{
-	font-size:30px;
-	font-weight:bold;
-	display:inline-block;
-	background-color:Red;
-	position:relative;
-	text-align:center;
-	margin:0 auto;
-	display:table;
-	margin-top:20px;
-	border-bottom: solid 1px;
-}
-.churchSlogan
-{
-	color:white;
-	background-color:red;
-	padding:15px;
-	margin:0 auto;
-	display:table;
-	margin-top:20px;
-	font-weight:bold;
-}
-.sloganContainer
-{
-	width:100%;
-	margin-top:50px;
-	display:block;
-	position:relative;
-	float:left;
-}
-.slogan
-{
-	width:500px;
-	height:200px;
-	background-color:yellow;
-	padding:20px;
-	float:left;
-	display:block;
-	border: solid 1px black;
-}
-.sloganFiller
-{
-	width:86px;
-	background-color:red;
-	float:left;
-}
-.sloganTitle
-{
-	font-weight:bold;
-}
-.sloganIcon
-{
-	width:25px;
-	height:25px;
-	display:inline-block;
-	vertical-align:middle;
-	margin-right:3px;
-}
 
-.slogan ul
-{
-	padding-left:20px;
-}
-.slogan ul li
-{
-	font-size:14px;
-	padding-top:7px;
-	padding-bottom:7px;
-	margin:0px;
-}
-.pastorHeader
-{
-	font-size:16px;
-	font-weight:bold;
-	margin-top:20px;
-	line-height:24px;
-}
-.pastorBody
-{
-	font-size:14px;
-	line-height:25px;
-}
-.pastorContentBody
-{
-	width:540px;
-	background-color:white;
-	float:left;
-}
-.pastorImage
-{
-	width:580px;
-	background:url('images/image1.jpg') no-repeat center center;
-	background-size:cover;
-	height:500px;
-	float:left;
-	position:relative;
-}
-.churchHistoryList
-{
-	width:100%;
-	border-top:solid 4px red;
-}
 
-.yearDescription li
-{
-	width:500px;
-	padding:0px;
-	margin:0px;
-}
-.yearDescription ul
-{
-	padding:10px;
-	padding-top:20px;
-	margin:0px;
-}
-.year
-{
-	color:red;
-	text-align:center;
-	padding:30px;
-	padding-right:70px;
-	float:left;
-	font-weight:bold;
-	display:block;
-}
-.yearDescription
-{
-	float:left;
-	background-color:blue;
-	display:inline-block;
-}
 @endsection
 @section('content')
-<div class="fullWidth" style="background-color:gray">
+<div class="fullWidth" style="background-color:#444444">
 	<div class="container">
 		<div class="sermonImageContainer" style="background: url('images/image1.jpg') center center; background-size:cover">
 		</div>
 	</div>
 </div>
-<div class="fullWidth" style="background-color:red" id="sermonNavBar">
+<div class="fullWidth" style="background-color:#bf1e2e" id="sermonNavBar">
 	<div class="sermonWrapper">
 		<ul class="sermonNav">
 			<li class="sermonNavLogo"><a href={!! url('/') !!} class="logo"><img src="images/footer_logo.png" width="100%" height="61px"></a></li>
-			<li style="margin-right:60px">교회소개</li>
-			<li style="margin-right:33px;"><a href="#churchVision">교회비전</a></li>
-			<li style="margin-right:33px;"><a href="#aboutPastor">목회자 소개</a></li>
-			<li style="margin-right:33px;"><a href="#churchHistory">교회연혁</a></li>
-			<li style="margin-right:33px;"><a href="#fridayPray">섬기는 사람들</a></li>
-			<li><a href="#fridayPray">공지사항</a></li>
+			<li style="margin-right:175px">교회소개</li>
+			<li style="margin-right:44px;"><a href="#churchVision">교회비전</a></li>
+			<li style="margin-right:52px;"><a href="#aboutPastor">목회자 소개</a></li>
+			<li style="margin-right:40px;"><a href="#churchHistory">교회연혁</a></li>
+			<li style="margin-right:42px;"><a href="#leaders">섬기는 사람들</a></li>
+			<li style="margin-right:30px"><a href="#fridayPray">공지사항</a></li>
 		</ul>
 	</div>
 </div>
 <a name="churchVision"></a>
-<div class="fullwidth" style="height:100px; background-color:white">
+<div class="fullwidth" style="height:90px; background-color:white">
 </div>
-<div class="fullWidth" style="background-color:white;height:850px;">
+<div class="fullWidth" style="background-color:white;height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="red" style="font-weight:bold">교회비전</font>
+			<font size="10px" color="#bf1e2e" style="font-weight:bold">교회비전</font>
 		</div>
 		<div class="fullWidth">
 			<div class="aboutGrace">
@@ -178,7 +48,7 @@
 			<div class="sloganContainer">
 				<div class="slogan">
 					<div class="sloganTitle">
-						<div class="sloganIcon" style="background: url('images/image1.jpg') no-repeat center center;
+						<div class="sloganIcon" style="background: url('images/intro_icon_01.png') no-repeat center center;
 		background-size:cover;"></div>비전 교회
 					</div>
 					<ul>
@@ -192,7 +62,7 @@
 				</div>
 				<div class="slogan">
 					<div class="sloganTitle">
-						<div class="sloganIcon" style="background: url('images/image2.jpg') no-repeat center center;
+						<div class="sloganIcon" style="background: url('images/intro_icon_02.png') no-repeat center center;
 		background-size:cover;"></div>선교사역
 					</div>
 					<ul>
@@ -207,7 +77,7 @@
 			<div class="sloganContainer">
 				<div class="slogan">
 					<div class="sloganTitle">
-						<div class="sloganIcon" style="background: url('images/image1.jpg') no-repeat center center;
+						<div class="sloganIcon" style="background: url('images/intro_icon_03.png') no-repeat center center;
 		background-size:cover;"></div>한국 유학생들의 쉼터
 					</div>
 					<ul>
@@ -221,7 +91,7 @@
 				</div>
 				<div class="slogan">
 					<div class="sloganTitle">
-						<div class="sloganIcon" style="background: url('images/image2.jpg') no-repeat center center;
+						<div class="sloganIcon" style="background: url('images/intro_icon_01.png') no-repeat center center;
 		background-size:cover;"></div>교내 복음 전파
 					</div>
 					<ul>
@@ -235,12 +105,12 @@
 	</div>
 </div>
 <a name="aboutPastor"></a>
-<div class="fullwidth" style="height:100px; background-color:yellow">
+<div class="fullwidth" style="height:90px; background-color:yellow">
 </div>
-<div class="fullWidth" style="background-color:yellow;height:850px;">
+<div class="fullWidth" style="background-color:yellow;height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="red" style="font-weight:bold">목회자 소개</font>
+			<font size="10px" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
 		</div>
 		<div class="fullWidth">
 			<div class="pastorContentBody">
@@ -270,7 +140,7 @@
 <div class="fullWidth" style="background-color:green;height:850px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="red" style="font-weight:bold">교회연혁</font>
+			<font size="10px" color="#bf1e2e" style="font-weight:bold">교회연혁</font>
 		</div>
 		<div class="churchHistoryList">
 			<div class="fullWidth">
@@ -314,6 +184,93 @@
 			</div>
 			<div style="clear:both">
 				<hr>
+			</div>
+		</div>
+	</div>
+</div>
+<a name="leaders"></a>
+<div class="fullwidth" style="height:90px; background-color:white">
+</div>
+<div class="fullWidth" style="background-color:white;height:966px;">
+	<div class="container">
+		<div class="fullWidth">
+			<font size="10px" color="red" style="font-weight:bold">섬기는 사람들</font>
+		</div>
+		
+		<div class="middleContentContainer">
+			<div class="middleContent">
+				<div class="circleImage">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						싹트네(학부)<Br>
+						팀리더: 오지영
+					</div>
+				</div>
+			</div>
+			<div class="middleContentFiller">
+				&nbsp;
+			</div>
+			<div class="middleContent">
+				<div class="circleImage1">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						Abel<br>
+						팀리더: 정지향
+					</div>
+				</div>
+			</div>
+			<div class="middleContentFiller">
+				&nbsp;
+			</div>
+			<div class="middleContent">
+				<div class="circleImage2">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						Zion<br>
+						팀리더: 박경미
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="middleContentContainer">
+			<div class="middleContent">
+				<div class="circleImage">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						서로섬김<Br>
+						팀리더: 이 황
+					</div>
+				</div>
+			</div>
+			<div class="middleContentFiller">
+				&nbsp;
+			</div>
+			<div class="middleContent">
+				<div class="circleImage1">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						안디옥<br>
+						팀리더: 남상욱
+					</div>
+				</div>
+			</div>
+			<div class="middleContentFiller">
+				&nbsp;
+			</div>
+			<div class="middleContent">
+				<div class="circleImage2">
+				</div>
+				<div class="circleImageDescriptionContainer">
+					<div class="leaderDescription">
+						몰라<br>
+						팀리더: 신은해
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

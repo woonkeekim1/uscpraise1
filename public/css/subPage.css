@@ -17,7 +17,6 @@
 	-o-background-size: cover;
 	background-size: cover;
 	position:relative;
-	border: 1px #c9c9c9 solid;
 }
 .sermonNav li.sermonNavLogo
 {
@@ -26,7 +25,8 @@
 	margin:0;
 	padding:0;
 	display:block;
-	margin-right:100px;
+	margin-right:90px;
+	padding-top:7px;
 }
 .sermonNav li
 {
@@ -34,8 +34,8 @@
 	float:left;
 	margin:0;
 	display:block;
-	margin-top:20px;
-	margin-right:65px;
+	margin-top:28px;
+	margin-right:68px;
 	font-weight:bold;
 	color:white;
 }
@@ -53,10 +53,10 @@
 	width:1170px;
 	margin-left:auto;
 	margin-right:auto;
-	height:61px;
+	height:76px;
 	position:relative;
 	font-size:16px;
-	background-color:red;
+	background-color:#bf1e2e;
 }
 .sermonNav
 {
@@ -78,46 +78,74 @@
 }
 .sundaySermonTable th
 {
-	background-color:red;
+	background-color:#bf1e2e;
 	padding:0px;
 	border-style:none;
 	color:white;
 	border:0px;
+	font-size:16px;
+	font-weight:bold;	
+	height:50px;
 }
 .sundaySermonTable tr
 {
 	padding:0px;
 	border-style:none;
 }
-.sundaySermonTable th
-{
-	padding-top:10px;
-	padding-bottom:10px;
-}
+
 .sundaySermonTable td
 {
-	border-top:solid 1px black;
-	padding-top:10px;
-	padding-bottom:10px;
+	border-bottom:solid 1px black;
+	padding-top:18px;
+	padding-bottom:18px;
+	background-color:white;
+	font-size:14px;
+	text-align:center;
 }
 .boardPageListWrapper
 {
 	float:left;
 	width:100%;
-	margin-top:20px;
+	margin-top:75px;
 	text-align:center;
 }
 .boardPageList
 {
 	margin:auto;
-	background-color:green;
+	color:#666666;
 }
 .boardPageList a
 {
 	padding-right:7px;
-	text-decoration:none;
 	padding-left:7px;
+	font-weight:bold;
 }
+.boardPageList a:hover
+{
+	color:#bf1e2e;
+	cursor: pointer;
+}
+.boardNextContainer
+{
+	width:62px;
+	height:24px;
+	border: 1px solid #d3d3d3;
+	background-color:white;
+	display:inline;
+	font-weight:bold;
+	font-size:14px;
+	padding-top:5px;
+	padding-left:7px;
+	padding-right:12px;
+	padding-bottom:6px;
+	font-color:#858585;
+}
+.boardNextContainer:hover
+{
+	color:#666666;
+	border-color: #bf1e2e;
+}
+
 .contentBlockDescription
 {
 	float:left;
@@ -128,9 +156,10 @@
 }
 .announceContentContainer
 {
-	border:2px solid red;
-	color:red;
-	width:100%:
+	margin-top:72px;
+	border:4px solid #bf1e2e;
+	color:#bf1e2e;
+	width:1162px;
 	display:block;
 	position:relative;
 }
@@ -139,17 +168,17 @@
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
-	padding:20px;
 	display:block;
-	font-size:32px;
+	font-size:36px;
 	font-weight:bold;
+	padding-top:30px;
+	padding-bottom:30px;
 }
 .circleImage
 {
 	border-radius:50%;
-	background-color:red;
-	height:211px;
-	width:211px;
+	height:280px;
+	width:280px;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
@@ -163,8 +192,8 @@
 {
 	border-radius:50%;
 	background-color:red;
-	height:211px;
-	width:211px;
+	height:280px;
+	width:280px;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
@@ -178,8 +207,8 @@
 {
 	border-radius:50%;
 	background-color:red;
-	height:211px;
-	width:211px;
+	height:280px;
+	width:280px;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
@@ -195,20 +224,20 @@
 }
 .circleImageDescriptionFirstLine
 {
-	background-color:red;
+	background-color:#bf1e2e;
 	color:white;
 	width:100px;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
-	margin-bottom:3px;
-	margin-top:6px;
+	margin-bottom:4px;
+	margin-top:22px;
 	padding:10px;
 	font-weight:bold;
 }
 .circleImageDescriptionSecondLine
 {
-	background-color:red;
+	background-color:#bf1e2e;
 	color:white;
 	margin-left:auto;
 	margin-right:auto;
@@ -216,4 +245,156 @@
 	margin-top:3px;
 	padding:10px;
 	font-weight:bold;
+}
+.sermonAudio
+{
+	width:20px;
+	height:20px;
+	background: url('/images/image1.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+.aboutGrace
+{
+	font-size:30px;
+	font-weight:bold;
+	display:inline-block;
+	background-color:Red;
+	position:relative;
+	text-align:center;
+	margin:0 auto;
+	display:table;
+	margin-top:20px;
+	border-bottom: solid 1px;
+}
+.churchSlogan
+{
+	color:white;
+	background-color:#bf1e2e;
+	padding:15px;
+	margin:0 auto;
+	display:table;
+	margin-top:20px;
+	font-weight:bold;
+}
+.sloganContainer
+{
+	width:100%;
+	margin-top:50px;
+	display:block;
+	position:relative;
+	float:left;
+}
+.slogan
+{
+	width:500px;
+	height:200px;
+	background-color:yellow;
+	padding:20px;
+	float:left;
+	display:block;
+	border: solid 1px black;
+}
+.sloganFiller
+{
+	width:86px;
+	background-color:red;
+	float:left;
+}
+.sloganTitle
+{
+	font-weight:bold;
+}
+.sloganIcon
+{
+	width:40px;
+	height:40px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:3px;
+}
+
+.slogan ul
+{
+	padding-left:20px;
+}
+.slogan ul li
+{
+	font-size:14px;
+	padding-top:7px;
+	padding-bottom:7px;
+	margin:0px;
+}
+.pastorHeader
+{
+	font-size:16px;
+	font-weight:bold;
+	margin-top:20px;
+	line-height:24px;
+}
+.pastorBody
+{
+	font-size:14px;
+	line-height:25px;
+}
+.pastorContentBody
+{
+	width:540px;
+	background-color:white;
+	float:left;
+}
+.pastorImage
+{
+	width:580px;
+	background:url('images/image1.jpg') no-repeat center center;
+	background-size:cover;
+	height:500px;
+	float:left;
+	position:relative;
+}
+.churchHistoryList
+{
+	width:100%;
+	border-top:solid 4px #bf1e2e;
+}
+
+.yearDescription li
+{
+	width:500px;
+	padding:0px;
+	margin:0px;
+}
+.yearDescription ul
+{
+	padding:10px;
+	padding-top:20px;
+	margin:0px;
+}
+.year
+{
+	color:red;
+	text-align:center;
+	padding:30px;
+	padding-right:70px;
+	float:left;
+	font-weight:bold;
+	display:block;
+}
+.yearDescription
+{
+	float:left;
+	background-color:blue;
+	display:inline-block;
+}
+
+.leaderDescription
+{
+	width:211px;
+	background-color:red;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:15px;
 }

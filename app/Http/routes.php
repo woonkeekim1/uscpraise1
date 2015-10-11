@@ -17,4 +17,5 @@ Route::get('/', function () {
 Route::get('/gallery', 'GalleryController@index');
 Route::get('/sermon', 'SermonController@index');
 Route::get('/sermon/updateSundaySermon', 'SermonController@updateSundaySermon');
+Route::get('/contactUs', 'AboutController@contactUs');
 //Route::get('/about', 'AboutController@aboutUs');

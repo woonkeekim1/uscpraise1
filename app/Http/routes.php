@@ -15,6 +15,8 @@ Route::get('/', function () {
 	return view('index');
 });
 Route::get('/gallery', 'GalleryController@index');
+Route::get('/gallery/moreContentPrayAndSermon', 'GalleryController@moreContentForPrayAndSermon');
+Route::get('/gallery/ContentPrayAndSermon', 'GalleryController@ContentForPrayAndSermon');
 Route::get('/sermon', 'SermonController@index');
 Route::get('/sermon/updateSundaySermon', 'SermonController@updateSundaySermon');
 Route::get('/contactUs', 'AboutController@contactUs');

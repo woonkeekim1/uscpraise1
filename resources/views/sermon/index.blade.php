@@ -298,7 +298,7 @@ $(document).on('click', "[id^=listPage]", function(){
 							"<td>"+data.contents[i].body+"</td>" +
 							"<td>" +
 								'<div class="sermonAudio">' +
-									'<audio src=' + data.contents[i].audio +  'type="audio/mpeg">' +
+									'<audio src="' + data.contents[i].audio +  '" type="audio/mpeg">' +
 									'</audio>' +
 								'</div>' +
 							"</td>" +
@@ -314,7 +314,7 @@ $(document).on('click', "[id^=listPage]", function(){
 								"<td style='border-bottom:none;'>"+data.contents[i].body+"</td>" +
 								"<td style='border-bottom:none;'>" + 
 									'<div class="sermonAudio">' +
-										'<audio src=' + data.contents[i].audio +  'type="audio/mpeg">' +
+										'<audio src="' + data.contents[i].audio +  '" type="audio/mpeg">' +
 										'</audio>' +
 									'</div>' +
 								"</td>" +

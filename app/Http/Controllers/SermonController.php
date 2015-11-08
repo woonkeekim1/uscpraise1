@@ -18,7 +18,6 @@ class SermonController extends Controller
     	$totalPage = ceil($totalContent/$contentInPage);
     	$start = ($curPage % 5 < 0) ? 0 : $curPage - ceil($curPage % 5);
     	$end = ($totalPage < $start + 4) ? $totalPage : $start+4;
-    	
     	$contents = \App\SundaySermon::orderBy('sermonDate', 'desc')->take($contentInPage)
     	->offset($curPage*$contentInPage)->get();
     	$returnArray = array(

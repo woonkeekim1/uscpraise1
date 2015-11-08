@@ -188,6 +188,13 @@
 	display:block;
 	float:left;
 }
+.ImageContentButton
+{
+	width:100%;
+	height:30%;
+	top:35%;
+	position:relative;
+}
 .ImageContent
 {
 	width:90%;
@@ -663,8 +670,6 @@
 		$ImageID = parseInt($ImageID);
 		if(!isNaN($ImageID) && typeof($ImageID) === 'number')
 		{
-			document.getElementById("showImage").style.display = "block";
-			document.getElementById("viewImage").style.display = "block";
 			$.ajax({
 				url:'/gallery/ContentPrayAndSermon',
 				data: {id : $ImageID},
@@ -684,8 +689,8 @@
 					}
 					else
 					{
-						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImagePrayAndSermon' + data.before.id  +'">';
-						$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
+						$html += '<div class="ImageContentButtonContainer">';
+						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImagePrayAndSermon' + data.before.id  +'">';
 					}
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
@@ -694,13 +699,15 @@
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
 					else
-						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImagePrayAndSermon' + data.after.id  +'">';
+					{
+						$html += '<div class="ImageContentButtonContainer">';
+						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImagePrayAndSermon' + data.after.id  +'">';
+					}
 					$html += '</div>';
 					$html += '</div>';
 					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 					$html += '<div class="ImageWrapper">';
-					$html += '<div class ="SmallImageContentButtonContainer">';
-					$html += '</div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[0].id+1) + '"> </div>';
 					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentContainer">';
 					$count = 0;
@@ -710,20 +717,26 @@
 							$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 						else
 							$html += '<div class="SmallImageBoxFiller"> </div>';
-						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox">';
+						$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImagePrayAndSermon' + data.contents[$count].id + '">';
+						$html += '</div></div>';
 						$count++;
 					}
 					$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 
 					$html += '</div>';
 					$html += '</div>';
-					$html += '<div class ="SmallImageContentButtonContainer"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[data.count-1].id-1) + '"> </div>';
 					$html += ' </div> </div>';
 
 					document.getElementById('showImage').innerHTML += $html;
+					document.getElementById("showImage").style.display = "block";
+					document.getElementById("viewImage").style.display = "block";
 					}});
 			
-		}});
+		}
+			
+		});
 
 	$(document).on('click',  "[id^=Retreat]", function(){
 		var $listPage = $(this).prop('id');
@@ -731,8 +744,6 @@
 		$ImageID = parseInt($ImageID);
 		if(!isNaN($ImageID) && typeof($ImageID) === 'number')
 		{
-			document.getElementById("showImage").style.display = "block";
-			document.getElementById("viewImage").style.display = "block";
 			$.ajax({
 				url:'/gallery/ContentRetreat',
 				data: {id : $ImageID},
@@ -752,8 +763,8 @@
 					}
 					else
 					{
-						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImageRetreat' + data.before.id  +'">';
-						$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
+						$html += '<div class="ImageContentButtonContainer">';
+						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImageRetreat' + data.before.id  +'">';
 					}
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
@@ -762,13 +773,15 @@
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
 					else
-						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImageRetreat' + data.after.id  +'">';
+					{
+						$html += '<div class="ImageContentButtonContainer">';
+						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImageRetreat' + data.after.id  +'">';
+					}
 					$html += '</div>';
 					$html += '</div>';
 					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 					$html += '<div class="ImageWrapper">';
-					$html += '<div class ="SmallImageContentButtonContainer">';
-					$html += '</div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[0].id+1) + '"> </div>';
 					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentContainer">';
 					$count = 0;
@@ -778,21 +791,26 @@
 							$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 						else
 							$html += '<div class="SmallImageBoxFiller"> </div>';
-						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox">';
+						$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImageRetreat' + data.contents[$count].id + '">';
+						$html += '</div></div>';
 						$count++;
 					}
 					$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 
 					$html += '</div>';
 					$html += '</div>';
-					$html += '<div class ="SmallImageContentButtonContainer"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[data.count-1].id-1) + '"> </div>';
 					$html += ' </div> </div>';
 
 					document.getElementById('showImage').innerHTML += $html;
+					document.getElementById("showImage").style.display = "block";
+					document.getElementById("viewImage").style.display = "block";
 					}});
 			
-		}});
-		
+		}
+			
+		});
 </script>
 <script>
 $(document).on('click',  "[id^=viewBigNextImage]", function(){
@@ -810,9 +828,6 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 		$header = 'Retreat';
 		$id = $parsingHeader.substring(7, $parsingHeader.length);
 	}
-	document.getElementById("showImage").style.display = "block";
-	document.getElementById("viewImage").style.display = "block";
-
 	$.ajax({
 			url:'/gallery/Content' + $header,
 			data: {id : $id},
@@ -832,8 +847,8 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				}
 				else
 				{
-					$html += '<div class="ImageContentButtonContainer" id="viewBigNextImage' +  $header  + data.before.id  +'">';
-					$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
+					$html += '<div class="ImageContentButtonContainer">';
+					$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImage' + $header + data.before.id  + '">';
 				}
 				$html += '</div>';
 				$html += '<div class="ImageContent">' +
@@ -842,12 +857,15 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				if(data.after == null)
 					$html += '<div class="ImageContentButtonContainer">';
 				else
-					$html += '<div class="ImageContentButtonContainer" id="viewBigNextImage' + $header + data.after.id  +'">';
+				{
+					$html += '<div class="ImageContentButtonContainer">';
+					$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImage' + $header + data.after.id  + '">';
+				}
 				$html += '</div>';
 				$html += '</div>';
 				$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 				$html += '<div class="ImageWrapper">';
-				$html += '<div class ="SmallImageContentButtonContainer">';
+				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[0].id+1) + '">';
 				$html += '</div>';
 				$html += '<div class="ImageTailContainer">';
 				$html += '<div class ="SmallImageContentContainer">';
@@ -858,17 +876,76 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 						$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 					else
 						$html += '<div class="SmallImageBoxFiller"> </div>';
-					$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+					$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox">';
+					$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImage' + $header + data.contents[$count].id + '">';
+					$html += '</div></div>';
 					$count++;
 				}
 				$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
 
 				$html += '</div>';
 				$html += '</div>';
-				$html += '<div class ="SmallImageContentButtonContainer"> </div>';
+				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[data.count-1].id-1) + '"> </div>';
 				$html += ' </div> </div>';
 
 				document.getElementById('showImage').innerHTML += $html;
+				document.getElementById("showImage").style.display = "block";
+				document.getElementById("viewImage").style.display = "block";
+				}});
+});
+
+
+$(document).on('click',  "[id^=viewSmallNextImage]", function(){
+	var $listPage = $(this).prop('id');
+	var $parsingHeader = $listPage.substring(18, $listPage.length);
+	var $header ='';
+	var $id = 0;
+	if($parsingHeader.indexOf('PrayAndSermon') > -1)
+	{
+		$header = 'PrayAndSermon';
+		$id = $parsingHeader.substring(13, $parsingHeader.length);
+	}
+	else if($parsingHeader.indexOf('Retreat') > -1)
+	{
+		$header = 'Retreat';
+		$id = $parsingHeader.substring(7, $parsingHeader.length);
+	}
+	$.ajax({
+			url:'/gallery/moreSmallContent' + $header,
+			data: {id : $id},
+			type: "GET",
+			cache: true,
+			jsonp:false,
+			dataType: 'json',
+			success: function(data){
+				//retrieve data
+				$html = '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[0].id+1) +  '">';
+				$html += '</div>';
+				$html += '<div class="ImageTailContainer">';
+				$html += '<div class ="SmallImageContentContainer">';
+				$count = 0;
+				while($count < data.count)
+				{
+					if($count == 0)
+						$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+					else
+						$html += '<div class="SmallImageBoxFiller"> </div>';
+					$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox">';
+					$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImage' + $header + data.contents[$count].id + '">';
+					$html += '</div></div>';
+					$count++;
+				}
+				$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+
+				$html += '</div>';
+				$html += '</div>';
+
+				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage'  + $header + eval(data.contents[data.count-1].id-1) +  '">';
+
+				$('.ImageWrapper').html($html);
+				
+				document.getElementById("showImage").style.display = "block";
+				document.getElementById("viewImage").style.display = "block";
 				}});
 });
 

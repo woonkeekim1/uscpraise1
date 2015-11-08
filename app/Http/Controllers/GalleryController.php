@@ -145,12 +145,51 @@ class GalleryController extends Controller
     public function ContentForRetreat(Request $request)
     {
     	$id = $request['id'];
-    	$after = \App\Gallery::where('id', '>', $id)->where('category', '=', 'Retreat')->min('id');
-    	$after = \App\Gallery::find($after);
-    	$before = \App\Gallery::where('id', '<', $id)->where('category', '=', 'Retreat')->max('id');
+    	$contentInPage = 8;
+    	$totalContent = \App\Gallery::where('category', '=', 'Reteat')->orderBy('gallery.created_at', 'desc');
+    	$offset = $totalContent->get()->count() % $contentInPage;
+    	$index = $totalContent->where('id', '>', $id)->get()->count() / 8;
+    	$index = floor($index) * 8;
+    	$lowIndex = $index;
+    	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
+    	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
+    	->offset($lowIndex)->select('gallery.id', 'smallimage')
+    	->where('category', '=', 'Retreat')
+    	->get();
+    	$count = $contents->count();
+    	
+    	$before = \App\Gallery::where('id', '>', $id)->where('category', '=', 'Retreat')->min('id');
     	$before = \App\Gallery::find($before);
-    	$current = \App\Gallery::find($id);
-    	$returnArray = array('before' => $before, 'after' => $after, 'current' => $current);
+		$after = \App\Gallery::where('id', '<', $id)->where('category', '=', 'Retreat')->max('id');
+		$after = \App\Gallery::find($after);
+		$current = \App\Gallery::find($id);
+		$returnArray = array('before' => $before, 
+						     'after' => $after, 
+							 'current' => $current, 
+				  			 'contents' => $contents, 
+							 'count' => $count);
+		return json_encode($returnArray);
+    }
+    
+    public function moreSmallContentForPrayAndSermon(Request $request)
+    {
+    	$id = $request['id'];
+    	$contentInPage = 8;
+    	$totalContent = \App\Gallery::where('category', '=', 'PrayAndSermon')->orderBy('gallery.created_at', 'desc');
+    	$offset = $totalContent->get()->count() % $contentInPage;
+    	$index = $totalContent->where('id', '>', $id)->get()->count() / 8;
+    	$index = floor($index) * 8;
+    	$lowIndex = $index;
+    	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
+    	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
+    	->offset($lowIndex)->select('gallery.id', 'smallimage')
+    	->where('category', '=', 'PrayAndSermon')
+    	->get();
+    	$count = $contents->count();
+    	$returnArray = array(
+    			'contents' => $contents,
+    			'count' => $count);
     	return json_encode($returnArray);
+    	
     }
 }

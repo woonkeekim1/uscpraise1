@@ -83,7 +83,7 @@
 				@else	
 					<a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
 				@endif
-				@for($returnArray['start']=$returnArray['start']+1; $returnArray['start'] <= $returnArray['end']; $returnArray['start']++)
+				@for($returnArray['start']=$returnArray['start']+1; $returnArray['start'] < $returnArray['end']; $returnArray['start']++)
 					@if($returnArray['start'] == $returnArray['curPage'])
 						| <a id="listPage{!! $returnArray['start'] !!}"><font color="#c03737">{{$returnArray['start'] + 1}}</font></a>
 					@else

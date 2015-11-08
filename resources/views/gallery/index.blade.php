@@ -5,26 +5,27 @@
 .GalleryContainer
 {
 	width:100%;
-	background-color:Yellow;
 	margin:auto;
-	border:solid 1px;
+	margin-top: 40px;
+	background-color:white;
 }
 .GalleryHeaderContainer
 {
-	background-color:yellow;
 	width:100%;
-	height:60px;
+	height:100px;
 	margin:auto;
+	background-color:white;
+	border: solid 1px #d0d0d0;
 }
 .GalleryHeader
 {
 	font-weight:bold;
-	background-color:green;
+	background-color:white;
 	float:left;
 	width:200px;
-	height:60px;
+	height:100px;
 	text-align:center;
-	line-height:60px;
+	line-height:100px;
 }
 .aHeader:hover
 {
@@ -37,69 +38,83 @@
 .GalleryBodyWrapper
 {
 	width:100%;
-
 }
 .GalleryBodyContainer
 {
 	width:100%;
-	background-color:green;
 	margin:auto;
 	float:left;
-	height:100%;
+	background-color:#d2d2d2;
 }
 .GalleryContentContainer
 {
 	width:100%;
-	height:300px;
+	height:245px;
 	float:left;
-	background-color:red;
+	background-color:#d2d2d2;
+	margin-bottom:32px;
+}
+.GalleryHorizontalMarginWithShadow
+{
+	width:100%;
+	height:32px;
+	box-shadow: 0px 10px 10px 0px #cecece inset;
 }
 .GalleryHorizontalMargin
 {
 	width:100%;
-	height:20px;
-	background-color:yellow;
+	height:32px;
 }
 .GalleryVerticalMargin
 {
-	height:280px;
-	width:20px;
-	background-color:yellow;
+	height:245px;
+	width:22px;
+	float:left;
+}
+.GalleryVerticalMargin_Side
+{
+	height:245px;
+	width:40px;
 	float:left;
 }
 .GalleryImageContainer
 {
 	width:200px;
-	height:274px;
+	height:245px;
 	float:left;
-	background-color:blue;
+	background-color:white;
 }
 .GalleryImageContainer:hover
 {
 	border:solid 3px #bf1e2e;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 .GalleryImage
 {
 	width:100%;
-	height:180px;
+	height:150px;
 }
 .GalleryImageBody
 {
 	width:170px;
 	margin:auto;
-	background-color:white;
 	height:30px;
-	margin-top:10px;
+	margin-top:20px;
 	font-size:12px;
+	background-color:white;
+	color:#111111;
 }
 .GalleryImageTail
 {
 	width:170px;
 	margin:auto;
-	background-color:white;
-	margin-top:10px;
+	margin-top:15px;
 	font-size:12px;
-	color:gray;
+	color:#9a9a9a;
+	height:12px;
+	margin-botom:18px;
 }
 .ViewGalleryBlock
 {
@@ -110,21 +125,25 @@
 	display:none;
 }
 
-
+#moreContent:hover
+{
+	background-color:#c5c5c5;
+	color:white;
+}
 
 #moreContent
 {
-	width:600px;
-	height:60px;
-	border: solid 1px;
-	border-bottom: solid 3px;
+	width:643px;
+	height:62px;
+	border: solid 1px #cccbcb;
+	box-shadow: 0 4px 0 0 #e4e4e4;
 	line-height:60px;
 	text-align:center;
-	margin-top:70px;
-	display:inline-block;
-	vertical-align: middle;
-	margin-left:300px;
-	margin-bottom:70px;
+	display:table;
+	margin: auto;
+	background-color:white;
+	font-size:14px;
+	color:#111111;
 }
 
 .viewImage{
@@ -133,13 +152,13 @@
 	left:0;
 	width:100%;
 	height:100%;
-	background:rgba(255,255,255,0.5);
+	background:rgba(0,0,0,0.8);
 	z-index:10;
 	display:none;
 }
 .ImageContainer{
-	width:1000px;
-	height:700px;
+	width:1170px;
+	height:100%;
 	overflow: auto;
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
@@ -150,20 +169,20 @@
 }
 .CloseButtonContainer
 {
-	height:30px;
+	height:5%;
 	width:100%;
 	background-color:green;
 }
 .ImageContentContainer
 {
 	width:100%;
-	height:550px;
-	background-color:yellow;
+	height:75%;
+	background-color:green;
 	margin:auto;
 }
 .ImageContentButtonContainer
 {
-	width:75px;
+	width:5%;
 	height:100%;
 	background-color:gray;
 	display:block;
@@ -171,7 +190,7 @@
 }
 .ImageContent
 {
-	width:850px;
+	width:90%;
 	height:100%;
 	background-color:blue;
 	display:block;
@@ -187,55 +206,74 @@
 	left:0;
 	right:0;
 	bottom:0;	
-	width: 80%;
-	height:100%;
+	width: 1170px;
+	height:95%;
 	margin:auto;
-	background-color:black;
 }
 .ImageWrapper
 {
-	width:1000px;
+	width: 100%;
+	height:15%;
 	margin:auto;
 }
 
 .ImageTailContainer
 {
-	width:950px;
-	height:90px;
+	width:90%;
+	height:100%;
 	background-color:yellow;
 	margin:auto;
+	float:left;
 }
 .SmallImageContentButtonContainer
 {
 	height:100%;
 	background-color:black;
-	width:50px;
+	width:5%;
 	float:left;
 	
 }
 .SmallImageContentContainer
 {
 	height:100%;
-	background-color:yellow;
-	width: 850px;
+	width: 100%;
 	float:left;
 }
 .SmallImageBox
 {
 	height:100%;
-	width:100px;
-	background-color:red;
-	margin-left:20px;
+	width:100%;
 	float:left;
 }
-
+.SmallImageBoxWrapper
+{
+	background-color:black;
+	height:100%;
+	width:10%;
+	float:left;
+}
+.SmallImageBox:hover
+{
+	Opacity:0.8;
+}
+.SmallImageBoxFiller
+{
+	height:100%;
+	width:2%;
+	background-color:green;
+	float:left;
+}
 .EmptyMargin
 {
 	background-color:green;
-	height:30px;
+	height:5%;
 	width:100%;
 	display:block;
 	
+}
+#moreContent:hover
+{
+	cursor:pointer;
 }
 </style>
 @endsection
@@ -250,7 +288,7 @@
 		<div class="sermonWrapper">
 			<ul class="sermonNav">
 				<li class="sermonNavLogo"><a href={!! url('/') !!} class="logo"><img src="images/footer_logo.png" width="100%" height="61px"></a></li>
-				<li style="margin-right:76px">문의</li>
+				<li style="margin-right:76px">겔러리</li>
 				<li><a href="#Before2015">Group 2015</a></li>
 				<li><a href="#morningPray">2014</a></li>
 				<li><a href="#fridayPray">Before</a></li>
@@ -284,14 +322,18 @@
 					<!-- 에베설교 -->
 					<div class="GalleryBodyContainer ViewGalleryBlock" id="PrayAndSermon">
 						<?php $count = 0;?>
-						
+						@if($count == 0)
+							<div class="GalleryHorizontalMarginWithShadow">
+								&nbsp;
+							</div>
+						@endif
 						@if($contentsPrayAndSermon->count() > 0)
 						<div class="GalleryContentContainer">
 						@endif
 						
 						@while($count < 5 && $contentsPrayAndSermon->count() -$count > 0)
 							@if($count == 0)
-							<div class="GalleryHorizontalMargin">
+							<div class="GalleryVerticalMargin_Side">
 								&nbsp;
 							</div>
 							@endif
@@ -308,11 +350,16 @@
 									{{ $contentsPrayAndSermon[$count]->body }}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->header }}
+									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->created_at->year }}
 								</div>
 							</div>
 							<?php $count++; ?>
 						@endwhile
+						@if($count == 5)
+						<div class="GalleryVerticalMargin_Side">
+							&nbsp;
+						</div>
+						@endif
 						@if($contentsPrayAndSermon->count() > 0)
 						</div>
 						@endif
@@ -323,8 +370,9 @@
 						@endif
 	
 						@while($count < 10 && $contentsPrayAndSermon->count() - $count > 0)
+
 							@if($count % 5 == 0)
-							<div class="GalleryHorizontalMargin">
+							<div class="GalleryVerticalMargin_Side">
 								&nbsp;
 							</div>
 							@endif
@@ -341,11 +389,16 @@
 									{{ $contentsPrayAndSermon[$count]->body }}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->header }}
+									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->created_at->year }}
 								</div>
 							</div>
 							<?php $count++; ?>
 						@endwhile
+						@if($count == 10)
+						<div class="GalleryVerticalMargin_Side">
+							&nbsp;
+						</div>
+						@endif
 						@if($contentsPrayAndSermon->count() > 5)
 						</div>
 						@endif
@@ -356,14 +409,18 @@
 					<!-- 수련회  -->
 					<div class="GalleryBodyContainer HideGalleryBlock" id="Retreat">
 						<?php $count = 0;?>
-						
+						@if($count == 0)
+							<div class="GalleryHorizontalMarginWithShadow">
+								&nbsp;
+							</div>
+						@endif
 						@if($contentsRetreat->count() > 0)
 						<div class="GalleryContentContainer">
 						@endif
 						
 						@while($count < 5 && $contentsRetreat->count() -$count > 0)
 							@if($count == 0)
-							<div class="GalleryHorizontalMargin">
+							<div class="GalleryVerticalMargin_Side">
 								&nbsp;
 							</div>
 							@endif
@@ -380,11 +437,16 @@
 									{{ $contentsRetreat[$count]->body }}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->header }}
+									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->created_at->year }}
 								</div>
 							</div>
 							<?php $count++; ?>
 						@endwhile
+						@if($count == 5)
+						<div class="GalleryVerticalMargin_Side">
+							&nbsp;
+						</div>
+						@endif
 						@if($contentsRetreat->count() > 0)
 						</div>
 						@endif
@@ -395,8 +457,9 @@
 						@endif
 	
 						@while($count < 10 && $contentsRetreat->count() - $count > 0)
+
 							@if($count % 5 == 0)
-							<div class="GalleryHorizontalMargin">
+							<div class="GalleryVerticalMargin_Side">
 								&nbsp;
 							</div>
 							@endif
@@ -413,24 +476,37 @@
 									{{ $contentsRetreat[$count]->body }}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->header }}
+									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->created_at->year }}
 								</div>
 							</div>
 							<?php $count++; ?>
 						@endwhile
-						@if($contentsRetreat->count() > 5)
+						@if($count == 10)
+						<div class="GalleryVerticalMargin_Side">
+							&nbsp;
 						</div>
 						@endif
+						@if($contentsPrayAndSermon->count() > 5)
+						</div>
+						@endif
+						
+						
 					</div>
 					<!-- 수련회 끝 -->
 				</div>
 			</div>
+			<div style="width:100%; height:30px; clear:both;">
+			&nbsp;
+			</div>
 			<!-- more contents -->
 			<div id="moreContent">
-				펼쳐보기<img src="\images\image1.jpg" width="10px" height="10px">
+				펼쳐보기<img id="moreContentArrow" src="\images\arrow_bottom.png" width="10px" height="10px" style="margin-left:5px">
 			</div>
 		</div>
 	</div>
+	<div style="width:100%; height:40px; clear:both;">
+			&nbsp;
+			</div>
 	<div class="viewImage" id ="viewImage" onClick="removeImage()">
 	</div>
 		<div id="showImage">
@@ -452,14 +528,14 @@
 	var curIndex = 0;
 	function displayImageBlock(newDiv)
 	{
-		//$("#" + ImageIndexToContentArray[curIndex]).removeClass("ViewGalleryBlock");
-		//$("#" + ImageIndexToContentArray[curIndex]).addClass("HideGalleryBlock");
+		$("#" + ImageIndexToContentArray[curIndex]).removeClass("ViewGalleryBlock");
+		$("#" + ImageIndexToContentArray[curIndex]).addClass("HideGalleryBlock");
 		$("#" + HeaderArray[curIndex]).removeClass("GalleryHeaderClick");
 		$("#" + ImageIndexToContentArray[curIndex]).hide();
 		
 		curIndex = ImageContentToIndexArray[newDiv];
-		//$("#" + ImageIndexToContentArray[curIndex]).addClass("ViewGalleryBlock");
-		//$("#" + ImageIndexToContentArray[curIndex]).removeClass("HideGalleryBlock");
+		$("#" + ImageIndexToContentArray[curIndex]).addClass("ViewGalleryBlock");
+		$("#" + ImageIndexToContentArray[curIndex]).removeClass("HideGalleryBlock");
 		$("#" + HeaderArray[curIndex]).addClass("GalleryHeaderClick");
 		$("#" + ImageIndexToContentArray[curIndex]).show();
 	}
@@ -489,10 +565,31 @@
 		 $("#" + ImageIndexToContentArray[curIndex]).delay(800).show("slide", {direction: "right"}, 800);
 		$("#" + HeaderArray[curIndex]).addClass("GalleryHeaderClick");
 	}
+	$('#moreContent').mouseenter(function()
+	{
+		$('#moreContentArrow').attr('src', '/images/arrow_bottom_over.png');
+	});
+	$('#moreContent').mouseleave(function()
+	{
+		$('#moreContentArrow').attr('src', '/images/arrow_bottom.png');
+	});
 	$pageCountPrayAndSermon = 1;
+	$pageCountRetreat = 1;
 	$(document).on('click', '#moreContent', function(){
+		var $id = '';
+		var $count = 0;
+		if($('#PrayAndSermon').hasClass('ViewGalleryBlock'))
+		{
+			$id = 'PrayAndSermon';
+			$count = $pageCountPrayAndSermon;
+		}
+		else if($('#Retreat').hasClass('ViewGalleryBlock'))
+		{
+			$id = 'Retreat';
+			$count = $pageCountRetreat;
+		}
 		$.ajax({
-			url:'/gallery/moreContentPrayAndSermon',
+			url:'/gallery/moreContent' + $id,
 			data: {page : $pageCountPrayAndSermon},
 			type: "GET",
 			cache: true,
@@ -507,7 +604,7 @@
 				while($count < 5 && data.count - $count > 0)
 				{
 					if($count == 0)
-						$content += '<div class="GalleryHorizontalMargin"> &nbsp; </div>';
+						$content += '<div class="GalleryVerticalMargin_Side"> &nbsp; </div>';
 					if($count != 0)
 						$content += '<div class="GalleryVerticalMargin"> &nbsp; </div>';
 					$content += '<div class="GalleryImageContainer" id="PrayAndSermon' + data.contents[$count].id + '">' +
@@ -528,7 +625,7 @@
 				while($count < 10 && data.count - $count > 0)
 				{
 					if($count % 5 == 0)
-						$content += '<div class="GalleryHorizontalMargin"> &nbsp; </div>';
+						$content += '<div class="GalleryVerticalMargin_Side"> &nbsp; </div>';
 					if($count % 5 != 0)
 						$content += '<div class="GalleryVerticalMargin"> &nbsp; </div>';
 					$content += '<div class="GalleryImageContainer" id="PrayAndSermon' + data.contents[$count].id + '"> <div class="GalleryImage">';
@@ -543,16 +640,28 @@
 				if(data.count > 5)
 					$content += '</div>';
 
-				document.getElementById('PrayAndSermon').innerHTML += $content;
-				$pageCountPrayAndSermon++;
+				if($('#PrayAndSermon').hasClass('ViewGalleryBlock'))
+				{
+					document.getElementById('PrayAndSermon').innerHTML += $content;
+					$pageCountPrayAndSermon++;
+				}
+				else if($('#Retreat').hasClass('ViewGalleryBlock'))
+				{
+					document.getElementById('Retreat').innerHTML += $content;
+					$pageCountRetreat++;
+				}
 			},	 
 		})
 	});
 
+	
+
+	
 	$(document).on('click',  "[id^=PrayAndSermon]", function(){
 		var $listPage = $(this).prop('id');
 		var $ImageID = $listPage.substring(13, $listPage.length);
-		if(($ImageID % 1) === 0)
+		$ImageID = parseInt($ImageID);
+		if(!isNaN($ImageID) && typeof($ImageID) === 'number')
 		{
 			document.getElementById("showImage").style.display = "block";
 			document.getElementById("viewImage").style.display = "block";
@@ -575,7 +684,7 @@
 					}
 					else
 					{
-						$html += '<div class="ImageContentButtonContainer" onClick="test(' + data.after.id  +')">';
+						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImagePrayAndSermon' + data.before.id  +'">';
 						$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
 					}
 					$html += '</div>';
@@ -585,25 +694,99 @@
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
 					else
-						$html += '<div class="ImageContentButtonContainer" onClick="test(' + data.before.id  +')">';
+						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImagePrayAndSermon' + data.after.id  +'">';
 					$html += '</div>';
 					$html += '</div>';
 					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 					$html += '<div class="ImageWrapper">';
-					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentButtonContainer">';
 					$html += '</div>';
+					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentContainer">';
-					$html += '<div class="SmallImageBox" style="margin-left:0px;">';
+					$count = 0;
+					while($count < data.count)
+					{
+						if($count == 0)
+							$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+						else
+							$html += '<div class="SmallImageBoxFiller"> </div>';
+						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+						$count++;
+					}
+					$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+
 					$html += '</div>';
-					$html += '<div class="SmallImageBox"> </div>';
-					$html += '<div class="SmallImageBox"> </div>';
-					$html += '<div class="SmallImageBox"> </div>';
-					$html += '<div class="SmallImageBox"> </div>';
-					$html += '<div class="SmallImageBox"> </div>';
 					$html += '</div>';
 					$html += '<div class ="SmallImageContentButtonContainer"> </div>';
-					$html += '</div> </div> </div>';
+					$html += ' </div> </div>';
+
+					document.getElementById('showImage').innerHTML += $html;
+					}});
+			
+		}});
+
+	$(document).on('click',  "[id^=Retreat]", function(){
+		var $listPage = $(this).prop('id');
+		var $ImageID = $listPage.substring(7, $listPage.length);
+		$ImageID = parseInt($ImageID);
+		if(!isNaN($ImageID) && typeof($ImageID) === 'number')
+		{
+			document.getElementById("showImage").style.display = "block";
+			document.getElementById("viewImage").style.display = "block";
+			$.ajax({
+				url:'/gallery/ContentRetreat',
+				data: {id : $ImageID},
+				type: "GET",
+				cache: true,
+				jsonp:false,
+				dataType: 'json',
+				success: function(data){
+					//retrieve data
+					$html = '<div class ="ImageContainer">';
+					$html += '<div class="CloseButtonContainer">';
+					$html += '</div>';
+					$html += '<div class="ImageContentContainer">';
+					if(data.before == null)
+					{
+						$html += '<div class="ImageContentButtonContainer">';
+					}
+					else
+					{
+						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImageRetreat' + data.before.id  +'">';
+						$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
+					}
+					$html += '</div>';
+					$html += '<div class="ImageContent">' +
+						'<Img src="' + data.current.image + '" width="100%" height="100%">' +
+						'</div>';
+					if(data.after == null)
+						$html += '<div class="ImageContentButtonContainer">';
+					else
+						$html += '<div class="ImageContentButtonContainer" id="viewBigNextImageRetreat' + data.after.id  +'">';
+					$html += '</div>';
+					$html += '</div>';
+					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
+					$html += '<div class="ImageWrapper">';
+					$html += '<div class ="SmallImageContentButtonContainer">';
+					$html += '</div>';
+					$html += '<div class="ImageTailContainer">';
+					$html += '<div class ="SmallImageContentContainer">';
+					$count = 0;
+					while($count < data.count)
+					{
+						if($count == 0)
+							$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+						else
+							$html += '<div class="SmallImageBoxFiller"> </div>';
+						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+						$count++;
+					}
+					$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+
+					$html += '</div>';
+					$html += '</div>';
+					$html += '<div class ="SmallImageContentButtonContainer"> </div>';
+					$html += ' </div> </div>';
 
 					document.getElementById('showImage').innerHTML += $html;
 					}});
@@ -612,57 +795,82 @@
 		
 </script>
 <script>
-function test($id)
-{
+$(document).on('click',  "[id^=viewBigNextImage]", function(){
+	var $listPage = $(this).prop('id');
+	var $parsingHeader = $listPage.substring(16, $listPage.length);
+	var $header ='';
+	var $id = 0;
+	if($parsingHeader.indexOf('PrayAndSermon') > -1)
+	{
+		$header = 'PrayAndSermon';
+		$id = $parsingHeader.substring(13, $parsingHeader.length);
+	}
+	else if($parsingHeader.indexOf('Retreat') > -1)
+	{
+		$header = 'Retreat';
+		$id = $parsingHeader.substring(7, $parsingHeader.length);
+	}
 	document.getElementById("showImage").style.display = "block";
 	document.getElementById("viewImage").style.display = "block";
-	
+
 	$.ajax({
-		url:'/gallery/ContentPrayAndSermon',
-		data: {id : $id},
-		type: "GET",
-		cache: true,
-		jsonp:false,
-		dataType: 'json',
-		success: function(data){
-			//retrieve data
-			$html = '<div class ="ImageContainer">';
-			$html += '<div class="CloseButtonContainer">';
-			$html += '</div>';
-			$html += '<div class="ImageContentContainer">';
-			if(data.before == null)
-				$html += '<div class="ImageContentButtonContainer">';
-			else
-				$html += '<div class="ImageContentButtonContainer" onClick="test(' + data.after.id + ')">';				
-			$html += '</div>';
-			$html += '<div class="ImageContent">' +
-				'<Img src="' + data.current.image + '" width="100%" height="100%">' +
-				'</div>';
-			if(data.after == null)
-				$html += '<div class="ImageContentButtonContainer">';
-			else
-				$html += '<div class="ImageContentButtonContainer" onClick="test(' + data.before.id + ')">';
-			$html += '</div>';
-			$html += '</div>';
-			$html += '<div class ="EmptyMargin"> &nbsp; </div>';
-			$html += '<div class="ImageWrapper">';
-			$html += '<div class="ImageTailContainer">';
-			$html += '<div class ="SmallImageContentButtonContainer">';
-			$html += '</div>';
-			$html += '<div class ="SmallImageContentContainer">';
-			$html += '<div class="SmallImageBox" style="margin-left:0px;">';
-			$html += '</div>';
-			$html += '<div class="SmallImageBox"> </div>';
-			$html += '<div class="SmallImageBox"> </div>';
-			$html += '<div class="SmallImageBox"> </div>';
-			$html += '<div class="SmallImageBox"> </div>';
-			$html += '<div class="SmallImageBox"> </div>';
-			$html += '</div>';
-			$html += '<div class ="SmallImageContentButtonContainer"> </div>';
-			$html += '</div> </div> </div>';
-			document.getElementById('showImage').innerHTML += $html;
-		}});	
-}
+			url:'/gallery/Content' + $header,
+			data: {id : $id},
+			type: "GET",
+			cache: true,
+			jsonp:false,
+			dataType: 'json',
+			success: function(data){
+				//retrieve data
+				$html = '<div class ="ImageContainer">';
+				$html += '<div class="CloseButtonContainer">';
+				$html += '</div>';
+				$html += '<div class="ImageContentContainer">';
+				if(data.before == null)
+				{
+					$html += '<div class="ImageContentButtonContainer">';
+				}
+				else
+				{
+					$html += '<div class="ImageContentButtonContainer" id="viewBigNextImage' +  $header  + data.before.id  +'">';
+					$html += '<Img src="/images/image1.jpg" width="20px"; height="20px";>';
+				}
+				$html += '</div>';
+				$html += '<div class="ImageContent">' +
+					'<Img src="' + data.current.image + '" width="100%" height="100%">' +
+					'</div>';
+				if(data.after == null)
+					$html += '<div class="ImageContentButtonContainer">';
+				else
+					$html += '<div class="ImageContentButtonContainer" id="viewBigNextImage' + $header + data.after.id  +'">';
+				$html += '</div>';
+				$html += '</div>';
+				$html += '<div class ="EmptyMargin"> &nbsp; </div>';
+				$html += '<div class="ImageWrapper">';
+				$html += '<div class ="SmallImageContentButtonContainer">';
+				$html += '</div>';
+				$html += '<div class="ImageTailContainer">';
+				$html += '<div class ="SmallImageContentContainer">';
+				$count = 0;
+				while($count < data.count)
+				{
+					if($count == 0)
+						$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+					else
+						$html += '<div class="SmallImageBoxFiller"> </div>';
+					$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox"><img src="' + data.contents[$count].smallimage + '" width="100%" height="100%"></div></div>';
+					$count++;
+				}
+				$html += '<div class="SmallImageBoxFiller" style="width:3%"> </div>';
+
+				$html += '</div>';
+				$html += '</div>';
+				$html += '<div class ="SmallImageContentButtonContainer"> </div>';
+				$html += ' </div> </div>';
+
+				document.getElementById('showImage').innerHTML += $html;
+				}});
+});
 
 
 function removeImage()

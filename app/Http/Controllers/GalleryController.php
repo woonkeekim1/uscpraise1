@@ -66,7 +66,9 @@ class GalleryController extends Controller
     
     	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
     	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
-    	->offset($curPage*$contentInPage)->select('title', 'body', 'createdBy', 'category', 'header', 'image', 'smallimage', 'gallery.created_at')->get();
+    	->offset($curPage*$contentInPage)->select('gallery.id', 'title', 'body', 'createdBy', 'category', 'header', 'image', 'smallimage', 'gallery.created_at')
+    	->where('category', '=', 'PrayAndSermon')
+    	->get();
     	 
     	$returnArray = array(
     			'contentInPage' => $contentInPage,
@@ -81,16 +83,74 @@ class GalleryController extends Controller
     	 
     	return json_encode($returnArray);
     }
+    public function moreContentForRetreat(Request $request)
+    {
+    	$contentInPage = 10;
+    	$totalContent = \App\Gallery::where('category', '=', 'Retreat')->get()->count();
+    	$curPage = $request['page'];
+    	$totalPage = ceil($totalContent/$contentInPage);
+    	$start = ($curPage % 5 < 0) ? 0 : $curPage - ceil($curPage % 5);
+    	$end = ($totalPage < $start + 4) ? $totalPage -1 : $start+4;
+    	if($curPage > $totalPage)
+    		return  "";
+    
+    	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
+    	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
+    	->offset($curPage*$contentInPage)->select('gallery.id', 'title', 'body', 'createdBy', 'category', 'header', 'image', 'smallimage', 'gallery.created_at')
+    	->where('category', '=', 'Retreat')
+    	->get();
+    
+    	$returnArray = array(
+    			'contentInPage' => $contentInPage,
+    			'totalContent' => $totalContent,
+    			'curPage' => $curPage,
+    			'totalPage' => $totalPage,
+    			'start' => $start,
+    			'end' => $end,
+    			'contents' => $contents,
+    			'count'=> $contents->count(),
+    	);
+    
+    	return json_encode($returnArray);
+    }
     
     public function ContentForPrayAndSermon(Request $request)
     {
     	$id = $request['id'];
-    	$after = \App\Gallery::where('id', '>', $id)->min('id');
-    	$after = \App\Gallery::find($after);
-		$before = \App\Gallery::where('id', '<', $id)->max('id');
-		$before = \App\Gallery::find($before);
+    	$contentInPage = 8;
+    	$totalContent = \App\Gallery::where('category', '=', 'PrayAndSermon')->orderBy('gallery.created_at', 'desc');
+    	$offset = $totalContent->get()->count() % $contentInPage;
+    	$index = $totalContent->where('id', '>', $id)->get()->count() / 8;
+    	$index = floor($index) * 8;
+    	$lowIndex = $index;
+    	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
+    	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
+    	->offset($lowIndex)->select('gallery.id', 'smallimage')
+    	->where('category', '=', 'PrayAndSermon')
+    	->get();
+    	$count = $contents->count();
+    	
+    	$before = \App\Gallery::where('id', '>', $id)->where('category', '=', 'PrayAndSermon')->min('id');
+    	$before = \App\Gallery::find($before);
+		$after = \App\Gallery::where('id', '<', $id)->where('category', '=', 'PrayAndSermon')->max('id');
+		$after = \App\Gallery::find($after);
 		$current = \App\Gallery::find($id);
-		$returnArray = array('before' => $before, 'after' => $after, 'current' => $current);
+		$returnArray = array('before' => $before, 
+						     'after' => $after, 
+							 'current' => $current, 
+				  			 'contents' => $contents, 
+							 'count' => $count);
 		return json_encode($returnArray);
+    }
+    public function ContentForRetreat(Request $request)
+    {
+    	$id = $request['id'];
+    	$after = \App\Gallery::where('id', '>', $id)->where('category', '=', 'Retreat')->min('id');
+    	$after = \App\Gallery::find($after);
+    	$before = \App\Gallery::where('id', '<', $id)->where('category', '=', 'Retreat')->max('id');
+    	$before = \App\Gallery::find($before);
+    	$current = \App\Gallery::find($id);
+    	$returnArray = array('before' => $before, 'after' => $after, 'current' => $current);
+    	return json_encode($returnArray);
     }
 }

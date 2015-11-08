@@ -15,14 +15,15 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call(UserTableSeeder::class);
-		$this->call(DatabaseSeeder::sundaySermonSeeder());
+		//$this->call(DatabaseSeeder::sundaySermonSeeder());
+		$this->call(DatabaseSeeder::GalleryPrayAndSermonSeeder());
         Model::reguard();
     }
     
     public function sundaySermonSeeder()
     {
     	$i = 0;
- 	   	for ($i = 0; $i <= 100; $i++) 
+ 	   	for ($i = 0; $i <= 10; $i++) 
  	  	{
   	 		DB::table('SundaySermon')->insert([
   	 				'title' => 'title' . $i,
@@ -32,5 +33,24 @@ class DatabaseSeeder extends Seeder
   	 				'sermonDate' => '2015/09/26',
   	 				]);
 		}
+    }
+    public function GalleryPrayAndSermonSeeder()
+    {
+    	$i = 0;
+    	$today = getdate();
+    	for($i = 0; $i <= 10; $i++)
+    	{
+    		DB::table('Gallery')->insert([
+    				'title' => 'title' . $i,
+    				'body' => "this is testing body " . $i,
+    				'category' => 'PrayAndSermon',
+    				'createdBy' => 1,
+    				'header'=>'Group 2015',
+    				'image'=>'\images\image' . (($i % 3)+1) . '.jpg',
+    				'smallImage'=>'\images\image' . (($i % 3)+1) . '.jpg',
+    				'created_at' => '2015-11-0' . $i,
+    				
+    				]);
+    	}
     }
 }

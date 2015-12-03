@@ -98,6 +98,7 @@ body{
                 mainImageList[2] = "image3.jpg";
                 mainImageList[3] = "image4.jpg";
                 var curImag = 0;
+                /*
                 var myVal = setInterval(function(){changeMainImage()}, 3000);
                 $(".ImgNextButton").click(function(){
                                 $("#ImgCircle" + curImag).removeClass("ImgCircleSelected");
@@ -117,6 +118,7 @@ body{
 								myVal = setInterval(function(){changeMainImage()}, 3000);
                                
                 });
+                */
 
                 function changeMainImage()
                 {
@@ -126,6 +128,7 @@ body{
                                 $(".ImageBody").css("background-image", "url(" +mainImageList[curImag] + ")");
 								
                 }
+                
                 function hoverNav()
                 {
                     $(this).parent().parent().addClass(".testcolor");

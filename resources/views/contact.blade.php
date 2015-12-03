@@ -1,6 +1,7 @@
 @extends('app')
 @section('cssExtend')
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
+<title>Power of Praise Church > Contact Us</title>
 @endsection
 @section ('css')
 .underline

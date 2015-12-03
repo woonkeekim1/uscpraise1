@@ -1,6 +1,7 @@
 @extends('app')
 @section('cssExtend')
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
+<title>Power of Praise Church > About Us</title>
 @endsection
 @section('css')
 
@@ -27,21 +28,28 @@
 	</div>
 </div>
 <a name="churchVision"></a>
-<div class="fullwidth" style="height:90px; background-color:white">
+<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
 </div>
-<div class="fullWidth" style="background-color:white;height:966px;">
+<div class="fullWidth" style="background-color:#f4f4f4;height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">교회비전</font>
+			<font class="font36" color="#bf1e2e" style="font-weight:bold">교회비전</font>
 		</div>
 		<div class="fullWidth">
 			<div class="aboutGrace">
-					Grace란
+					찬양선교교회
 			</div>
 		</div>
 		<div class="fullWidth">
 			<div class="churchSlogan">
-				USC 찬양선교교회의 2015년 표어는 Grace in God 입니다.
+				사랑과 사명이 어우러진 교회
+			</div>
+		</div>
+		<div class="fullWidth">
+			<div class="sloganBody">
+				찬양선교교회는 하나님께서 USC 캠퍼스 안에 마련하신 하나님 나라의 교두보입니다. 유학생활이라는 삶의 여정을 주님과 함꼐 걷도록 한국과 아시아계 유학생을 섬깁니다.<br>
+				성경을 기초로 하는 복음주의 신앙의 깃발 아래 하나님과의 친밀한 관계로 인도합니다. USC 대학의 종교학생그룹으로 등록되어 캠퍼스 내 선교활동을 보장받고 있으며<br>
+				주일 예배와 아침기도회, 금요 성경의 모임을 캠퍼스에서 가집니다.
 			</div>
 		</div>
 		<div class="fullWidth">
@@ -49,12 +57,12 @@
 				<div class="slogan">
 					<div class="sloganTitle">
 						<div class="sloganIcon" style="background: url('images/intro_icon_01.png') no-repeat center center;
-		background-size:cover;"></div>비전 교회
+		background-size:cover;"></div>비전
 					</div>
 					<ul>
-						<li>세력 확장이 아니라 지역 속에 들어가 연약한 교회를 격려하며 돕는 것</li>
-						<li>국내,외 지역 교회들과의 협력과 메트릭스 팀웍을 통해 인력과 자원을 공유하는것 </li>
-						<li>교파와 교단의 벽을 넘어서 상호간 목회적 소프트웨어를 공유하는것 </li>
+						<li>초대교회의 예배 공동체, 사랑 공동체, 선교 공동체를 지향</li>
+						<li>유학생들을 하나님 나라의 추수할 일꾼으로 양육</li>
+						<li>영혼 하나의 부흥, 청년 하나가 바로 서는 일에 전력</li>
 					</ul>
 				</div>
 				<div class="sloganFiller">
@@ -63,12 +71,12 @@
 				<div class="slogan">
 					<div class="sloganTitle">
 						<div class="sloganIcon" style="background: url('images/intro_icon_02.png') no-repeat center center;
-		background-size:cover;"></div>선교사역
+		background-size:cover;"></div>선교
 					</div>
 					<ul>
-						<li>선교사 훈련을 중요시하는 선교사 사관학교로서의 역할</li>
-						<li>안식년 선교사들의 휴식과 재충전의 자리로서의 역할</li>
-						<li>평신도들의 업그레이드를 위한 헌신과 침묵의 훈련장으로서의 역할</li>
+						<li>세계 각국 청년들의 집결지인 USC 캠퍼스를 세계선교의 현장으로 인식</li>
+						<li>유학생에 대한 복음 전파를 넘어 양육된 일꾼을 모국의 선교사로 파송</li>
+						<li>USC의 명성을 활용하여 해외 대학들과 복음안에서 교류</li>
 					</ul>
 				</div>
 			</div>
@@ -78,12 +86,12 @@
 				<div class="slogan">
 					<div class="sloganTitle">
 						<div class="sloganIcon" style="background: url('images/intro_icon_03.png') no-repeat center center;
-		background-size:cover;"></div>한국 유학생들의 쉼터
+		background-size:cover;"></div>도우미
 					</div>
 					<ul>
-						<li>세력 확장이 아니라 USC 학교 속에 들어가 젊은 유학생 격려하며 돕는 것</li>
-						<li>국내,외 지역 USC 졸업생들과 유학생들에게 믿음의 성장네트워크를 공유하는 것</li>
-						<li>유학생들에게 믿음을 공유하는 공간과 그들만의 쉼터를 제공하는 것 </li>
+						<li>유학 초년생들의 정착을 돕고 든든히 서도록 지원</li>
+						<li>유학 삶에서의 필요 충족, 위로 제공, 정신적/신앙적인 멘토 역할</li>
+						<li>실패, 좌절, 상실, 파탄 등의 위기를 예수 사랑으로 함께 극복</li>
 					</ul>
 				</div>
 				<div class="sloganFiller">
@@ -92,12 +100,12 @@
 				<div class="slogan">
 					<div class="sloganTitle">
 						<div class="sloganIcon" style="background: url('images/intro_icon_01.png') no-repeat center center;
-		background-size:cover;"></div>교내 복음 전파
+		background-size:cover;"></div>지역 봉사
 					</div>
 					<ul>
-						<li>USC 교내에서 한국 유학생 뿐만 아니라 아시아 학생들에게 복음전파 역할</li>
-						<li>USC 교내 속에 복음 전파 역할</li>
-						<li>학생들을 위한 오전 예배 큐티 모임으로 말씀을 전파하는 역할</li>
+						<li>캠퍼스 내 기독학생 그룹들과 연계</li>
+						<li>USC의 지역사회 활동에 복음적으로 협력</li>
+						<li>Los Angeles시의 노숙자, 음주, 마약 문제 등에 협조</li>
 					</ul>
 				</div>
 			</div>
@@ -105,31 +113,30 @@
 	</div>
 </div>
 <a name="aboutPastor"></a>
-<div class="fullwidth" style="height:90px; background-color:yellow">
+<div class="fullwidth" style="height:90px; background-color:#ffde00">
 </div>
-<div class="fullWidth" style="background-color:yellow;height:966px;">
+<div class="fullWidth" style="background-color:#ffde00;height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
+			<font class="font36" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
 		</div>
 		<div class="fullWidth">
 			<div class="pastorContentBody">
-				<div class="pastorHeader">
-					찬양선교교회는 하나님의 비전으로 세워진 교회입니다.<br>
-					사도행전적 교회란, 예수님꼐서 주인되시고 성령님께서 이끄시는 교회입니다.
-				</div>
 				<div class="pastorBody">
-					모든 성도들이 세상 속의 소금과 빛으로 살아가며 삶으로 복음을 증거하는 선교사로 살아가는 교회입니다.
-					한 지역에만 머물지 않고 땅 끝을 향해 나아가는 교회입니다. 온누리교회의 사도행전적 교회의 비전은
-					"ACT29"라는 단어로 표현됩니다. 성경의 사도행전은 28장으로 끝나지만 그 28장의 마지막은 마치
-					끝나지 않은 것 같은 여운을 두고 끝납니다. 이는 사도행전의 역사는 교회를 통해 계속되고 있다는 것입니다.
-					온누리교회는 오늘 이 시대에 사도행전을 써 내려가는 교회라 되고 싶습니다.
-					주님 오실 때까지 그리스도의 지상명령에 순종하며
-					사도행전적 교회로 다시 오실 주님을 맞이할 것입니다.
+					<b>찬양선교교회</b>를 이끌고 있는 신승호 목사는 40세가 되서야 하나님을 만난 늦깍이 목사다.<br>
+					경기고등학교와 서울대학교를 거쳐 유명 기업들과 해외지사 근무 경력이 있고<br>
+					예술의 전당에서 공연기획을 맡아 일하기도 했다. 세상에서 잘 나가던 청년이<Br>
+					어느 날벼락 같은 말기 암의 사형선고를 받았다. 삶을 마감하기 직전 하나님께<br>
+					서원을 하고 나서 하나님의 기적적인 치유하심으로 '제 2의 인생'을 얻었다.<br>
+					40세의 나이에 신학을 시작, 개척 목회의 길로 들어섰고 주님을 섬기는 일에<br>
+					깊이가 필요함을 느껴 98년에 미국으로 건너와 Fuller신학교에서 박사학위를<br>
+					받았다. Redondo Beach에서 시작된 이민목회가 USC 박사과정 청년들의<br>
+					열정에 이끌려 2004년 USC캠퍼스로 옮겨진 이래로 줄곧 한국과 아시아계<br>
+					유학생들을 주 대상으로 캠퍼스 유학생 선교에 힘을 기울여왔다. 신승호 목사는<br>
+					<b>USC대학 종교디렉터(Religious Director)</b>로 임명 받아 대학의 각종<br>
+					종교사업계획에도 협조하고 있다.
 					
 				</div>
-			</div>
-			<div class="pastorImage">
 			</div>
 		</div>
 	</div>
@@ -137,10 +144,10 @@
 <a name="churchHistory"></a>
 <div class="fullwidth" style="height:100px; background-color:white">
 </div>
-<div class="fullWidth" style="background-color:green;height:850px;">
+<div class="fullWidth" style="background-color:white;min-height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">교회연혁</font>
+			<font class="font36" color="#bf1e2e" style="font-weight:bold">교회연혁</font>
 		</div>
 		<div class="churchHistoryList">
 			<div class="fullWidth">
@@ -149,8 +156,10 @@
 				</div>
 				<div class="yearDescription">
 					<ul>
-						<li>"USC찬양선교교회"개척, 창립예배</li>
-						<li>"USC찬양선교교회"개척, 창립예배</li>
+						<li>USC University Village 내에 무료 카페 "쉴만한 물가(The Well)" open</li>
+						<li>USC찬양선교교회 개척, 창립예배</li>
+						<li>USC 기독학생조직으로 정식 등록</li>
+						<li>USC Fishbowl Chapel을 주일에배 장소로 인가 받음</li>
 					</ul>
 				</div>
 			</div>
@@ -163,8 +172,11 @@
 				</div>
 				<div class="yearDescription">
 					<ul>
-						<li>제 1기 교회연합 평신도 신앙강좌 개최</li>
-						<li>제 1기 교회연합 평신도 신앙강좌 개최</li>
+						<li>양육 프로그램 "생명의 삶" 개강</li>
+						<li>교회 website 개설</li>
+						<li>금요찬양잔치를 정기 예배로 함</li>
+						<li>신입생 정착도우미 시작</li>
+						<li>외국학생들 위한 주일 2부 예배(영어) 마련</li>
 					</ul>
 				</div>
 			</div>
@@ -177,8 +189,78 @@
 				</div>
 				<div class="yearDescription">
 					<ul>
-						<li>제 1기 젊은이를 꺠운다 교회청년 대학부 교역자 세미나</li>
-						<li>제 1기 젊은이를 꺠운다 교회청년 대학부 교역자 세미나</li>
+						<li>사랑방 모임 시작</li>
+						<li>외국학생들 위한 추수감사절 잔치 첫회</li>
+					</ul>
+				</div>
+			</div>
+			<div style="clear:both">
+				<hr>
+			</div>
+			<div class="fullWidth">
+				<div class="year">
+					2007
+				</div>
+				<div class="yearDescription">
+					<ul>
+						<li>탈북대학생 초청 간증</li>
+						<li>교회 운영위원회 발족</li>
+					</ul>
+				</div>
+			</div>
+			<div style="clear:both">
+				<hr>
+			</div>
+			<div class="fullWidth">
+				<div class="year">
+					2008
+				</div>
+				<div class="yearDescription">
+					<ul>
+						<li>아침기도회(월-금) 시작</li>
+						<li>일대일 영어교습 프로그램 "The Well" 개원</li>
+					</ul>
+				</div>
+			</div>
+			<div style="clear:both">
+				<hr>
+			</div>
+			<div class="fullWidth">
+				<div class="year">
+					2009
+				</div>
+				<div class="yearDescription">
+					<ul>
+						<li>캠퍼스 찬양잔치 'Praise Night' 개최</li>
+						<li>토요 노숙자 거리 청소 시작</li>
+					</ul>
+				</div>
+			</div>
+			<div style="clear:both">
+				<hr>
+			</div>
+			<div class="fullWidth">
+				<div class="year">
+					2010
+				</div>
+				<div class="yearDescription">
+					<ul>
+						<li>2단계 양육 프로그램 "영의 삶" 개강</li>
+						<li>'Bible Talk' 프로그램 개설</li>
+					</ul>
+				</div>
+			</div>
+			<div style="clear:both">
+				<hr>
+			</div>
+			<div class="fullWidth">
+				<div class="year">
+					2011
+				</div>
+				<div class="yearDescription">
+					<ul>
+						<li>북한 실상 알리는 'North Korea Night' 캠퍼스 모임 개최</li>
+						<li>주일예배 장소를 Taper Hall(THH)로 이전</li>
 					</ul>
 				</div>
 			</div>
@@ -189,12 +271,12 @@
 	</div>
 </div>
 <a name="leaders"></a>
-<div class="fullwidth" style="height:90px; background-color:white">
+<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
 </div>
-<div class="fullWidth" style="background-color:white;height:966px;">
+<div class="fullWidth" style="background-color:#f4f4f4;height:966px;">
 	<div class="container">
 		<div class="fullWidth">
-			<font size="10px" color="red" style="font-weight:bold">섬기는 사람들</font>
+			<font class="font36" color="#bf1e2e" style="font-weight:bold">섬기는 사람들</font>
 		</div>
 		
 		<div class="middleContentContainer">
@@ -267,7 +349,7 @@
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
-						몰라<br>
+						브리스길라와 아글라<br>
 						팀리더: 신은해
 					</div>
 				</div>

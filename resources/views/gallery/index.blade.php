@@ -1,6 +1,7 @@
 @extends('app')
 @section('cssExtend')
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
+<title>Power of Praise Church > Gallery</title>
 <style>
 .GalleryContainer
 {
@@ -105,6 +106,7 @@
 	font-size:12px;
 	background-color:white;
 	color:#111111;
+	overflow:hidden;
 }
 .GalleryImageTail
 {
@@ -115,6 +117,7 @@
 	color:#9a9a9a;
 	height:12px;
 	margin-botom:18px;
+	overflow:hidden;
 }
 .ViewGalleryBlock
 {
@@ -173,12 +176,36 @@
 	width:100%;
 	background-color:green;
 }
+.CloseButton
+{
+	width:5%;
+	height:100%;
+	background-image:url('/images/image1.jpg');
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	float:right;
+}
 .ImageContentContainer
 {
 	width:100%;
 	height:75%;
 	background-color:green;
 	margin:auto;
+}
+.ImageBody
+{
+	background-color:red;
+	top:60%;
+	height:15%;
+	position:absolute;
+	float:left;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	width: 80%;
+	margin:auto;
+	right:0;
+	left:0;
+	
 }
 .ImageContentButtonContainer
 {
@@ -282,6 +309,7 @@
 {
 	cursor:pointer;
 }
+
 </style>
 @endsection
 @section('content')
@@ -308,7 +336,7 @@
 	<div class="fullWidth" style="background-color:#f4f4f4; min-height:966px">
 		<div class="container">
 			<div class="fullWidth">
-				<font size="10px" color="#bf1e2e" style="font-weight:bold">갤러리</font>
+				<font class="font36" color="#bf1e2e" style="font-weight:bold">갤러리</font>
 			</div>
 			<div class="GalleryContainer">
 				<div class="GalleryHeaderContainer">
@@ -354,10 +382,10 @@
 									<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
 								</div>
 								<div class="GalleryImageBody">
-									{{ $contentsPrayAndSermon[$count]->body }}
+									{!! $contentsPrayAndSermon[$count]->body !!}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->created_at->year }}
+									{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
 								</div>
 							</div>
 							<?php $count++; ?>
@@ -393,10 +421,10 @@
 									<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
 								</div>
 								<div class="GalleryImageBody">
-									{{ $contentsPrayAndSermon[$count]->body }}
+									{!! $contentsPrayAndSermon[$count]->body !!}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsPrayAndSermon[$count]->category }} | {{ $contentsPrayAndSermon[$count]->created_at->year }}
+									{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
 								</div>
 							</div>
 							<?php $count++; ?>
@@ -441,10 +469,10 @@
 									<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
 								</div>
 								<div class="GalleryImageBody">
-									{{ $contentsRetreat[$count]->body }}
+									{!! $contentsRetreat[$count]->body !!}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->created_at->year }}
+									{!! $contentsRetreat[$count]->header !!} | {!! $contentsRetreat[$count]->created_at->year !!}
 								</div>
 							</div>
 							<?php $count++; ?>
@@ -480,10 +508,10 @@
 									<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
 								</div>
 								<div class="GalleryImageBody">
-									{{ $contentsRetreat[$count]->body }}
+									{!! $contentsRetreat[$count]->body !!}
 								</div>
 								<div class="GalleryImageTail">
-									{{ $contentsRetreat[$count]->category }} | {{ $contentsRetreat[$count]->created_at->year }}
+									{!! $contentsRetreat[$count]->category !!} | {{ $contentsRetreat[$count]->created_at->year !!} . {!! $contentsRetreat[$count]->created_at->month !!}
 								</div>
 							</div>
 							<?php $count++; ?>
@@ -618,8 +646,8 @@
 									'<div class="GalleryImage">';
 					$content += '<img src="' + data.contents[$count].image + '" width="100%" height="100%"> </div>';
 					$content += '<div class="GalleryImageBody">' + data.contents[$count].body + '</div>';
-					$content += '<div class="GalleryImageTail">' + data.contents[$count].category + ' | ' +
-								data.contents[$count].header + '</div> </div>';
+					$content += '<div class="GalleryImageTail">' + data.contents[$count].header + ' | ' +
+								data.contents[$count].created_at.split('-').join('.') + '</div> </div>';
 					$count++;
 				}
 
@@ -640,7 +668,7 @@
 					$content += '</div> <div class="GalleryImageBody">';
 					$content += data.contents[$count].body;
 					$content += '</div> 	<div class="GalleryImageTail">';
-					$content += data.contents[$count].category + " | " + data.contents[$count].header;
+					$content += data.contents[$count].header + " | " + data.contents[$count].created_at.split('-').join('.') ;
 					$content += '</div> </div>';
 					$count++;
 				}
@@ -681,6 +709,7 @@
 					//retrieve data
 					$html = '<div class ="ImageContainer">';
 					$html += '<div class="CloseButtonContainer">';
+					$html += '<div class="CloseButton"></div>';
 					$html += '</div>';
 					$html += '<div class="ImageContentContainer">';
 					if(data.before == null)
@@ -695,6 +724,7 @@
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
 						'<Img src="' + data.current.image + '" width="100%" height="100%">' +
+						'<div class="ImageBody">' + data.current.body + '</div>' + 
 						'</div>';
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
@@ -839,6 +869,7 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				//retrieve data
 				$html = '<div class ="ImageContainer">';
 				$html += '<div class="CloseButtonContainer">';
+				$html += '<div class="CloseButton"></div>';
 				$html += '</div>';
 				$html += '<div class="ImageContentContainer">';
 				if(data.before == null)
@@ -853,6 +884,7 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				$html += '</div>';
 				$html += '<div class="ImageContent">' +
 					'<Img src="' + data.current.image + '" width="100%" height="100%">' +
+					'<div class="ImageBody">' + data.current.body + '</div>' + 
 					'</div>';
 				if(data.after == null)
 					$html += '<div class="ImageContentButtonContainer">';
@@ -948,7 +980,10 @@ $(document).on('click',  "[id^=viewSmallNextImage]", function(){
 				document.getElementById("viewImage").style.display = "block";
 				}});
 });
-
+$(document).on('click',  ".CloseButton", function(){
+	document.getElementById("showImage").style.display = "none";
+	document.getElementById("viewImage").style.display = "none";
+});
 
 function removeImage()
 {

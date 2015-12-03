@@ -1,6 +1,7 @@
 @extends('app')
 @section('cssExtend')
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
+<title>Power of Praise Church > Sermon</title>
 @endsection
 @section('content')
 <div class="fullWidth" style="background-color:#444444">
@@ -59,7 +60,7 @@
 						<td>{{ $content->title }}</td>
 						<td>{{ $content->body }}</td>
 						<td>
-							<div class="sermonAudio">
+							<div class="sermonAudio" style="margin:auto;">
 								<audio src="{{$content->audio}}" type="audio/mpeg">
 								</audio>
 							</div>

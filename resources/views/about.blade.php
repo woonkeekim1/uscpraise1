@@ -207,7 +207,7 @@
 <a name="leaders"></a>
 <div class="fullwidth" style="height:90px; background-color:#f4f4f4">
 </div>
-<div class="fullWidth" style="background-color:#f4f4f4;height:966px;">
+<div class="fullWidth" style="background-color:#f4f4f4;height:800px;">
 	<div class="container">
 		<div class="fullWidth">
 			<font class="font36" color="#bf1e2e" style="font-weight:bold">섬기는 사람들</font>

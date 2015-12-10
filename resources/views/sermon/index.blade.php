@@ -204,7 +204,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage1">
+				<div class="circleImage" style="background-image:url('/images/image2.jpg')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="circleImageDescriptionFirstLine">
@@ -219,7 +219,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage2">
+				<div class="circleImage" style="background-image:url('/images/image3.jpg')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="circleImageDescriptionFirstLine">

@@ -189,19 +189,23 @@
 	height:75%;
 	margin:auto;
 }
-.ImageBody
+.ImageBodyContainer
 {
-	top:60%;
 	height:15%;
-	position:absolute;
-	float:left;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	width: 80%;
-	margin:auto;
-	right:0;
-	left:0;
+	width: 100%;
 	font-weight:bold;
+	color:white;
+	margin:auto;
+	position:absolute;
+	bottom:0px;
+}
+.ImageBody
+{
+	width:90%;
+	height:80%;
+	margin:auto;
 }
 .ImageContentButtonContainer
 {
@@ -318,6 +322,17 @@
 .smallImageLeftButton:hover
 {
 	background: url("/images/btn_small_gallery_left_over.png") center no-repeat;
+}
+.mainImage
+{
+	width:100%;
+	height:100%;
+	background: url('/images/image1.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative;
 }
 
 </style>
@@ -733,9 +748,11 @@
 					}
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
-						'<Img src="' + data.current.image + '" width="100%" height="100%">' +
-						'<div class="ImageBody">' + data.current.body + '</div>' + 
-						'</div>';
+						'<div class="mainImage" style="background-image:url(\'' + data.current.image + '\')">' +
+						'<div class="ImageBodyContainer">' +
+						'<div class="ImageBody">' + data.current.body +'</div>' +
+						'</div>' + 
+						'</div></div>';
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
 					else
@@ -779,7 +796,7 @@
 					$html += '</div>';
 					$html += ' </div> </div>';
 
-					document.getElementById('showImage').innerHTML += $html;
+					document.getElementById('showImage').innerHTML = $html;
 					document.getElementById("showImage").style.display = "block";
 					document.getElementById("viewImage").style.display = "block";
 					}});
@@ -903,9 +920,11 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				}
 				$html += '</div>';
 				$html += '<div class="ImageContent">' +
-					'<Img src="' + data.current.image + '" width="100%" height="100%">' +
-					'<div class="ImageBody">' + data.current.body + '</div>' + 
-					'</div>';
+				'<div class="mainImage" style="background-image:url(\'' + data.current.image + '\')">' +
+				'<div class="ImageBodyContainer">' +
+				'<div class="ImageBody">' + data.current.body +'</div>' +
+				'</div>' + 
+				'</div></div>';
 				if(data.after == null)
 					$html += '<div class="ImageContentButtonContainer">';
 				else
@@ -949,7 +968,7 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				$html +='</div>';
 				$html += ' </div> </div>';
 
-				document.getElementById('showImage').innerHTML += $html;
+				document.getElementById('showImage').innerHTML = $html;
 				document.getElementById("showImage").style.display = "block";
 				document.getElementById("viewImage").style.display = "block";
 				}});

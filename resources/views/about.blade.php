@@ -1,6 +1,7 @@
 @extends('app')
 @section('cssExtend')
 <link rel="stylesheet" type="text/css" href="css/subPage.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <title>Power of Praise Church > About Us</title>
 @endsection
 @section('css')
@@ -120,8 +121,10 @@
 		<div class="fullWidth">
 			<font class="font36" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
 		</div>
-		<div class="fullWidth">
+		<div class="fullWidth" style="height:700px">
 			<div class="pastorContentBody">
+				<div class="pastorBodyFiller">
+				</div>
 				<div class="pastorBody">
 					<b>찬양선교교회</b>를 이끌고 있는 신승호 목사는 40세가 되서야 하나님을 만난 늦깍이 목사다.<br>
 					경기고등학교와 서울대학교를 거쳐 유명 기업들과 해외지사 근무 경력이 있고<br>
@@ -134,8 +137,13 @@
 					열정에 이끌려 2004년 USC캠퍼스로 옮겨진 이래로 줄곧 한국과 아시아계<br>
 					유학생들을 주 대상으로 캠퍼스 유학생 선교에 힘을 기울여왔다. 신승호 목사는<br>
 					<b>USC대학 종교디렉터(Religious Director)</b>로 임명 받아 대학의 각종<br>
-					종교사업계획에도 협조하고 있다.
+				종교사업계획에도 협조하고 있다.
 					
+				</div>
+				<div class="pastorImage">
+				
+				</div>
+				<div class="pastorBodyFiller">
 				</div>
 			</div>
 		</div>
@@ -149,125 +157,51 @@
 		<div class="fullWidth">
 			<font class="font36" color="#bf1e2e" style="font-weight:bold">교회연혁</font>
 		</div>
-		<div class="churchHistoryList">
+		<div class="churchHistoryList" id="HistoryList">
+			<?php $curYear = ''; $i = 0;?>
+			@while($i < $count)
 			<div class="fullWidth">
-				<div class="year">
-					2004
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>USC University Village 내에 무료 카페 "쉴만한 물가(The Well)" open</li>
-						<li>USC찬양선교교회 개척, 창립예배</li>
-						<li>USC 기독학생조직으로 정식 등록</li>
-						<li>USC Fishbowl Chapel을 주일에배 장소로 인가 받음</li>
-					</ul>
-				</div>
+				@if($curYear != $contents[$i]->year)
+					<?php  $curYear = $contents[$i]->year; ?>
+					<div class="year">
+						{{ $contents[$i]->year }}
+					</div>
+					<div class ="yearDescription">
+						<ul class="yearDescriptionList">
+							@while($i < $count && $contents[$i]->year == $curYear)
+								<li>{{ $contents[$i]->description}}</li>
+								<?php $i++;?>
+							@endwhile
+						</ul>
+					</div>
+					<div style="clear:both">
+						<hr>
+					</div>
+				@endif
+				<?php  $i++;?>
 			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2005
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>양육 프로그램 "생명의 삶" 개강</li>
-						<li>교회 website 개설</li>
-						<li>금요찬양잔치를 정기 예배로 함</li>
-						<li>신입생 정착도우미 시작</li>
-						<li>외국학생들 위한 주일 2부 예배(영어) 마련</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2006
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>사랑방 모임 시작</li>
-						<li>외국학생들 위한 추수감사절 잔치 첫회</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2007
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>탈북대학생 초청 간증</li>
-						<li>교회 운영위원회 발족</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2008
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>아침기도회(월-금) 시작</li>
-						<li>일대일 영어교습 프로그램 "The Well" 개원</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2009
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>캠퍼스 찬양잔치 'Praise Night' 개최</li>
-						<li>토요 노숙자 거리 청소 시작</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2010
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>2단계 양육 프로그램 "영의 삶" 개강</li>
-						<li>'Bible Talk' 프로그램 개설</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
-			<div class="fullWidth">
-				<div class="year">
-					2011
-				</div>
-				<div class="yearDescription">
-					<ul>
-						<li>북한 실상 알리는 'North Korea Night' 캠퍼스 모임 개최</li>
-						<li>주일예배 장소를 Taper Hall(THH)로 이전</li>
-					</ul>
-				</div>
-			</div>
-			<div style="clear:both">
-				<hr>
-			</div>
+			@endwhile
 		</div>
+		@if($pages > 1)
+		
+			@if($pages == 2)
+				<div style="width:40px; margin-top:10px; margin-bottom:20px; margin-left:auto; margin-right:auto;">
+					<div class="AnnouncementDot" id="History0">
+					</div>
+					<div class="AnnouncementDot" id="History1">
+					</div>
+				</div>
+			@elseif($page == 3)
+				<div style="width:60px; margin-top:10px; margin-bottom:20px; margin-left:auto; margin-right:auto;">
+					<div class="AnnouncementDot" id="History0">
+					</div>
+					<div class="AnnouncementDot" id="History1">
+					</div>
+					<div class="AnnouncementDot" id="History2">
+					</div>
+				</div>
+			@endif
+		@endif
 	</div>
 </div>
 <a name="leaders"></a>
@@ -281,7 +215,7 @@
 		
 		<div class="middleContentContainer">
 			<div class="middleContent">
-				<div class="circleImage">
+				<div class="circleImage" style="background-image:url('/images/img_01.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -294,7 +228,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage1">
+				<div class="circleImage" style="background-image:url('/images/img_02.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -307,7 +241,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage2">
+				<div class="circleImage" style="background-image:url('/images/img_03.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -319,7 +253,7 @@
 		</div>
 		<div class="middleContentContainer">
 			<div class="middleContent">
-				<div class="circleImage">
+				<div class="circleImage" style="background-image:url('/images/img_04.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -332,7 +266,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage1">
+				<div class="circleImage" style="background-image:url('/images/img_05.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -345,7 +279,7 @@
 				&nbsp;
 			</div>
 			<div class="middleContent">
-				<div class="circleImage2">
+				<div class="circleImage" style="background-image:url('/images/img_06.png')">
 				</div>
 				<div class="circleImageDescriptionContainer">
 					<div class="leaderDescription">
@@ -360,4 +294,57 @@
 @endsection
 @section('script')
 <script src="/scripts/myScript.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+$(document).on('click',  "[id^=History]", function(){
+	var $listPage = $(this).prop('id');
+	var $HistoryID = $listPage.substring(7, $listPage.length);
+	$HistoryID = parseInt($HistoryID);
+	$.ajax({
+		url:'/about/moreHistory',
+		data: {id : $HistoryID},
+		type: "GET",
+		cache: true,
+		jsonp:false,
+		dataType: 'json',
+		success: function(data){
+			$curYear = '';
+			$i = 0;
+			$html = "";
+			while($i < data.count)
+			{
+				$html = '<div class="fullWidth">';
+				if($curYear != data.contents[$i].year)
+				{
+					$curYear = data.contents[$i].year;
+					$html += '<div class="year">';
+					$html += $curYear;
+					$html += '</div>';
+					$html += '<div class="yearDescription">';
+					$html += '<ul class="yearDescriptionList">';
+					while($i < data.count && data.contents[$i].year == $curYear)
+					{
+						$html += '<li>' + data.contents[$i].description + '</li>';
+						$i++;
+					}
+					$html += '</ul>';
+					$html += '</div>';
+					$html += '<div style="clear:both">';
+					$html += '<hr>';
+					$html += '</div>';
+				}
+				$html += '</div>';
+			}
+			$("#HistoryList").html($html);
+		}
+		/*
+		error: function(data){
+			alert("HI");
+		}
+		*/
+	});
+	
+});
+</script>
+
 @endsection

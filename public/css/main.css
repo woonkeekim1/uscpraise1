@@ -545,6 +545,10 @@ hr.transLine
 	margin-right:4px;
 	float:left;
 }
+.AnnouncementDot:hover
+{
+	background-color:black;
+}
 
 .event
 {

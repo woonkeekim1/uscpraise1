@@ -11,6 +11,7 @@
 |
 */
 Route::get('/about', 'AboutController@aboutUs');
+Route::get('/about/moreHistory', 'AboutController@moreHistory');
 Route::get('/', function () {
 	return view('index');
 });

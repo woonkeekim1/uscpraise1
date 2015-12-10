@@ -165,7 +165,6 @@
 	overflow: auto;
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background-color:red;
 	vertical-align: middle;
 	position:absolute;
 	z-index:10;
@@ -174,7 +173,6 @@
 {
 	height:5%;
 	width:100%;
-	background-color:green;
 }
 .CloseButton
 {
@@ -189,12 +187,10 @@
 {
 	width:100%;
 	height:75%;
-	background-color:green;
 	margin:auto;
 }
 .ImageBody
 {
-	background-color:red;
 	top:60%;
 	height:15%;
 	position:absolute;
@@ -205,13 +201,12 @@
 	margin:auto;
 	right:0;
 	left:0;
-	
+	font-weight:bold;
 }
 .ImageContentButtonContainer
 {
 	width:5%;
 	height:100%;
-	background-color:gray;
 	display:block;
 	float:left;
 }
@@ -226,7 +221,6 @@
 {
 	width:90%;
 	height:100%;
-	background-color:blue;
 	display:block;
 	float:left;
 }
@@ -255,14 +249,12 @@
 {
 	width:90%;
 	height:100%;
-	background-color:yellow;
 	margin:auto;
 	float:left;
 }
 .SmallImageContentButtonContainer
 {
 	height:100%;
-	background-color:black;
 	width:5%;
 	float:left;
 	
@@ -281,7 +273,6 @@
 }
 .SmallImageBoxWrapper
 {
-	background-color:black;
 	height:100%;
 	width:10%;
 	float:left;
@@ -294,12 +285,10 @@
 {
 	height:100%;
 	width:2%;
-	background-color:green;
 	float:left;
 }
 .EmptyMargin
 {
-	background-color:green;
 	height:5%;
 	width:100%;
 	display:block;
@@ -308,6 +297,27 @@
 #moreContent:hover
 {
 	cursor:pointer;
+}
+
+.smallImageRightButton
+{
+	width:100%;
+	height:100%;
+	background: url("/images/btn_small_gallery_right.png") center no-repeat;
+}
+.smallImageRightButton:hover
+{
+	background: url("/images/btn_small_gallery_right_over.png") center no-repeat;
+}
+.smallImageLeftButton
+{
+	width:100%;
+	height:100%;
+	background: url("/images/btn_small_gallery_left.png") center no-repeat;
+}
+.smallImageLeftButton:hover
+{
+	background: url("/images/btn_small_gallery_left_over.png") center no-repeat;
 }
 
 </style>
@@ -719,7 +729,7 @@
 					else
 					{
 						$html += '<div class="ImageContentButtonContainer">';
-						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImagePrayAndSermon' + data.before.id  +'">';
+						$html += '<div class="smallImageLeftButton" id="viewBigNextImagePrayAndSermon' + data.before.id  +'"></div>';
 					}
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
@@ -731,13 +741,18 @@
 					else
 					{
 						$html += '<div class="ImageContentButtonContainer">';
-						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImagePrayAndSermon' + data.after.id  +'">';
+						$html += '<div class="smallImageRightButton" id="viewBigNextImagePrayAndSermon' + data.after.id  +'"></div>';
 					}
 					$html += '</div>';
 					$html += '</div>';
 					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 					$html += '<div class="ImageWrapper">';
-					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[0].id+1) + '"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[0].id+1) + '">';
+					if(data.maxYN == 'N')
+					{
+						$html += '<div class="smallImageLeftButton"></div>';
+					}
+					$html += '</div>';
 					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentContainer">';
 					$count = 0;
@@ -756,7 +771,12 @@
 
 					$html += '</div>';
 					$html += '</div>';
-					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[data.count-1].id-1) + '"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImagePrayAndSermon' + eval(data.contents[data.count-1].id-1) + '">';
+					if(data.minYN == 'N')
+					{
+						$html += '<div class="smallImageRightButton"></div>';
+					}
+					$html += '</div>';
 					$html += ' </div> </div>';
 
 					document.getElementById('showImage').innerHTML += $html;
@@ -879,7 +899,7 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				else
 				{
 					$html += '<div class="ImageContentButtonContainer">';
-					$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImage' + $header + data.before.id  + '">';
+					$html += '<div class="smallImageLeftButton" id="viewBigNextImage' + $header + data.before.id  + '"></div>';
 				}
 				$html += '</div>';
 				$html += '<div class="ImageContent">' +
@@ -891,13 +911,17 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 				else
 				{
 					$html += '<div class="ImageContentButtonContainer">';
-					$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImage' + $header + data.after.id  + '">';
+					$html += '<div class="smallImageRightButton" id="viewBigNextImage' + $header + data.after.id  + '"></div>';
 				}
 				$html += '</div>';
 				$html += '</div>';
 				$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 				$html += '<div class="ImageWrapper">';
 				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[0].id+1) + '">';
+				if(data.maxYN == 'N')
+				{
+					$html += '<div class="smallImageLeftButton"></div>';
+				}
 				$html += '</div>';
 				$html += '<div class="ImageTailContainer">';
 				$html += '<div class ="SmallImageContentContainer">';
@@ -917,7 +941,12 @@ $(document).on('click',  "[id^=viewBigNextImage]", function(){
 
 				$html += '</div>';
 				$html += '</div>';
-				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[data.count-1].id-1) + '"> </div>';
+				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[data.count-1].id-1) + '">'
+				if(data.minYN == 'N')
+				{ 
+					$html += '<div class="smallImageRightButton"></div>';
+				}
+				$html +='</div>';
 				$html += ' </div> </div>';
 
 				document.getElementById('showImage').innerHTML += $html;
@@ -952,6 +981,10 @@ $(document).on('click',  "[id^=viewSmallNextImage]", function(){
 			success: function(data){
 				//retrieve data
 				$html = '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage' + $header + eval(data.contents[0].id+1) +  '">';
+				if(data.maxYN == 'N')
+				{
+					$html += '<div class="smallImageLeftButton"></div>';
+				}
 				$html += '</div>';
 				$html += '<div class="ImageTailContainer">';
 				$html += '<div class ="SmallImageContentContainer">';
@@ -973,7 +1006,11 @@ $(document).on('click',  "[id^=viewSmallNextImage]", function(){
 				$html += '</div>';
 
 				$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImage'  + $header + eval(data.contents[data.count-1].id-1) +  '">';
-
+				if(data.minYN == 'N')
+				{
+					$html += '<div class="smallImageRightButton"></div>';
+				}
+				$html += '</div>';
 				$('.ImageWrapper').html($html);
 				
 				document.getElementById("showImage").style.display = "block";

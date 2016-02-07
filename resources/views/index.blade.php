@@ -20,15 +20,15 @@
 			<div class="middleContent">
 				<div class="sermon">
 					<div class="sermonHeader">
-						<div class="sermonTitle">���� �ȱ� ����</div> <div class="sermonDate">09/06/2015</div>
+						<div class="sermonTitle">{!! $latestSermon[0]->title !!}</div> <div class="sermonDate">{!! $latestSermon[0]->created_at->year !!}.{!! str_pad($latestSermon[0]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($latestSermon[0]->created_at->day, 2, 0, STR_PAD_LEFT) !!}</div>
 					</div>
 					<hr class="Line">
 					<div class="sermonBody">
-						<div class="sermonBodyHead">��μ��� 2:1-2</div>
-						1. ���� ����� �����Ծƿ� �ִ� �ڵ�� ������ ������ ���� ���� ���� �ڵ��� ���Ͽ� ��� �� ���� ���� ���� �˱⸦ ���ϳ��<br>
-						2. �̴� ����� ������ ������ �ް� ��� �ȿ��� �����Ͽ� ���� ������ ��� �ο信 �̸��� �ϳ����� ����� �׸������� ��ݰ� �Ϸ� ���̶�
-						2. �̴� ����� ������ ������ �ް� ��� �ȿ��� �����Ͽ� ���� ������ ��� �ο信 �̸��� �ϳ����� ����� �׸������� ��ݰ� �Ϸ� ���̶�
-						2. �̴� ����� ������ ������ �ް� ��� �ȿ��� �����Ͽ� ���� ������ ��� �ο信 �̸��� �ϳ����� ����� �׸������� ��ݰ� �Ϸ� ���̶�
+						<div class="sermonBodyHead">목사님 설교말씀 자리 테스트 중입니다</div>
+						1. 이부분은 매주 목사님 설교말씀이 들어갈자리에요</br>
+						2. 이것도 테스트중이에요</br>
+						3. 이것도 테스트</br>
+						4. 요놈도 테스트</br>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 					<image class="mainGallryImage" src="images/image2.jpg">
 					<div class="mainGallryBody">
 						<div class="mainGallaryDescription">	
-							������
+							
 						</div>
 					</div>
 				</div>
@@ -51,19 +51,19 @@
 			<div class="middleContent">
 				<div class="helper">
 					<div class="helperHeader">
-						USC	������ ��û
+						추가하실꺼 있으시면 알려주세요
 					</div>
 					<hr class="Line">
 					<div class="helperBody">
-						��缱����ȸ�� USC ���۽� ���� �ִ� �л� �߽� ��ȸ�Դϴ�. ���� �����б� ���۶����� ���� ����� ���񽺸� ���� ���ô� �е鲲 �����ϰ� �ֽ��ϴ�
+						바꿀꺼나 추가할꺼 알려주시면 감사합니다
 					</div>
 					<hr class="transLine">
 					<div class="helperBody1">
-						<div class="contentHead">�Ⱓ</div>
-						7�� 20�� ~ 8�� 20�ϱ���
-						<br><Br>	
-						<div class="contentHead">���</div>
-						USC���� �о��� �����ϰų� �湮�Ͻô� ��
+						<div class="contentHead">아쉽게도</div>
+						모바일에서는
+						<br>
+						<div class="contentHead">잘안되요</div>
+						ㅜㅜ
 					</div>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 						Worship
 					</div>
 					<div class = "worshipBody" style="padding-left:20px">
-						�������
+						예배 장소
 					</div>
 					<div class="worshipMap">
 						<img src="images/image1.jpg" width="100%" height="100%">
@@ -115,20 +115,16 @@
 					</div>
 					<div class="AnnouncementBody">
 						<div class="AnnouncementBodyPart">
-							ķ�۽� 30�� ťƼ ����<br>
-							���� 8�� 20�� ~ 8�� 50�� @ Annenberg Backyard
+							예배장소는??<br>
+							Kilgore에서!!
 						</div>
 						<div class="AnnouncementBodyPart">
-							ķ�۽� 30�� ťƼ ����<br>
-							���� 8�� 20�� ~ 8�� 50�� @ Annenberg Backyard
+							식사는??<br>
+							108호에서
 						</div>
 						<div class="AnnouncementBodyPart">
-							ķ�۽� 30�� ťƼ ����<br>
-							���� 8�� 20�� ~ 8�� 50�� @ Annenberg Backyard
-						</div>
-						<div class="AnnouncementBodyPart">
-							ķ�۽� 30�� ťƼ ����<br>
-							���� 8�� 20�� ~ 8�� 50�� @ Annenberg Backyard
+							안알랴줌<br>
+							비밀
 						</div>
 					</div>
 					<div class="AnnouncementDotContainer">
@@ -148,8 +144,8 @@
 					<div class="mainGallry">
 						<image class="mainGallryImage" src="images/image3.jpg">
 						<div class="mainGallryBody">
-							<div class="mainGallaryDescription">	
-								������
+							<div class="mainGallaryDescription" id="AboutUs">	
+								About Us
 							</div>
 						</div>
 					</div>
@@ -160,25 +156,25 @@
 	            <div class="middleContent">
 		            <div class="event">
 		            	<div class="sermonHeader">
-	    	            	blah blah
+	    	            	여기는
 	        	        </div>
 	        	        <hr class="Line">
 	        	        <div class="eventBody">
-	        	        	test
+	        	        	무엇으로
 	        	        	<br>
-	        	        	test
+	        	        	채워질 것인가
 	        	        </div>
 	        	        <hr class="transLine">
 	        	        <div class="eventBody">
-	        	        	test
+	        	        	그게
 	        	        	<br>
-	        	        	test
+	        	        	저도
 	        	        </div>
 	        	        <hr class="transLine">
 	        	        <div class="eventBody">
-	        	        	test
+	        	        	많이
 	        	        	<br>
-	        	        	test
+	        	        	궁금합니다
 	        	        </div>
 	        	        <div class="EventDotContainer">
 							<div class="EventDot">
@@ -198,8 +194,8 @@
 					<div class="mainGallry">
 						<image class="mainGallryImage" src="images/image4.jpg">
 						<div class="mainGallryBody">
-							<div class="mainGallaryDescription">	
-								������
+							<div class="mainGallaryDescription" id="gallery">	
+								Gallery
 							</div>
 						</div>
 					</div>
@@ -209,4 +205,15 @@
 <div style="width:100%; height:95px; background-color:white; clear:left;">
 
 </div>
+@endsection
+@section('script')
+<script>
+	$(document).on('click', '#gallery', function(){
+		window.location.href="{{ url('\gallery') }}";
+	});
+	$(document).on('click', '#AboutUs', function(){
+		window.location.href="{{ url('\about') }}";
+	});
+</script>
+	
 @endsection

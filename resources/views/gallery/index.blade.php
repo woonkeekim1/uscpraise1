@@ -178,9 +178,6 @@
 {
 	width:5%;
 	height:100%;
-	background-image:url('/images/image1.jpg');
-	background-size:100% 100%;
-	background-repeat: no-repeat;
 	float:right;
 }
 .ImageContentContainer
@@ -338,243 +335,247 @@
 </style>
 @endsection
 @section('content')
-	<div class="fullWidth" style="background-color:#444444">
-		<div class="container">
-			<div class="sermonImageContainer">
-			</div>
+<div class="fullWidth" style="background-color:#444444">
+	<div class="container">
+		<div class="sermonImageContainer">
 		</div>
 	</div>
-	<div class="fullWidth" style="background-color:#bf1e2e" id="sermonNavBar">
-		<div class="sermonWrapper">
-			<ul class="sermonNav">
-				<li class="sermonNavLogo"><a href={!! url('/') !!} class="logo"><img src="images/footer_logo.png" width="100%" height="61px"></a></li>
-				<li style="margin-right:76px">겔러리</li>
-				<li><a href="#Before2015">Group 2015</a></li>
-				<li><a href="#morningPray">2014</a></li>
-				<li><a href="#fridayPray">Before</a></li>
-			</ul>
+</div>
+<div class="fullWidth" style="background-color:#bf1e2e" id="sermonNavBar">
+	<div class="sermonWrapper">
+		<ul class="sermonNav">
+			<li class="sermonNavLogo"><a href={!! url('/') !!} class="logo"><img src="images/footer_logo.png" width="100%" height="61px"></a></li>
+			<li style="margin-right:76px">겔러리</li>
+			<li><a href="#Before2015">Group 2015</a></li>
+			<li><a href="#morningPray">2014</a></li>
+			<li><a href="#fridayPray">Before</a></li>
+		</ul>
+	</div>
+</div>
+<div class="bodyWrapper" style="background-color:#f4f4f4">
+	<div class="container">
+		<a name="Before2015"></a>
+		<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
 		</div>
-	</div>
-	<a name="Before2015"></a>
-	<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
-	</div>
-	<div class="fullWidth" style="background-color:#f4f4f4; min-height:966px">
-		<div class="container">
-			<div class="fullWidth">
-				<font class="font36" color="#bf1e2e" style="font-weight:bold">갤러리</font>
-			</div>
-			<div class="GalleryContainer">
-				<div class="GalleryHeaderContainer">
-					<div class="GalleryHeader GalleryHeaderClick" id="PrayAndSermonHeader" onClick="displayImageBlock('PrayAndSermon')">
-						<a class="aHeader">예배설교</a>
+		<div class="fullWidth" style="background-color:#f4f4f4; min-height:966px">
+			<div class="container">
+				<div class="fullWidth">
+					<font class="font36" color="#bf1e2e" style="font-weight:bold">갤러리</font>
+				</div>
+				<div class="GalleryContainer">
+					<div class="GalleryHeaderContainer">
+						<div class="GalleryHeader GalleryHeaderClick" id="PrayAndSermonHeader" onClick="displayImageBlock('PrayAndSermon')">
+							<a class="aHeader">예배설교</a>
+						</div>
+						<div class="GalleryHeader" id="RetreatHeader" onClick="displayImageBlock('Retreat')">
+							<a class="aHeader">수련회</a>
+						</div>
+						<div class="GalleryHeader">
+							대회/기념식
+						</div>
+						<div class="GalleryHeader">
+							베트남 선교
+						</div>
 					</div>
-					<div class="GalleryHeader" id="RetreatHeader" onClick="displayImageBlock('Retreat')">
-						<a class="aHeader">수련회</a>
-					</div>
-					<div class="GalleryHeader">
-						대회/기념식
-					</div>
-					<div class="GalleryHeader">
-						베트남 선교
+					<div class="GalleryBodyWrapper">
+						<!-- 에베설교 -->
+						<div class="GalleryBodyContainer ViewGalleryBlock" id="PrayAndSermon">
+							<?php $count = 0;?>
+							@if($count == 0)
+								<div class="GalleryHorizontalMarginWithShadow">
+									&nbsp;
+								</div>
+							@endif
+							@if($contentsPrayAndSermon->count() > 0)
+							<div class="GalleryContentContainer">
+							@endif
+							
+							@while($count < 5 && $contentsPrayAndSermon->count() -$count > 0)
+								@if($count == 0)
+								<div class="GalleryVerticalMargin_Side">
+									&nbsp;
+								</div>
+								@endif
+								@if($count != 0)
+								<div class="GalleryVerticalMargin">
+									&nbsp;
+								</div>
+								@endif
+								<div class="GalleryImageContainer" id="PrayAndSermon{{ $contentsPrayAndSermon[$count]->id}}">
+									<div class="GalleryImage">
+										<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
+									</div>
+									<div class="GalleryImageBody">
+										{!! $contentsPrayAndSermon[$count]->title !!}
+									</div>
+									<div class="GalleryImageTail">
+										{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
+									</div>
+								</div>
+								<?php $count++; ?>
+							@endwhile
+							@if($count == 5)
+							<div class="GalleryVerticalMargin_Side">
+								&nbsp;
+							</div>
+							@endif
+							@if($contentsPrayAndSermon->count() > 0)
+							</div>
+							@endif
+							
+							
+							@if($contentsPrayAndSermon->count() > 5)
+							<div class="GalleryContentContainer">
+							@endif
+		
+							@while($count < 10 && $contentsPrayAndSermon->count() - $count > 0)
+	
+								@if($count % 5 == 0)
+								<div class="GalleryVerticalMargin_Side">
+									&nbsp;
+								</div>
+								@endif
+								@if($count % 5 != 0)
+								<div class="GalleryVerticalMargin">
+									&nbsp;
+								</div>
+								@endif
+								<div class="GalleryImageContainer" id="PrayAndSermon{{ $contentsPrayAndSermon[$count]->id}}">
+									<div class="GalleryImage">
+										<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
+									</div>
+									<div class="GalleryImageBody">
+										{!! $contentsPrayAndSermon[$count]->title !!}
+									</div>
+									<div class="GalleryImageTail">
+										{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
+									</div>
+								</div>
+								<?php $count++; ?>
+							@endwhile
+							@if($count == 10)
+							<div class="GalleryVerticalMargin_Side">
+								&nbsp;
+							</div>
+							@endif
+							@if($contentsPrayAndSermon->count() > 5)
+							</div>
+							@endif
+							
+							
+						</div>
+						<!-- 에배설교 끝 -->
+						<!-- 수련회  -->
+						<div class="GalleryBodyContainer HideGalleryBlock" id="Retreat">
+							<?php $count = 0;?>
+							@if($count == 0)
+								<div class="GalleryHorizontalMarginWithShadow">
+									&nbsp;
+								</div>
+							@endif
+							@if($contentsRetreat->count() > 0)
+							<div class="GalleryContentContainer">
+							@endif
+							
+							@while($count < 5 && $contentsRetreat->count() -$count > 0)
+								@if($count == 0)
+								<div class="GalleryVerticalMargin_Side">
+									&nbsp;
+								</div>
+								@endif
+								@if($count != 0)
+								<div class="GalleryVerticalMargin">
+									&nbsp;
+								</div>
+								@endif
+								<div class="GalleryImageContainer" id="Retreat{{ $contentsRetreat[$count]->id}}">
+									<div class="GalleryImage">
+										<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
+									</div>
+									<div class="GalleryImageBody">
+										{!! $contentsRetreat[$count]->title !!}
+									</div>
+									<div class="GalleryImageTail">
+										{!! $contentsRetreat[$count]->header !!} | {!! $contentsRetreat[$count]->created_at->year !!}.{!! str_pad($contentsRetreat[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsRetreat[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
+									</div>
+								</div>
+								<?php $count++; ?>
+							@endwhile
+							@if($count == 5)
+							<div class="GalleryVerticalMargin_Side">
+								&nbsp;
+							</div>
+							@endif
+							@if($contentsRetreat->count() > 0)
+							</div>
+							@endif
+							
+							
+							@if($contentsRetreat->count() > 5)
+							<div class="GalleryContentContainer">
+							@endif
+		
+							@while($count < 10 && $contentsRetreat->count() - $count > 0)
+	
+								@if($count % 5 == 0)
+								<div class="GalleryVerticalMargin_Side">
+									&nbsp;
+								</div>
+								@endif
+								@if($count % 5 != 0)
+								<div class="GalleryVerticalMargin">
+									&nbsp;
+								</div>
+								@endif
+								<div class="GalleryImageContainer" id="Retreat{{ $contentsRetreat[$count]->id}}">
+									<div class="GalleryImage">
+										<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
+									</div>
+									<div class="GalleryImageBody">
+										{!! $contentsRetreat[$count]->title !!}
+									</div>
+									<div class="GalleryImageTail">
+										{!! $contentsRetreat[$count]->header !!} | {!! $contentsRetreat[$count]->created_at->year !!}.{!! str_pad($contentsRetreat[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsRetreat[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
+									</div>
+								</div>
+								<?php $count++; ?>
+							@endwhile
+							@if($count == 10)
+							<div class="GalleryVerticalMargin_Side">
+								&nbsp;
+							</div>
+							@endif
+							@if($contentsRetreat->count() > 5)
+							</div>
+							@endif
+							
+							
+						</div>
+						 <!-- 수련회 끝 -->
 					</div>
 				</div>
-				<div class="GalleryBodyWrapper">
-					<!-- 에베설교 -->
-					<div class="GalleryBodyContainer ViewGalleryBlock" id="PrayAndSermon">
-						<?php $count = 0;?>
-						@if($count == 0)
-							<div class="GalleryHorizontalMarginWithShadow">
-								&nbsp;
-							</div>
-						@endif
-						@if($contentsPrayAndSermon->count() > 0)
-						<div class="GalleryContentContainer">
-						@endif
-						
-						@while($count < 5 && $contentsPrayAndSermon->count() -$count > 0)
-							@if($count == 0)
-							<div class="GalleryVerticalMargin_Side">
-								&nbsp;
-							</div>
-							@endif
-							@if($count != 0)
-							<div class="GalleryVerticalMargin">
-								&nbsp;
-							</div>
-							@endif
-							<div class="GalleryImageContainer" id="PrayAndSermon{{ $contentsPrayAndSermon[$count]->id}}">
-								<div class="GalleryImage">
-									<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
-								</div>
-								<div class="GalleryImageBody">
-									{!! $contentsPrayAndSermon[$count]->body !!}
-								</div>
-								<div class="GalleryImageTail">
-									{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
-								</div>
-							</div>
-							<?php $count++; ?>
-						@endwhile
-						@if($count == 5)
-						<div class="GalleryVerticalMargin_Side">
-							&nbsp;
-						</div>
-						@endif
-						@if($contentsPrayAndSermon->count() > 0)
-						</div>
-						@endif
-						
-						
-						@if($contentsPrayAndSermon->count() > 5)
-						<div class="GalleryContentContainer">
-						@endif
-	
-						@while($count < 10 && $contentsPrayAndSermon->count() - $count > 0)
-
-							@if($count % 5 == 0)
-							<div class="GalleryVerticalMargin_Side">
-								&nbsp;
-							</div>
-							@endif
-							@if($count % 5 != 0)
-							<div class="GalleryVerticalMargin">
-								&nbsp;
-							</div>
-							@endif
-							<div class="GalleryImageContainer" id="PrayAndSermon{{ $contentsPrayAndSermon[$count]->id}}">
-								<div class="GalleryImage">
-									<Img src="{{$contentsPrayAndSermon[$count]->image}}" width="100%" height="100%">
-								</div>
-								<div class="GalleryImageBody">
-									{!! $contentsPrayAndSermon[$count]->body !!}
-								</div>
-								<div class="GalleryImageTail">
-									{!! $contentsPrayAndSermon[$count]->header !!} | {!! $contentsPrayAndSermon[$count]->created_at->year !!}.{!! str_pad($contentsPrayAndSermon[$count]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($contentsPrayAndSermon[$count]->created_at->day, 2, 0, STR_PAD_LEFT)!!}
-								</div>
-							</div>
-							<?php $count++; ?>
-						@endwhile
-						@if($count == 10)
-						<div class="GalleryVerticalMargin_Side">
-							&nbsp;
-						</div>
-						@endif
-						@if($contentsPrayAndSermon->count() > 5)
-						</div>
-						@endif
-						
-						
-					</div>
-					<!-- 에배설교 끝 -->
-					<!-- 수련회  -->
-					<div class="GalleryBodyContainer HideGalleryBlock" id="Retreat">
-						<?php $count = 0;?>
-						@if($count == 0)
-							<div class="GalleryHorizontalMarginWithShadow">
-								&nbsp;
-							</div>
-						@endif
-						@if($contentsRetreat->count() > 0)
-						<div class="GalleryContentContainer">
-						@endif
-						
-						@while($count < 5 && $contentsRetreat->count() -$count > 0)
-							@if($count == 0)
-							<div class="GalleryVerticalMargin_Side">
-								&nbsp;
-							</div>
-							@endif
-							@if($count != 0)
-							<div class="GalleryVerticalMargin">
-								&nbsp;
-							</div>
-							@endif
-							<div class="GalleryImageContainer" id="Retreat{{ $contentsRetreat[$count]->id}}">
-								<div class="GalleryImage">
-									<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
-								</div>
-								<div class="GalleryImageBody">
-									{!! $contentsRetreat[$count]->body !!}
-								</div>
-								<div class="GalleryImageTail">
-									{!! $contentsRetreat[$count]->header !!} | {!! $contentsRetreat[$count]->created_at->year !!}
-								</div>
-							</div>
-							<?php $count++; ?>
-						@endwhile
-						@if($count == 5)
-						<div class="GalleryVerticalMargin_Side">
-							&nbsp;
-						</div>
-						@endif
-						@if($contentsRetreat->count() > 0)
-						</div>
-						@endif
-						
-						
-						@if($contentsRetreat->count() > 5)
-						<div class="GalleryContentContainer">
-						@endif
-	
-						@while($count < 10 && $contentsRetreat->count() - $count > 0)
-
-							@if($count % 5 == 0)
-							<div class="GalleryVerticalMargin_Side">
-								&nbsp;
-							</div>
-							@endif
-							@if($count % 5 != 0)
-							<div class="GalleryVerticalMargin">
-								&nbsp;
-							</div>
-							@endif
-							<div class="GalleryImageContainer" id="Retreat{{ $contentsRetreat[$count]->id}}">
-								<div class="GalleryImage">
-									<Img src="{{$contentsRetreat[$count]->image}}" width="100%" height="100%">
-								</div>
-								<div class="GalleryImageBody">
-									{!! $contentsRetreat[$count]->body !!}
-								</div>
-								<div class="GalleryImageTail">
-									{!! $contentsRetreat[$count]->category !!} | {{ $contentsRetreat[$count]->created_at->year !!} . {!! $contentsRetreat[$count]->created_at->month !!}
-								</div>
-							</div>
-							<?php $count++; ?>
-						@endwhile
-						@if($count == 10)
-						<div class="GalleryVerticalMargin_Side">
-							&nbsp;
-						</div>
-						@endif
-						@if($contentsPrayAndSermon->count() > 5)
-						</div>
-						@endif
-						
-						
-					</div>
-					<!-- 수련회 끝 -->
+				<div style="width:100%; height:30px; clear:both;">
+				&nbsp;
+				</div>
+				<!-- more contents -->
+				<div id="moreContent">
+					펼쳐보기<img id="moreContentArrow" src="\images\arrow_bottom.png" width="10px" height="10px" style="margin-left:5px">
 				</div>
 			</div>
-			<div style="width:100%; height:30px; clear:both;">
-			&nbsp;
-			</div>
-			<!-- more contents -->
-			<div id="moreContent">
-				펼쳐보기<img id="moreContentArrow" src="\images\arrow_bottom.png" width="10px" height="10px" style="margin-left:5px">
-			</div>
 		</div>
-	</div>
-	<div style="width:100%; height:40px; clear:both;">
-			&nbsp;
-			</div>
-	<div class="viewImage" id ="viewImage" onClick="removeImage()">
-	</div>
-		<div id="showImage">
+		<div style="width:100%; height:40px; clear:both;">
+				&nbsp;
+				</div>
+		<div class="viewImage" id ="viewImage" onClick="removeImage()">
 		</div>
-	
+			<div id="showImage">
+			</div>
+	</div>	
+</div>
 @endsection
 @section('script')
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="js/myScript.js"></script>
 <script>
 	var HeaderArray = {};
 	var ImageIndexToContentArray = {};
@@ -822,6 +823,7 @@
 					//retrieve data
 					$html = '<div class ="ImageContainer">';
 					$html += '<div class="CloseButtonContainer">';
+					$html += '<div class="CloseButton"></div>';
 					$html += '</div>';
 					$html += '<div class="ImageContentContainer">';
 					if(data.before == null)
@@ -831,24 +833,32 @@
 					else
 					{
 						$html += '<div class="ImageContentButtonContainer">';
-						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImageRetreat' + data.before.id  +'">';
+						$html += '<div class="smallImageLeftButton" id="viewBigNextImageRetreat' + data.before.id  +'"></div>';
 					}
 					$html += '</div>';
 					$html += '<div class="ImageContent">' +
-						'<Img src="' + data.current.image + '" width="100%" height="100%">' +
-						'</div>';
+						'<div class="mainImage" style="background-image:url(\'' + data.current.image + '\')">' +
+						'<div class="ImageBodyContainer">' +
+						'<div class="ImageBody">' + data.current.body +'</div>' +
+						'</div>' + 
+						'</div></div>';
 					if(data.after == null)
 						$html += '<div class="ImageContentButtonContainer">';
 					else
 					{
 						$html += '<div class="ImageContentButtonContainer">';
-						$html += '<Img src="/images/image1.jpg" class="ImageContentButton" id="viewBigNextImageRetreat' + data.after.id  +'">';
+						$html += '<div class="smallImageRightButton" id="viewBigNextImageRetreat' + data.after.id  +'"></div>';
 					}
 					$html += '</div>';
 					$html += '</div>';
 					$html += '<div class ="EmptyMargin"> &nbsp; </div>';
 					$html += '<div class="ImageWrapper">';
-					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[0].id+1) + '"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[0].id+1) + '">';
+					if(data.maxYN == 'N')
+					{
+						$html += '<div class="smallImageLeftButton"></div>';
+					}
+					$html += '</div>';
 					$html += '<div class="ImageTailContainer">';
 					$html += '<div class ="SmallImageContentContainer">';
 					$count = 0;
@@ -859,7 +869,7 @@
 						else
 							$html += '<div class="SmallImageBoxFiller"> </div>';
 						$html += '<div class="SmallImageBoxWrapper"><div class="SmallImageBox">';
-						$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImageRetreat' + data.contents[$count].id + '">';
+						$html += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%" id="viewBigNextImagePrayAndSermon' + data.contents[$count].id + '">';
 						$html += '</div></div>';
 						$count++;
 					}
@@ -867,14 +877,19 @@
 
 					$html += '</div>';
 					$html += '</div>';
-					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[data.count-1].id-1) + '"> </div>';
+					$html += '<div class ="SmallImageContentButtonContainer" id="viewSmallNextImageRetreat' + eval(data.contents[data.count-1].id-1) + '">';
+					if(data.minYN == 'N')
+					{
+						$html += '<div class="smallImageRightButton"></div>';
+					}
+					$html += '</div>';
 					$html += ' </div> </div>';
 
-					document.getElementById('showImage').innerHTML += $html;
+					document.getElementById('showImage').innerHTML = $html;
 					document.getElementById("showImage").style.display = "block";
 					document.getElementById("viewImage").style.display = "block";
 					}});
-			
+		
 		}
 			
 		});

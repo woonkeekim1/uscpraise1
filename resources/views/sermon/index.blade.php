@@ -10,6 +10,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="fullWidth" style="background-color:#bf1e2e" id="sermonNavBar">
 	<div class="sermonWrapper">
 		<ul class="sermonNav">
@@ -21,220 +22,228 @@
 		</ul>
 	</div>
 </div>
-<a name="sundayPray"></a>
-<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
-</div>
-<div class="fullWidth" style="background-color:#f4f4f4;height:966px;">
+<div class="bodyWrapper" style="background-color:#f4f4f4">
 	<div class="container">
-		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">주일 예배</font>
+		<a name="sundayPray"></a>
+		<div class="fullwidth" style="height:90px; background-color:#f4f4f4">
 		</div>
-		<table class="sundaySermonTable" style="margin-top:40px">
-			<tr>
-				<th style="width:280px">설교 일자</th>
-				<th style="width:136px">설교자</th>
-				<th style="width:384px">설교제목</th>
-				<th style="width:184px">본문</th>
-				<th style="width:186px">듣기</th>
-			</tr>
-			<?php $count = 0;?> 
-			@foreach($contents as $content)
-			<?php $count++;?>
-				@if($count == $contents->count())
+		<div class="fullWidth" style="background-color:#f4f4f4;height:966px;">
+			<div class="container">
+				<div class="fullWidth">
+					<font size="10px" color="#bf1e2e" style="font-weight:bold">주일 예배</font>
+				</div>
+				<table class="sundaySermonTable" style="margin-top:40px">
 					<tr>
-						<td style="border-bottom:none;">{{ $content->sermonDate->year }}년 {{$content->sermonDate->month }}월 {{ $content->sermonDate->day }}일</td>
-						<td style="border-bottom:none;">{{ $content->author->name }}</td>
-						<td style="border-bottom:none;">{{ $content->title }}</td>
-						<td style="border-bottom:none;">{{ $content->body }}</td>
-						<td style="border-bottom:none;">
-							<div class="sermonAudio">
-								<audio src="{{$content->audio}}" type="audio/mpeg">
-								</audio>
-							</div>
-						</td>
+						<th style="width:280px">설교 일자</th>
+						<th style="width:136px">설교자</th>
+						<th style="width:384px">설교제목</th>
+						<th style="width:184px">본문</th>
+						<th style="width:186px">듣기</th>
 					</tr>
-				@else
-					<tr>
-						<td>{{ $content->sermonDate->year }}년 {{$content->sermonDate->month }}월 {{ $content->sermonDate->day }}일</td>
-						<td>{{ $content->author->name }}</td>
-						<td>{{ $content->title }}</td>
-						<td>{{ $content->body }}</td>
-						<td>
-							<div class="sermonAudio" style="margin:auto;">
-								<audio src="{{$content->audio}}" type="audio/mpeg">
-								</audio>
+					<?php $count = 0;?> 
+					@foreach($contents as $content)
+					<?php $count++;?>
+						@if($count == $contents->count())
+							<tr>
+								<td style="border-bottom:none;">{{ $content->sermonDate->year }}년 {{$content->sermonDate->month }}월 {{ $content->sermonDate->day }}일</td>
+								<td style="border-bottom:none;">{{ $content->author->name }}</td>
+								<td style="border-bottom:none;">{{ $content->title }}</td>
+								<td style="border-bottom:none;">{{ $content->body }}</td>
+								<td style="border-bottom:none;">
+	
+								</td>
+							</tr>
+						@else
+							<tr>
+								<td>{{ $content->sermonDate->year }}년 {{$content->sermonDate->month }}월 {{ $content->sermonDate->day }}일</td>
+								<td>{{ $content->author->name }}</td>
+								<td>{{ $content->title }}</td>
+								<td>{{ $content->body }}</td>
+								<td>
+									<div class="sermonAudio" style="margin:auto;">
+										<audio src="{{$content->audio}}" type="audio/mpeg">
+										</audio>
+									</div>
+								</td>
+							</tr>
+						@endif
+					@endforeach
+				</table>
+				<div class="boardPageListWrapper">
+					<div class="boardPageList">
+						@if($returnArray['start'] != 0)
+						<a id="listPage{!! $returnArray['start']-5 !!}">
+							<div class="boardNextContainer">
+								< 이전
 							</div>
-						</td>
-					</tr>
-				@endif
-			@endforeach
-		</table>
-		<div class="boardPageListWrapper">
-			<div class="boardPageList">
-				@if($returnArray['start'] != 0)
-				<a id="listPage{!! $returnArray['start']-5 !!}">
-					<div class="boardNextContainer">
-						< 이전
+						</a>
+						@endif
+						<?php $tmpStart = $returnArray['start'];?>
+						@if($returnArray['start'] == $returnArray['curPage'])
+							<a id="listPage{!! $returnArray['start'] !!}" ><font color="#c03737">{{$returnArray['start'] + 1}}</font></a>
+						@else	
+							<a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
+						@endif
+						@for($returnArray['start']=$returnArray['start']+1; $returnArray['start'] < $returnArray['end']; $returnArray['start']++)
+							@if($returnArray['start'] == $returnArray['curPage'])
+								| <a id="listPage{!! $returnArray['start'] !!}"><font color="#c03737">{{$returnArray['start'] + 1}}</font></a>
+							@else
+								| <a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
+							@endif
+						@endfor
+						@if($returnArray['totalPage'] > $returnArray['end'])
+							<a id="listPage{!! $tmpStart+5 !!}">
+								<div class="boardNextContainer">
+									다음 >
+								</div>
+							</a>
+						@endif
 					</div>
-				</a>
-				@endif
-				<?php $tmpStart = $returnArray['start'];?>
-				@if($returnArray['start'] == $returnArray['curPage'])
-					<a id="listPage{!! $returnArray['start'] !!}" ><font color="#c03737">{{$returnArray['start'] + 1}}</font></a>
-				@else	
-					<a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
-				@endif
-				@for($returnArray['start']=$returnArray['start']+1; $returnArray['start'] < $returnArray['end']; $returnArray['start']++)
-					@if($returnArray['start'] == $returnArray['curPage'])
-						| <a id="listPage{!! $returnArray['start'] !!}"><font color="#c03737">{{$returnArray['start'] + 1}}</font></a>
-					@else
-						| <a id="listPage{!! $returnArray['start'] !!}">{{$returnArray['start'] + 1}}</a>
-					@endif
-				@endfor
-				@if($returnArray['totalPage'] > $returnArray['end'])
-					<a id="listPage{!! $tmpStart+5 !!}">
-						<div class="boardNextContainer">
-							다음 >
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="bodyWrapper" style="background-color:#ffde00">
+	<div class="container">
+		<a name="morningPray"></a>
+		<div class="fullwidth" style="height:90px; background-color:#ffde00">
+		</div>
+		<div class="fullWidth" style="background-color:#ffde00;height:966px;">
+			<div class="container">
+				<div class="fullWidth">
+					<font size="10px" color="#bf1e2e" style="font-weight:bold">아침 예배</font>
+				</div>
+				<div class="middleContentContainer" style="margin-top:42px">
+					<div class="middleContent" style="background-color:white">
+						<div class="mainGallry">
+							<image class="mainGallryImage" src="images/image2.jpg">
+							<div class="mainGallryBody">
+								<div class="contentBlockDescription">	
+									BLAH
+								</div>
+							</div>
 						</div>
-					</a>
-				@endif
+					</div>
+					<div class="middleContentFiller">
+						&nbsp;
+					</div>
+					<div class="middleContent">
+				            <div class="event"  style="background-color:#bf1e2e">
+				            	<div class="sermonHeader" style="color:yellow">
+			    	            	blah blah
+			        	        </div>
+			        	        <hr class="Line">
+			        	        <div class="eventBody">
+			        	        	test
+			        	        	<br>
+			        	        	test
+			        	        </div>
+			        	        <hr class="transLine">
+			        	        <div class="eventBody">
+			        	        	test
+			        	        	<br>
+			        	        	test
+			        	        </div>
+			        	        <hr class="transLine">
+			        	        <div class="eventBody">
+			        	        	test
+			        	        	<br>
+			        	        	test
+			        	        </div>
+			            	</div>
+			            </div>
+					<div class="middleContentFiller">
+						&nbsp;
+					</div>
+					<div class="middleContent"  style="background-color:white">
+						<div class="mainGallry">
+							<image class="mainGallryImage" src="images/image2.jpg">
+							<div class="mainGallryBody">
+								<div class="contentBlockDescription">	
+									BLah
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middleContentContainer">
+					<div class="announceContentContainer">
+						<div class="announceContent">
+							찬양선교교회에서 여러분을 아침예배에 초대합니다!
+						</div>
+					</div>
+				</div>
+				<div class="middleContentContainer" style="margin-top:60px">
+					<div style="color:#bf1e2e; font-weight:bold; line-height:1.6em; font-size:36px;">
+						여러분을 초대합니다<br>
+						찬양선교교회는 열린 예배이며 USC 캠퍼스에서 하루를 시작하도록 돕습니다.
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<a name="morningPray"></a>
-<div class="fullwidth" style="height:90px; background-color:#ffde00">
-</div>
-<div class="fullWidth" style="background-color:#ffde00;height:966px;">
+<div class="bodyWrapper" style="background-color:white">
 	<div class="container">
-		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">아침 예배</font>
+		<a name="fridayPray"></a>
+		<div class="fullwidth" style="height:90px; background-color:white">
 		</div>
-		<div class="middleContentContainer" style="margin-top:42px">
-			<div class="middleContent" style="background-color:white">
-				<div class="mainGallry">
-					<image class="mainGallryImage" src="images/image2.jpg">
-					<div class="mainGallryBody">
-						<div class="contentBlockDescription">	
-							BLAH
+		<div class="fullWidth" style="background-color:white;height:966px;">
+			<div class="container">
+				<div class="fullWidth">
+					<font size="10px" color="#bf1e2e" style="font-weight:bold">금요 예배</font>
+				</div>
+				<div class="middleContentContainer" style="magin-top:42px">
+					<div class="middleContent">
+						<div class="circleImage">
+						</div>
+						<div class="circleImageDescriptionContainer">
+							<div class="circleImageDescriptionFirstLine">
+								일대일 기도
+							</div>
+							<div class="circleImageDescriptionSecondLine">
+								교우들과 기도제목을 나누는 기도모임
+							</div>
+						</div>
+					</div>
+					<div class="middleContentFiller">
+						&nbsp;
+					</div>
+					<div class="middleContent">
+						<div class="circleImage" style="background-image:url('/images/image2.jpg')">
+						</div>
+						<div class="circleImageDescriptionContainer">
+							<div class="circleImageDescriptionFirstLine">
+								성경공부
+							</div>
+							<div class="circleImageDescriptionSecondLine">
+								깊이있는 성경을 해석하는 시간
+							</div>
+						</div>
+					</div>
+					<div class="middleContentFiller">
+						&nbsp;
+					</div>
+					<div class="middleContent">
+						<div class="circleImage" style="background-image:url('/images/image3.jpg')">
+						</div>
+						<div class="circleImageDescriptionContainer">
+							<div class="circleImageDescriptionFirstLine">
+								일대일 기도
+							</div>
+							<div class="circleImageDescriptionSecondLine">
+								성경에 관한 질문을 통한 성장의 시간
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="middleContentFiller">
-				&nbsp;
-			</div>
-			<div class="middleContent">
-		            <div class="event"  style="background-color:#bf1e2e">
-		            	<div class="sermonHeader" style="color:yellow">
-	    	            	blah blah
-	        	        </div>
-	        	        <hr class="Line">
-	        	        <div class="eventBody">
-	        	        	test
-	        	        	<br>
-	        	        	test
-	        	        </div>
-	        	        <hr class="transLine">
-	        	        <div class="eventBody">
-	        	        	test
-	        	        	<br>
-	        	        	test
-	        	        </div>
-	        	        <hr class="transLine">
-	        	        <div class="eventBody">
-	        	        	test
-	        	        	<br>
-	        	        	test
-	        	        </div>
-	            	</div>
-	            </div>
-			<div class="middleContentFiller">
-				&nbsp;
-			</div>
-			<div class="middleContent"  style="background-color:white">
-				<div class="mainGallry">
-					<image class="mainGallryImage" src="images/image2.jpg">
-					<div class="mainGallryBody">
-						<div class="contentBlockDescription">	
-							BLah
+				<div class="middleContentContainer" style="margin-top:70px">
+					<div class="announceContentContainer">
+						<div class="announceContent">
+							금요일 저녁 6시 30분부터 교회 '쉼터'에서 드리는 예배
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="middleContentContainer">
-			<div class="announceContentContainer">
-				<div class="announceContent">
-					찬양선교교회에서 여러분을 아침예배에 초대합니다!
-				</div>
-			</div>
-		</div>
-		<div class="middleContentContainer" style="margin-top:60px">
-			<div style="color:#bf1e2e; font-weight:bold; line-height:1.6em; font-size:36px;">
-				여러분을 초대합니다<br>
-				찬양선교교회는 열린 예배이며 USC 캠퍼스에서 하루를 시작하도록 돕습니다.
-			</div>
-		</div>
-	</div>
-</div>
-<a name="fridayPray"></a>
-<div class="fullwidth" style="height:90px; background-color:white">
-</div>
-<div class="fullWidth" style="background-color:white;height:966px;">
-	<div class="container">
-		<div class="fullWidth">
-			<font size="10px" color="#bf1e2e" style="font-weight:bold">금요 예배</font>
-		</div>
-		<div class="middleContentContainer" style="magin-top:42px">
-			<div class="middleContent">
-				<div class="circleImage">
-				</div>
-				<div class="circleImageDescriptionContainer">
-					<div class="circleImageDescriptionFirstLine">
-						일대일 기도
-					</div>
-					<div class="circleImageDescriptionSecondLine">
-						교우들과 기도제목을 나누는 기도모임
-					</div>
-				</div>
-			</div>
-			<div class="middleContentFiller">
-				&nbsp;
-			</div>
-			<div class="middleContent">
-				<div class="circleImage" style="background-image:url('/images/image2.jpg')">
-				</div>
-				<div class="circleImageDescriptionContainer">
-					<div class="circleImageDescriptionFirstLine">
-						성경공부
-					</div>
-					<div class="circleImageDescriptionSecondLine">
-						깊이있는 성경을 해석하는 시간
-					</div>
-				</div>
-			</div>
-			<div class="middleContentFiller">
-				&nbsp;
-			</div>
-			<div class="middleContent">
-				<div class="circleImage" style="background-image:url('/images/image3.jpg')">
-				</div>
-				<div class="circleImageDescriptionContainer">
-					<div class="circleImageDescriptionFirstLine">
-						일대일 기도
-					</div>
-					<div class="circleImageDescriptionSecondLine">
-						성경에 관한 질문을 통한 성장의 시간
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="middleContentContainer" style="margin-top:70px">
-			<div class="announceContentContainer">
-				<div class="announceContent">
-					금요일 저녁 6시 30분부터 교회 '쉼터'에서 드리는 예배
 				</div>
 			</div>
 		</div>
@@ -242,7 +251,8 @@
 </div>
 @endsection
 @section('script')
-<script src="/scripts/myScript.js"></script>
+
+<script type="text/javascript" src="js/myScript.js"></script>
 <script>
 
 
@@ -345,7 +355,7 @@ $(document).on('click', "[id^=listPage]", function(){
 			},	 
 		})
 	});
-
+	
 
 </script>
 @endsection

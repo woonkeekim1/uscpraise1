@@ -12,13 +12,12 @@
 */
 Route::get('/about', 'AboutController@aboutUs');
 Route::get('/about/moreHistory', 'AboutController@moreHistory');
-Route::get('/', function () {
-	return view('index');
-});
+Route::get('/', 'LandController@index');
 Route::get('/gallery', 'GalleryController@index');
 Route::get('/gallery/moreContentPrayAndSermon', 'GalleryController@moreContentForPrayAndSermon');
 Route::get('/gallery/moreSmallContentPrayAndSermon', 'GalleryController@moreSmallContentForPrayAndSermon');
 Route::get('/gallery/moreContentRetreat', 'GalleryController@moreContentForRetreat');
+Route::get('/gallery/moreSmallContentRetreat', 'GalleryController@moreSmallContentForRetreat');
 Route::get('/gallery/ContentPrayAndSermon', 'GalleryController@ContentForPrayAndSermon');
 Route::get('/gallery/ContentRetreat', 'GalleryController@ContentForRetreat');
 Route::get('/sermon', 'SermonController@index');

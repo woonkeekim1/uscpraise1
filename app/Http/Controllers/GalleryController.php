@@ -116,20 +116,20 @@ class GalleryController extends Controller
     	->where('category', '=', 'Retreat')
     	->get();
     	
-    	$maxid = \App\Gallery::where('category', '=', 'PrayAndSermon')->max('id');
-    	$minid = \App\Gallery::where('category', '=', 'PrayAndSermon')->min('id');
+    	$maxid = \App\Gallery::where('category', '=', 'Retreat')->max('id');
+    	$minid = \App\Gallery::where('category', '=', 'Retreat')->min('id');
     	$i = 0;
     	$maxYN = 'N';
     	$minYN = 'N';
-    	
+    	 
     	for($i = 0; $i < $contents->count(); $i++)
     	{
-    	if($contents[$i]->id == $maxid)
-    		$maxYN = 'Y';
+    		if($contents[$i]->id == $maxid)
+    			$maxYN = 'Y';
     		if($contents[$i]->id == $minid)
-    		$minYN = 'Y';
+    			$minYN = 'Y';
     	}
-    
+    	 
     	$returnArray = array(
     			'contentInPage' => $contentInPage,
     			'totalContent' => $totalContent,
@@ -142,7 +142,7 @@ class GalleryController extends Controller
     			'minYN' => $minYN,
     			'maxYN' => $maxYN
     	);
-    
+    	 
     	return json_encode($returnArray);
     }
     
@@ -195,7 +195,7 @@ class GalleryController extends Controller
     {
     	$id = $request['id'];
     	$contentInPage = 8;
-    	$totalContent = \App\Gallery::where('category', '=', 'Reteat')->orderBy('gallery.created_at', 'desc');
+    	$totalContent = \App\Gallery::where('category', '=', 'Retreat')->orderBy('gallery.created_at', 'desc');
     	$offset = $totalContent->get()->count() % $contentInPage;
     	$index = $totalContent->where('id', '>', $id)->get()->count() / 8;
     	$index = floor($index) * 8;
@@ -212,11 +212,28 @@ class GalleryController extends Controller
 		$after = \App\Gallery::where('id', '<', $id)->where('category', '=', 'Retreat')->max('id');
 		$after = \App\Gallery::find($after);
 		$current = \App\Gallery::find($id);
+		
+		$maxid = \App\Gallery::where('category', '=', 'Retreat')->max('id');
+		$minid = \App\Gallery::where('category', '=', 'Retreat')->min('id');
+		$i = 0;
+		$maxYN = 'N';
+		$minYN = 'N';
+		 
+		for($i = 0; $i < $contents->count(); $i++)
+		{
+		if($contents[$i]->id == $maxid)
+			$maxYN = 'Y';
+			if($contents[$i]->id == $minid)
+			$minYN = 'Y';
+		}
 		$returnArray = array('before' => $before, 
 						     'after' => $after, 
 							 'current' => $current, 
 				  			 'contents' => $contents, 
-							 'count' => $count);
+							 'count' => $count,
+							 'minYN' => $minYN,
+							 'maxYN' => $maxYN				
+				);
 		return json_encode($returnArray);
     }
     
@@ -256,5 +273,42 @@ class GalleryController extends Controller
     			'minYN' => $minYN);
     	return json_encode($returnArray);
     	
+    }
+    public function moreSmallContentForRetreat(Request $request)
+    {
+    	$id = $request['id'];
+    	$contentInPage = 8;
+    	$totalContent = \App\Gallery::where('category', '=', 'Retreat')->orderBy('gallery.created_at', 'desc');
+    	$offset = $totalContent->get()->count() % $contentInPage;
+    	$index = $totalContent->where('id', '>', $id)->get()->count() / 8;
+    	$index = floor($index) * 8;
+    	$lowIndex = $index;
+    	$contents = \App\Gallery::join('users', 'users.id', '=', 'gallery.createdBy')
+    	->orderBy('gallery.created_at', 'desc')->take($contentInPage)
+    	->offset($lowIndex)->select('gallery.id', 'smallimage')
+    	->where('category', '=', 'Retreat')
+    	->get();
+    	$count = $contents->count();
+    	 
+    	$maxid = \App\Gallery::where('category', '=', 'PrayAndSermon')->max('id');
+    	$minid = \App\Gallery::where('category', '=', 'PrayAndSermon')->min('id');
+    	$i = 0;
+    	$maxYN = 'N';
+    	$minYN = 'N';
+    	 
+    	for($i = 0; $i < $count; $i++)
+    	{
+    	if($contents[$i]->id == $maxid)
+    		$maxYN = 'Y';
+    		if($contents[$i]->id == $minid)
+    		$minYN = 'Y';
+    	}
+    	$returnArray = array(
+    	'contents' => $contents,
+    	'count' => $count,
+    	'maxYN' => $maxYN,
+    	'minYN' => $minYN);
+    	return json_encode($returnArray);
+    			 
     }
 }

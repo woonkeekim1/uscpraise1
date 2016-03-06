@@ -20,6 +20,10 @@ class LandController extends Controller
         return view('index', compact('latestSermon'));
     }
 
+    public function privacyPolicy()
+    {
+    	return view('privacyPolicy');
+    }
     /**
      * Show the form for creating a new resource.
      *

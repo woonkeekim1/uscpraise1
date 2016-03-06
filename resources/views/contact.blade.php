@@ -46,8 +46,8 @@
 			background-size:cover;"></div>Location
 						</div>
 						<ul>
-							<li>예배 장소: USC Taper Hall 102호 (지도 A 참조)</li>
-							<li>교제 장소: The Well - 1207 w 37th PL, Los Angeles CA, 90020 (지도 B 참조)</li>
+							<li>예배 장소: USC Kilgore(지도 A 참조)</li>
+							<li>교제 장소: The Well - 2726 South Vermont Avenue Unit E, Los Angeles CA, 90020 (지도 B 참조)</li>
 						</ul>
 					</div>
 					<div class="sloganFiller">

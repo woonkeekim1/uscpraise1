@@ -23,4 +23,5 @@ Route::get('/gallery/ContentRetreat', 'GalleryController@ContentForRetreat');
 Route::get('/sermon', 'SermonController@index');
 Route::get('/sermon/updateSundaySermon', 'SermonController@updateSundaySermon');
 Route::get('/contactUs', 'AboutController@contactUs');
+Route::get('/privacyPolicy', 'LandController@privacyPolicy');
 //Route::get('/about', 'AboutController@aboutUs');

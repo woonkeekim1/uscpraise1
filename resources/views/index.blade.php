@@ -7,8 +7,10 @@
 				</div>
 			</div>
 			<div class="mainImageContent">
-				<div class="mainImageTitle">"GROW IN HIS GRACE"</div>
+				<div class="mainImageTitle">"Build Your Faith Right"</div>
+				<!-- 
 				<button class="mainImageTitleButton"> &rarr; Latest Sermon</button>
+				-->
 			</div>
 			<div class="mainImageNextButtonContainer">
 				<div class="mainImageNextButton">
@@ -51,7 +53,7 @@
 			<div class="middleContent">
 				<div class="helper">
 					<div class="helperHeader">
-						추가하실꺼 있으시면 알려주세요
+						목사님 작성하신 기사가 들어가는부분
 					</div>
 					<hr class="Line">
 					<div class="helperBody">
@@ -79,7 +81,7 @@
 						예배 장소
 					</div>
 					<div class="worshipMap">
-						<img src="images/image1.jpg" width="100%" height="100%">
+						<img src="images/worshipLocation.jpg" width="100%" height="100%" id="mapImage">
 					</div>
 				</div>
 			</div>
@@ -92,7 +94,7 @@
 						Where
 					</div>
 					<div class="worshipInfoBodyWhere">
-						Worship: THH 102<br>
+						Worship: Kilgore<br>
 						Fishbowl Chapel: University Religious Center<br>
 						(next to Student Health Center)
 					</div>
@@ -115,7 +117,7 @@
 					</div>
 					<div class="AnnouncementBody">
 						<div class="AnnouncementBodyPart">
-							예배장소는??<br>
+							주보로 체우기<br>
 							Kilgore에서!!
 						</div>
 						<div class="AnnouncementBodyPart">
@@ -156,25 +158,29 @@
 	            <div class="middleContent">
 		            <div class="event">
 		            	<div class="sermonHeader">
-	    	            	여기는
+	    	            	목회 이야기
 	        	        </div>
 	        	        <hr class="Line">
 	        	        <div class="eventBody">
-	        	        	무엇으로
+	        	        	March 01, 2016
 	        	        	<br>
-	        	        	채워질 것인가
+	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이 바이asdfadf<br>
+	        	        	March 01, 2016
+	        	        	<br>
+	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이<br>
+	        	        	March 01, 2016
+	        	        	<br>
+	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이 
 	        	        </div>
 	        	        <hr class="transLine">
 	        	        <div class="eventBody">
-	        	        	그게
+	        	        	마우스 오버시에는 밑줄 생기기
 	        	        	<br>
 	        	        	저도
 	        	        </div>
 	        	        <hr class="transLine">
 	        	        <div class="eventBody">
-	        	        	많이
-	        	        	<br>
-	        	        	궁금합니다
+
 	        	        </div>
 	        	        <div class="EventDotContainer">
 							<div class="EventDot">
@@ -214,6 +220,12 @@
 	$(document).on('click', '#AboutUs', function(){
 		window.location.href="{{ url('\about') }}";
 	});
+	$(document).on('click', '.worshipMap', function(){
+		var source = $('#mapImage').attr('src');
+		$('.popUpContent').html('<img style="margin:auto;width:100%; height:80%" src="images/worshipLocation_Large.jpg">');
+		$('.popUpContainer').css('display', 'block');
+	});
+
 </script>
 	
 @endsection

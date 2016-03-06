@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="shortcut icon" href="/images/favicon/ppc.png" / >
 @yield('cssExtend')
 <style>
 body, html{
@@ -34,7 +36,7 @@ body{
 			<ul>
 				<li style="width:113px"><a href={!! url('/about#churchVision') !!}>교회비전</a></li>
 				<li style="width:113px"><a href={!! url('/about#aboutPastor') !!}>교역자 소개</a></li>
-				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>교회현역</a></li>
+				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>교회연역</a></li>
 				<li style="width:113px"><a href={!! url('/about#leaders') !!}>섬기는 사람들</a></li>
 				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>공지사항</a></li>
 			</ul>
@@ -46,6 +48,7 @@ body{
 				<li><a href={!! url('/sermon#sundayPray') !!}>주일 예배</a></li>
 				<li><a href={!! url('/sermon#morningPray') !!}>아침 예배</a></li>
 				<li><a href={!! url('/sermon#fridayPray') !!}>금요 예배</a></li>
+				<li><a href="">목회 이야기</a></li>
 			</ul>
 		</li>
 		<li><a href={!! action('AboutController@contactUs') !!}>문의</a></li>
@@ -65,7 +68,7 @@ body{
 		<div class="tailInfo">
 			<img class="tailLogo" src="images/footer_logo.png">
 			<div class="tailContent">
-				2015 power of Praise church &emsp;&emsp; Term of Use &nbsp;|&nbsp;  Privacy Policy  &nbsp;|&nbsp;  Sponsorship
+				2015 power of Praise church &emsp;&emsp; &nbsp;  <a style="color:white; text-decoration:none;" href={!! url('/privacyPolicy') !!}>Privacy Policy</a>  &nbsp;|&nbsp;  <div id="sponsorPopup" style="display:inline; cursor:pointer">Sponsorship</div>
 			</div>
 		</div>
 		<div class="tailContact">
@@ -82,7 +85,20 @@ body{
 		</div>
 	</div>
 </div>
-
+<div class="popUpContainer">
+	<div class="popUpWrapper">
+		<div class="popUpcontentContainer">
+			<div class="closeButtonContainer">
+				<div class="closeButton">
+				</div>
+			</div>	
+			<div class="popUp">
+				<div class="popUpContent">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 
 
@@ -133,5 +149,15 @@ body{
                 {
                     $(this).parent().parent().addClass(".testcolor");
                 }
+
+                $(document).on('click', '#sponsorPopup', function(){
+                	$('.popUpContent').html('<img style="margin:auto;width:100%; height:80%" src="images/contact_popup.jpg">');
+                	$('.popUpContainer').css('display', 'block');
+                });
+            	$(document).on('click', '.closeButton', function(){
+            		$('.closeButton').parent().parent().parent().parent().css('display', 'none');
+            		$('.popUpContent').html('');
+            	});
+
 </script>
 </html>

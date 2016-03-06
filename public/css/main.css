@@ -128,7 +128,7 @@
 	margin-top:1%;
 	margin-right:auto;
 	margin-left:auto;
-	background: url('/images/image1.jpg') no-repeat center center; 
+	background: url('/images/main_img_01.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -230,7 +230,7 @@
 .mainImageTitle
 {
 	font-size:46px;
-	margin-top:20%;
+	margin-top:30%;
 	margin-left:20%;
 	margin-right:20%;
 }
@@ -393,16 +393,11 @@ hr.transLine
 	padding-right:20px;
 	font-size:16px;
 	font-weight:bold;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow:hidden;
 }
-.helperHeader:after
-{
-	content:"신청하기";
-	border:solid 2px;
-	border-color:white;
-	float:right;
-	font-size:14px;
-	padding:2px;
-}
+
 .helperHeader hr
 {
 	margin-right:2%;
@@ -416,6 +411,9 @@ hr.transLine
 	padding-right: 20px;
 	line-height:1.5em;
 	font-size:14px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow:hidden;
 }
 .helperBody1
 {
@@ -474,6 +472,9 @@ hr.transLine
 	margin-right:62px;
 	margin-bottom:18px;
 	height:212px;
+}
+.worshipMap:hover {
+	cursor: pointer;
 }
 .worshipHeaderWhere
 {
@@ -651,6 +652,15 @@ hr.transLine
 	margin-left:20px;
 	margin-right:20px;
 	margin-top:15px;
+	width: 329px;
+	height:33px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.eventBody:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .EventDotContainer
@@ -670,3 +680,68 @@ hr.transLine
 	margin-right:4px;
 	float:left;
 }
+.popUpContainer
+{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0, 0, 0, 0.5);
+	width:100%;
+	height:100%;
+	display:none;
+}
+.popUpWrapper{
+	width:80%;
+	height:100%;
+	display:flex;
+	margin:auto;
+	align-items: center;
+}
+.closeButtonContainer{
+	width:100%;
+	position:absolute;
+	margin:auto;
+	float:left;
+	height:42px;
+	top:-42px;
+	right:-42px;
+}
+.popUp{
+	width:800px;
+	height:550px;
+	margin:auto;
+}
+.popUpContent{
+	width:100%;
+	height:100%;
+	margin:auto;
+	float:left;
+}
+.closeButton
+{
+	background: url('/images/btn_close.png') no-repeat center center;
+	width:42px;
+	height:42px;
+	float:right;
+	cursor: pointer;
+}
+.popUpcontentContainer{
+	width:800px;
+	height:500px;
+	margin:auto;
+	position:relative;
+	display:flex;
+	vertical-align: middle;
+}
+
+.privacyContent{
+	padding:20px;
+	line-height:1.4em;
+}
+.privacySubTitle{
+	color:#bf1e2e;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px;
+}
+

@@ -220,7 +220,7 @@
 {
 	width:20px;
 	height:20px;
-	background: url('/images/image1.jpg') no-repeat center center;
+	background: url('/images/audioPlay.png') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -306,7 +306,7 @@
 .slogan ul li
 {
 	font-size:14px;
-	line-height:1.6em;
+	line-height:1.8em;
 	margin:0px;
 	margin-left:17px;
 }
@@ -333,7 +333,7 @@
 .pastorBody
 {
 	font-size:15px;
-	line-height:1.8em;
+	line-height:2.0em;
 	width:50%;
 	height:100%;
 	float:left;
@@ -341,12 +341,14 @@
 
 .pastorImage
 {
-	width:30%;
+	width:38%;
 	background:url('/images/img_pastor.png') no-repeat center center;
 	background-size:cover;
 	height:100%;
 	float:left;
-	position:relative;
+	position:absolute;
+	right:100px;
+	top:10px;
 }
 .churchHistoryList
 {

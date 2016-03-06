@@ -19,6 +19,7 @@
 			<li><a href="#sundayPray">주일 예배</a></li>
 			<li><a href="#morningPray">아침 예배</a></li>
 			<li><a href="#fridayPray">금요 예배</a></li>
+			<li><a href="#">목회 이야기</a></li>
 		</ul>
 	</div>
 </div>
@@ -260,13 +261,13 @@ $(document).on('click', '.sermonAudio', function(){
 	if(!$(this).children()[0].paused)
 	{
 		$(this).children()[0].pause();
-		$(this).css("background-image", "url(images/image1.jpg)");
+		$(this).css("background-image", "url(images/audioPlay.png)");
 	}
 	else
 	{
 		try{
 		$(this).children()[0].play();
-		$(this).css("background-image", "url(images/image2.jpg)");
+		$(this).css("background-image", "url(images/audioPause.png)");
 		}
 		catch(err)
 		{

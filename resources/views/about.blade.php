@@ -123,7 +123,7 @@
 		<a name="aboutPastor"></a>
 		<div class="fullwidth" style="height:90px; background-color:#ffde00">
 		</div>
-		<div class="fullWidth" style="background-color:#ffde00;height:966px;">
+		<div class="fullWidth" style="background-color:#ffde00;height:766px;">
 			<div class="container">
 				<div class="fullWidth">
 					<font class="font36" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
@@ -147,12 +147,12 @@
 						종교사업계획에도 협조하고 있다.
 							
 						</div>
-						<div class="pastorImage">
-						
-						</div>
 						<div class="pastorBodyFiller">
 						</div>
 					</div>
+					<div class="pastorImage">
+						
+						</div>
 				</div>
 			</div>
 		</div>

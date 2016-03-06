@@ -2,20 +2,24 @@
 @section('content')
 <div class="container">
 	<div class="mainImageContainer">
+			<!--
 			<div class="mainImagePrevButtonContainer">
 	        	<div class="mainImagePrevButton">
 				</div>
 			</div>
+			-->
 			<div class="mainImageContent">
 				<div class="mainImageTitle">"Build Your Faith Right"</div>
 				<!-- 
 				<button class="mainImageTitleButton"> &rarr; Latest Sermon</button>
 				-->
 			</div>
+			<!-- 
 			<div class="mainImageNextButtonContainer">
 				<div class="mainImageNextButton">
 	            </div>
 			</div>
+			-->
 		</div>
 		
 		<div class="middleContentContainer">

@@ -11,7 +11,7 @@
 @section('content')
 <div class="fullWidth" style="background-color:#444444">
 	<div class="container">
-		<div class="sermonImageContainer" style="background: url('images/image1.jpg') center center; background-size:cover">
+		<div class="sermonImageContainer" style="background-image: url('/images/main_img_04.jpg')">
 		</div>
 	</div>
 </div>

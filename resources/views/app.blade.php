@@ -41,7 +41,7 @@ body{
 				<li style="width:113px"><a href={!! url('/about#churchHistory') !!}>공지사항</a></li>
 			</ul>
 		</li>
-		<li style="width:70px"><a href={!! action('GalleryController@index') !!}>겔러리</a>
+		<li style="width:70px"><a href={!! action('GalleryController@index') !!}>갤러리</a>
 		</li>
 		<li style="width:51px"><a href={!! action('SermonController@index') !!}>설교<img src="images/btn_category_arrow_off.png" style="padding-left:11px;"></img></a>
 			<ul>

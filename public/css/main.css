@@ -49,7 +49,7 @@
 
 .nav li.logo
 {
-	width:280px;
+	width:247px;
 	float:left;
 	margin:0;
 	padding:0;
@@ -631,7 +631,7 @@ hr.transLine
 {
 	margin-top:26px;
 	height:61px;
-	width:280px;
+	width:247px;
 }
 .tailContent
 {
@@ -724,6 +724,7 @@ hr.transLine
 	height:42px;
 	float:right;
 	cursor: pointer;
+	z-index:10;
 }
 .popUpcontentContainer{
 	width:800px;
@@ -732,6 +733,7 @@ hr.transLine
 	position:relative;
 	display:flex;
 	vertical-align: middle;
+	margin-top:118px;
 }
 
 .privacyContent{

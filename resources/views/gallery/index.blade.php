@@ -337,7 +337,7 @@
 @section('content')
 <div class="fullWidth" style="background-color:#444444">
 	<div class="container">
-		<div class="sermonImageContainer">
+		<div class="sermonImageContainer" style="background-image: url('/images/main_img_03.jpg')">
 		</div>
 	</div>
 </div>

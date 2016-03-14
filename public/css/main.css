@@ -128,7 +128,7 @@
 	margin-top:1%;
 	margin-right:auto;
 	margin-left:auto;
-	background: url('/images/main_img_01.jpg') no-repeat center center; 
+	background: url('/images/main_landing.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -308,11 +308,11 @@
 {
 	font-size:14px;
 	line-height:1.5em;
-	height: 182px;
-	margin-top:22px;
-	margin-left:20px;
-	margin-right:20px;
-	margin-bottom:40px;
+	height: 180px;
+	padding-top:22px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:40px;
 	
 	overflow:hidden;
 	text-overflow: ellipsis;
@@ -320,6 +320,7 @@
 	-webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
     display: -webkit-box;
+    white-space: nowrap;
 }
 .contentHead
 {
@@ -498,15 +499,15 @@ hr.transLine
 {
 	font-size:14px;
 	color:black;
-	line-height:14px;
-	margin-top:48px;
+	margin-top:35px;
+	line-height:1.4em;
 }
 .worshipInfoBodyWhen
 {
 	font-size:14px;
 	color:black;
-	line-height:14px;
-	margin-top:38px;
+	line-height:1.4em;
+	margin-top:30px;
 }
 .worshipHeaderWhen
 {
@@ -559,7 +560,7 @@ hr.transLine
 	background-color:black;
 }
 
-.event
+.pastorStory
 {
 	background-color:#f25f5c;
 	height:100%;
@@ -747,3 +748,52 @@ hr.transLine
 	padding: 20px;
 }
 
+.eventBody > .date{
+
+}
+.eventBody > .title{
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display:block;
+	line-height:1.6em;
+}
+
+.EventDotContainer > .EventDot:hover{
+	background-color:black;
+	cursor:pointer;
+}
+
+
+.sermonBody > .sermonBodyContent{
+  	width: 100%;
+  	height:100%;
+  	display:block;
+  	white-space: normal !important;
+  	text-overflow: ellipsis;
+  	line-height: 1.6em;
+  	overflow:hidden;
+  	-webkit-line-clamp: 8;
+  	-webkit-box-orient: vertical;
+  	display:block;
+}
+
+.event
+{
+	background-color:#bf1e2e;
+	height:100%;
+	float:left;
+	display:block;
+	color:white;
+	width:100%;
+}
+.event > .sermonHeader{
+	color: yellow;
+}
+.event > .eventBody{
+	color:black;
+}
+.event > .eventBody:hover{
+	text-decoration: none;
+	cursor: default;
+}

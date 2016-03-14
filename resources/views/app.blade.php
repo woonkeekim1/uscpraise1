@@ -68,7 +68,7 @@ body{
 		<div class="tailInfo">
 			<img class="tailLogo" src="images/footer_logo.png">
 			<div class="tailContent">
-				2015 power of Praise church &emsp;&emsp; &nbsp;  <a style="color:white; text-decoration:none;" href={!! url('/privacyPolicy') !!}>Privacy Policy</a>  &nbsp;|&nbsp;  <div id="sponsorPopup" style="display:inline; cursor:pointer">Sponsorship</div>
+				ⓒ 2016 Power of Praise Church &emsp;&emsp; &nbsp;  <a style="color:white; text-decoration:none;" href={!! url('/privacyPolicy') !!}>Privacy Policy</a>  &nbsp;|&nbsp;  <div id="sponsorPopup" style="display:inline; cursor:pointer">Sponsorship</div>
 			</div>
 		</div>
 		<div class="tailContact">

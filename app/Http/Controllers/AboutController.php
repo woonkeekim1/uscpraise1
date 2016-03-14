@@ -13,29 +13,38 @@ class AboutController extends Controller
     {
     	$cutYear = 8;
     	$beginYear = '2004';
-    	$contents = \App\History::where('year', '<=', $beginYear + $cutYear)->get();//->orderBy('year')->get();
     	$maxYear = \App\History::max('year');
-    	$diff = (int)$maxYear - (int)$beginYear;
-    	$pages = $diff / 8;
-    	$count = $contents->count();
-    	return view('about', compact('contents', 'pages', 'count'));
+
+        $years = \App\History::select('year')->where('year', '<=', $beginYear + $cutYear)->orderBy('year')->distinct()->get();
+        $pages = $years->count() / 8;
+        $histories = [];
+        $histories['result'] = [];
+        for($i = 0; $i < $years->count(); $i++)
+        {
+            $histories['result'][$i] = $years[$i];
+            $yearActivities = \App\History::select('description')->where('year', '=', $years[$i]->year)->get();
+            $histories['result'][$i]['descriptions'] = $yearActivities;
+        }
+        return view('about', compact('pages', 'histories'));
     }
     public function moreHistory(Request $request)
     {
     	$page = $request->id;
-    	$cutYear = 8;
-    	$beginYear = '2004';
-    	$contents = \App\History::where('year', '>=', $beginYear + $cutYear*$page)->where('year', '<', $beginYear + $cutYear*($page+1))->get();
-    	$maxYear = \App\History::max('year');
-    	$diff = (int)$maxYear - (int)$beginYear;
-    	$pages = $diff / 8;
-    	$count = $contents->count();
-    	$returnArray = array(
-    			'contents' => $contents,
-    			'pages' => $pages,
-    			'count' => $count,
-    	);
-    	return json_encode($returnArray);
+
+        $cutYear = 8;
+        $beginYear = '2004';
+        $maxYear = \App\History::max('year');
+
+        $years = \App\History::select('year')->where('year', '>=', $beginYear + $cutYear*$page)->orderBy('year')->where('year', '<', $beginYear + $cutYear*($page+1))->distinct()->get();
+        $histories = [];
+        $histories['result'] = [];
+        for($i = 0; $i < $years->count(); $i++)
+        {
+            $histories['result'][$i] = $years[$i];
+            $yearActivities = \App\History::select('description')->where('year', '=', $years[$i]->year)->get();
+            $histories['result'][$i]['descriptions'] = $yearActivities;
+        }
+    	return json_encode($histories);
     	
     }
     public function contactUs()

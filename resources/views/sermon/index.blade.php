@@ -131,7 +131,7 @@
 					</div>
 					<div class="middleContent">
 				            <div class="event"  style="background-color:#bf1e2e">
-				            	<div class="sermonHeader" style="color:yellow">
+				            	<div class="sermonHeader">
 			    	            	blah blah
 			        	        </div>
 			        	        <hr class="Line">

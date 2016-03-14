@@ -24,4 +24,5 @@ Route::get('/sermon', 'SermonController@index');
 Route::get('/sermon/updateSundaySermon', 'SermonController@updateSundaySermon');
 Route::get('/contactUs', 'AboutController@contactUs');
 Route::get('/privacyPolicy', 'LandController@privacyPolicy');
+Route::get('/landing', 'LandController@fetchInfo');
 //Route::get('/about', 'AboutController@aboutUs');

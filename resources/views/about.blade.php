@@ -123,12 +123,12 @@
 		<a name="aboutPastor"></a>
 		<div class="fullwidth" style="height:90px; background-color:#ffde00">
 		</div>
-		<div class="fullWidth" style="background-color:#ffde00;height:766px;">
+		<div class="fullWidth" style="background-color:#ffde00;height:600px;">
 			<div class="container">
 				<div class="fullWidth">
 					<font class="font36" color="#bf1e2e" style="font-weight:bold">목회자 소개</font>
 				</div>
-				<div class="fullWidth" style="height:700px">
+				<div class="fullWidth" style="height:600px;">
 					<div class="pastorContentBody">
 						<div class="pastorBodyFiller">
 						</div>
@@ -147,12 +147,11 @@
 						종교사업계획에도 협조하고 있다.
 							
 						</div>
-						<div class="pastorBodyFiller">
-						</div>
-					</div>
-					<div class="pastorImage">
+						<div class="pastorImage">
 						
 						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -169,50 +168,33 @@
 					<font class="font36" color="#bf1e2e" style="font-weight:bold">교회연혁</font>
 				</div>
 				<div class="churchHistoryList" id="HistoryList">
-					<?php $curYear = ''; $i = 0;?>
-					@while($i < $count)
-					<div class="fullWidth">
-						@if($curYear != $contents[$i]->year)
-							<?php  $curYear = $contents[$i]->year; ?>
+					@foreach($histories as $history)
+						@foreach($history as $eachHistory)
+						<div class="fullWidth">
 							<div class="year">
-								{{ $contents[$i]->year }}
+								{!! $eachHistory->year !!}
 							</div>
 							<div class ="yearDescription">
 								<ul class="yearDescriptionList">
-									@while($i < $count && $contents[$i]->year == $curYear)
-										<li>{{ $contents[$i]->description}}</li>
-										<?php $i++;?>
-									@endwhile
+									@foreach($eachHistory->descriptions as $description)
+										<li> {!! $description->description !!}</li>
+									@endforeach
 								</ul>
 							</div>
 							<div style="clear:both">
 								<hr>
 							</div>
-						@endif
-						<?php  $i++;?>
-					</div>
-					@endwhile
+						</div>
+						@endforeach
+					@endforeach
 				</div>
-				@if($pages > 1)
-				
-					@if($pages == 2)
-						<div style="width:40px; margin-top:10px; margin-bottom:20px; margin-left:auto; margin-right:auto;">
-							<div class="AnnouncementDot" id="History0">
-							</div>
-							<div class="AnnouncementDot" id="History1">
-							</div>
+				<div style="width:40px; margin-top:10px; margin-bottom:50px; margin-left:auto; margin-right:auto;">
+					@for($i = 0; $i < $pages; $i++)
+						<div class="AnnouncementDot" id="History{!!$i!!}">
 						</div>
-					@elseif($page == 3)
-						<div style="width:60px; margin-top:10px; margin-bottom:20px; margin-left:auto; margin-right:auto;">
-							<div class="AnnouncementDot" id="History0">
-							</div>
-							<div class="AnnouncementDot" id="History1">
-							</div>
-							<div class="AnnouncementDot" id="History2">
-							</div>
-						</div>
-					@endif
-				@endif
+
+					@endfor
+				</div>
 			</div>
 		</div>
 	</div>
@@ -328,29 +310,27 @@ $(document).on('click',  "[id^=History]", function(){
 			$curYear = '';
 			$i = 0;
 			$html = "";
-			while($i < data.count)
+			data = data.result;
+			while($i < data.length)
 			{
-				$html = '<div class="fullWidth">';
-				if($curYear != data.contents[$i].year)
-				{
-					$curYear = data.contents[$i].year;
-					$html += '<div class="year">';
-					$html += $curYear;
-					$html += '</div>';
-					$html += '<div class="yearDescription">';
-					$html += '<ul class="yearDescriptionList">';
-					while($i < data.count && data.contents[$i].year == $curYear)
-					{
-						$html += '<li>' + data.contents[$i].description + '</li>';
-						$i++;
-					}
-					$html += '</ul>';
-					$html += '</div>';
-					$html += '<div style="clear:both">';
-					$html += '<hr>';
-					$html += '</div>';
-				}
+				$html += '<div class="fullWidth">';
+				$html += '<div class="year">';
+				$html += data[$i].year;
 				$html += '</div>';
+				console.log(data[$i].descriptions.length);
+				$html += '<div class="yearDescription">';
+				$html += '<ul class="yearDescriptionList">';
+				for($j = 0; $j < data[$i].descriptions.length; $j++)
+				{
+					$html += '<li>' + data[$i].descriptions[$j].description + '</li>';
+				}
+				$html += '</ul>';
+				$html += '</div>';
+				$html += '<div style="clear:both">';
+				$html += '<hr>';
+				$html += '</div>';
+				$html += '</div>';
+				$i++;
 			}
 			$("#HistoryList").html($html);
 		}

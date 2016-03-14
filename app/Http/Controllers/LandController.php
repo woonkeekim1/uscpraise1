@@ -17,12 +17,31 @@ class LandController extends Controller
     {
         //
         $latestSermon = \App\SundaySermon::orderBy('sermonDate', 'desc')->take(1)->get();
-        return view('index', compact('latestSermon'));
+        $pastorStories = \App\PastorStory::orderBy('created_at', 'desc')->take(3)->get();
+        $pastorStoryCount = \App\PastorStory::orderBy('created_at', 'desc')->count() / 3;
+        if($pastorStoryCount > 3)
+            $pastorStoryCount = 3;
+        return view('index', compact('latestSermon', 'pastorStories', 'pastorStoryCount'));
     }
 
     public function privacyPolicy()
     {
     	return view('privacyPolicy');
+    }
+
+    public function fetchInfo(Request $request){
+        $type = $request['type'];
+        $count = $request['count'];
+        $result;
+        if($type == 'pastorStory'){
+            if($count > 3)
+                $count = 2;
+            $result = \App\PastorStory::orderBy('created_at', 'desc')->skip(3 * $count)->take(3)->get();
+            $result = array(
+                    'pastorStories' =>  $result
+                );
+        }
+        return json_encode($result);
     }
     /**
      * Show the form for creating a new resource.

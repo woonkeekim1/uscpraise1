@@ -20,7 +20,7 @@
 }
 .sermonNav li.sermonNavLogo
 {
-	width:280px;
+	width:247px;
 	float:left;
 	margin:0;
 	padding:0;
@@ -341,7 +341,7 @@
 
 .pastorImage
 {
-	width:38%;
+	width:400px;
 	background:url('/images/img_pastor.png') no-repeat center center;
 	background-size:cover;
 	height:100%;
@@ -376,7 +376,7 @@
 }
 .year
 {
-	color:red;
+	color:#bf1e2e;
 	text-align:center;
 	padding-top:20px;
 	padding-right:36px;

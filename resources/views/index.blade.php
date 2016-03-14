@@ -9,7 +9,9 @@
 			</div>
 			-->
 			<div class="mainImageContent">
+				<!--
 				<div class="mainImageTitle">"Build Your Faith Right"</div>
+				-->
 				<!-- 
 				<button class="mainImageTitleButton"> &rarr; Latest Sermon</button>
 				-->
@@ -30,11 +32,9 @@
 					</div>
 					<hr class="Line">
 					<div class="sermonBody">
-						<div class="sermonBodyHead">목사님 설교말씀 자리 테스트 중입니다</div>
-						1. 이부분은 매주 목사님 설교말씀이 들어갈자리에요</br>
-						2. 이것도 테스트중이에요</br>
-						3. 이것도 테스트</br>
-						4. 요놈도 테스트</br>
+						<div class="sermonBodyContent">
+							{!! $latestSermon[0]->content !!}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -148,7 +148,7 @@
 	    <div class="middleContentContainer">
 				<div class="middleContent">
 					<div class="mainGallry">
-						<image class="mainGallryImage" src="images/image3.jpg">
+						<image class="mainGallryImage" src="images/_img_worship.jpg">
 						<div class="mainGallryBody">
 							<div class="mainGallaryDescription" id="AboutUs">	
 								About Us
@@ -160,39 +160,29 @@
 				&nbsp;
 				</div>
 	            <div class="middleContent">
-		            <div class="event">
+		            <div class="pastorStory">
 		            	<div class="sermonHeader">
 	    	            	목회 이야기
 	        	        </div>
 	        	        <hr class="Line">
-	        	        <div class="eventBody">
-	        	        	March 01, 2016
-	        	        	<br>
-	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이 바이asdfadf<br>
-	        	        	March 01, 2016
-	        	        	<br>
-	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이<br>
-	        	        	March 01, 2016
-	        	        	<br>
-	        	        	내 고유함을 가지다(제목만) 안녕하세요 바이 바이 바이 바이 
-	        	        </div>
-	        	        <hr class="transLine">
-	        	        <div class="eventBody">
-	        	        	마우스 오버시에는 밑줄 생기기
-	        	        	<br>
-	        	        	저도
-	        	        </div>
-	        	        <hr class="transLine">
-	        	        <div class="eventBody">
-
-	        	        </div>
+	        	        <div id="pastorStoryContainer">
+		        	        @foreach ($pastorStories as $pastorStory)
+		        	        	<div class="eventBody">
+		        	        		<div class="date">
+		        	        			{!! $pastorStory->created_at->year !!}.{!! str_pad($pastorStory->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($pastorStory->created_at->day, 2, 0, STR_PAD_LEFT)!!}
+		        	        		</div>
+		        	        		<div class="title">
+		        	        			{!! $pastorStory->title !!}
+		        	        		</div>
+		        	        	</div>
+		        	        	 <hr class="transLine">
+		        	        @endforeach
+		        	    </div>
 	        	        <div class="EventDotContainer">
-							<div class="EventDot">
-							</div>
-							<div class="EventDot">
-							</div>
-							<div class="EventDot" style="margin-right:41px">
-							</div>
+	        	        	@for($i = 0; $i < $pastorStoryCount; $i++)
+	        	        		<div class="EventDot" id="pastorStory{!! $i !!}">
+								</div>
+	        	        	@endfor
 						</div>
 	            	</div>
 	            </div>
@@ -202,7 +192,7 @@
 				</div>
 				<div class="middleContent">
 					<div class="mainGallry">
-						<image class="mainGallryImage" src="images/image4.jpg">
+						<image class="mainGallryImage" src="images/_img_mission.jpg">
 						<div class="mainGallryBody">
 							<div class="mainGallaryDescription" id="gallery">	
 								Gallery
@@ -228,6 +218,36 @@
 		var source = $('#mapImage').attr('src');
 		$('.popUpContent').html('<img style="margin:auto;width:100%; height:80%" src="images/worshipLocation_Large.jpg">');
 		$('.popUpContainer').css('display', 'block');
+	});
+	$(document).on('click', '[id^=pastorStory]', function(e){
+		$id = e.currentTarget.id.substring(11);
+		$.ajax({
+			url: '/landing/',
+			data: {type : 'pastorStory', count: $id},
+			type: "GET",
+			cache: true,
+			jsonp:false,
+			dataType: 'json',
+			success: function(data) {
+				var i = 0;
+				var pastorStories = data.pastorStories;
+				var html = "";
+				for(i = 0; i < pastorStories.length; i++)
+				{
+					html += '<div class="eventBody">';
+					html += '<div class="date">';
+		        	html += pastorStories[i].created_at.substring(0,4) + "." + pastorStories[i].created_at.substring(5,7) + "." + pastorStories[i].created_at.substring(8,10);
+		        	html += '</div>'
+		        	html += '<div class="title">';
+					html += pastorStories[i].title;
+		        	html += '</div>';
+		        	html += '</div>';
+		        	html += '<hr class="transLine">';
+				}
+				$('#pastorStoryContainer').html(html);
+			}
+		});
+
 	});
 
 </script>

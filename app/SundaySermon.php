@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class SundaySermon extends Model
 {
@@ -13,5 +14,11 @@ class SundaySermon extends Model
     public function author()
     {
     	return $this->belongsTo('\App\User', 'createdBy');
+    }
+
+    //setNameAttribute
+    public function setSermonDateAttribute($date)
+    {
+    	$this->attributes['sermonDate'] = Carbon::createFromFormat('Y-m-d', $date);
     }
 }

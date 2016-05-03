@@ -16,6 +16,7 @@
 	margin-right:auto;
 	position:relative;
 	font-size:16px;
+	float:left;
 }
 .nav
 {
@@ -49,7 +50,7 @@
 
 .nav li.logo
 {
-	width:247px;
+	width:348px;
 	float:left;
 	margin:0;
 	padding:0;
@@ -111,6 +112,20 @@
 .nav li ul li a:hover
 {
 	color:#ffde00;
+	text-decoration: none;
+}
+
+.nav li ul li a::after
+{
+	display:block;
+    content:attr(title);
+    font-weight:bold;
+    height:1px;
+    color:transparent;
+    overflow:hidden;
+    visibility:hidden;
+    margin-bottom:-1px;
+
 }
 
 .container
@@ -123,16 +138,16 @@
 .mainImageContainer
 {
 	width:1170px;
-	height:632px;
+	height:500px;
 	position:relative;
 	margin-top:1%;
 	margin-right:auto;
 	margin-left:auto;
-	background: url('/images/main_landing.jpg') no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: url('/images/main_landing1.jpg') no-repeat center center; 
+ 	 -webkit-background-size: cover;
+ 	 -moz-background-size: cover;
+ 	 -o-background-size: cover;
+ 	 background-size: cover;
 	position:relative;
 	border: 1px #c9c9c9 solid;
 
@@ -144,7 +159,7 @@
 	float:left;
 	position:absolute;
 	z-index:50;
-	margin-top:278px;
+	margin-top:200px;
 }
 .mainImagePrevButton
 {
@@ -204,7 +219,7 @@
 	right:0;
 	position:absolute;
 	z-index:50;
-	margin-top:278px;
+	margin-top:200px;
 }
 .mainImageNextButton
 {
@@ -263,6 +278,7 @@
 	height:300px;
 	float:left;
 	display:block;
+	position:relative;
 }
 
 .middleContentFiller
@@ -299,6 +315,11 @@
 .sermonTitle
 {
 	float:left;
+	width:220px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+
 }
 .sermonDate
 {
@@ -315,12 +336,9 @@
 	padding-bottom:40px;
 	
 	overflow:hidden;
-	text-overflow: ellipsis;
 	display:block;
-	-webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
     white-space: nowrap;
+    word-wrap:break-word;
 }
 .contentHead
 {
@@ -538,7 +556,14 @@ hr.transLine
 	margin-top:11px;
 	margin-bottom:11px;
 	font-size:14px;
+	overflow: hidden;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	height:50px;
+	position:relative;
 }
+
 .AnnouncementDotContainer
 {
 	margin-right:4%;
@@ -558,6 +583,7 @@ hr.transLine
 .AnnouncementDot:hover
 {
 	background-color:black;
+	cursor:pointer;
 }
 
 .pastorStory
@@ -577,10 +603,13 @@ hr.transLine
 .tail
 {
 	width:100%;
-	height:155px;
 	float:left;
 	color:white;
 	background-color:#2d2819;
+	position:relative;
+	bottom:0;
+	left:0;
+	right:0;
 }
 .tailContainer
 {
@@ -595,11 +624,13 @@ hr.transLine
 {
 	width:872px;
 	float:left;
+	background-color:#2d2819;
 	height:100%;
 }
 .tailContact
 {
 	width:298px;
+	background-color:#2d2819;
 	float:left;
 	height:100%;
 }
@@ -653,8 +684,9 @@ hr.transLine
 	margin-left:20px;
 	margin-right:20px;
 	margin-top:15px;
+	margin-bottom:15px;
 	width: 329px;
-	height:33px;
+	line-height: 1.4em;
 	overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -690,6 +722,7 @@ hr.transLine
 	width:100%;
 	height:100%;
 	display:none;
+	z-index:100;
 }
 .popUpWrapper{
 	width:80%;
@@ -717,6 +750,7 @@ hr.transLine
 	height:100%;
 	margin:auto;
 	float:left;
+	z-index:100;
 }
 .closeButton
 {
@@ -734,7 +768,6 @@ hr.transLine
 	position:relative;
 	display:flex;
 	vertical-align: middle;
-	margin-top:118px;
 }
 
 .privacyContent{
@@ -748,15 +781,21 @@ hr.transLine
 	padding: 20px;
 }
 
-.eventBody > .date{
-
-}
-.eventBody > .title{
+.eventBody > a > .date,
+.eventBody > a > .title{
 	overflow:hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	display:block;
-	line-height:1.6em;
+	color: white;
+	text-decoration: none;
+}
+
+.eventBody > a:hover{
+	color:white;
+}
+.eventBody > a{
+	text-decoration: none;
 }
 
 .EventDotContainer > .EventDot:hover{
@@ -796,4 +835,22 @@ hr.transLine
 .event > .eventBody:hover{
 	text-decoration: none;
 	cursor: default;
+}
+
+.AnnouncementBodyPart > .edit{
+	position:absolute; 
+	cursor:pointer;
+	top:0; 
+	right:30px; 
+}
+
+.AnnouncementBodyPart> .closeContainer{
+	position:absolute;
+	cursor:pointer;
+	top:0; 
+	right:10px; 
+	color:gray; 
+	font-weight:bold; 
+	cursor:pointer;
+	font-size:25px;
 }

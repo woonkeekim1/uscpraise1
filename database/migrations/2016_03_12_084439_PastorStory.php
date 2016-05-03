@@ -18,6 +18,7 @@ class PastorStory extends Migration
             $table->string('title');
             $table->string('content');
             $table->Integer('createdBy')->length(10)->unsigned();
+            $table->Integer('hits');
             $table->timestamps();
             $table->foreign('createdBy')->references('id')->on('users');
         });

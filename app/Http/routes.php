@@ -41,6 +41,9 @@ Route::get('/sermon/sundaySermon', 'SermonController@addSundaySermon');
 Route::post('/sermon/sundaySermon', 'SermonController@addActionSundaySermon');
 Route::get('/sermon/pastorStory', 'SermonController@addPastorStory');
 Route::post('/sermon/pastorStory', 'SermonController@addActionPastorStory');
+Route::get('/sermon/dailyWord', 'SermonController@getDailySermon');
+Route::get('/sermon/dailySermon', 'SermonController@renderDailySermon');
+Route::post('/sermon/dailySermon', 'SermonController@addDailySermon');
 Route::get('/contactUs', 'AboutController@contactUs');
 Route::get('/privacyPolicy', 'LandController@privacyPolicy');
 Route::get('/landing', 'LandController@fetchInfo');
@@ -73,5 +76,8 @@ Route::post('/about/addLeader', 'AboutController@addActionLeader');
 Route::get('/about/editLeader/{id}', 'AboutController@editLeader');
 Route::patch('/about/editLeader/{id}', 'AboutController@editActionLeader');
 Route::get('/about/deleteLeader', 'AboutController@deleteLeader');
+Route::get('/help', 'AboutController@renderHelp');
+Route::post('/help', 'AboutController@addHelp');
+Route::get('/helplist', 'AboutController@renderHelpList');
 
 //Route::get('/about', 'AboutController@aboutUs');

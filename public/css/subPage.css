@@ -466,3 +466,84 @@
 .yearDescription> ul.yearDescriptionList > li {
 	position:relative;
 }
+
+.more{
+	color: #ffde00;
+	display:inline-block;
+	float: right;
+}
+.more:hover{
+	cursor: pointer;
+}
+
+.popUpDailySermonContainer
+{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0, 0, 0, 0.5);
+	width:100%;
+	height:100%;
+	display: none;
+	z-index:100;
+	font-size:14px;
+
+}
+.popUpDailySermonContainer > .popUpDailySermonWrapper{
+	width:80%;
+	height:100%;
+	display:flex;
+	margin:auto;
+	align-items: center;
+}
+.popUpDailySermonContainer > .popUpDailySermonWrapper >.popUpDailySermoncontentContainer{
+	width:800px;
+	height:500px;
+	margin:auto;
+	position:relative;
+	display:flex;
+	vertical-align: middle;
+}
+
+.popUpDailySermoncontentContainer >.popUpDailySermon{
+	width:800px;
+	height:550px;
+	margin:auto;
+}
+.popUpDailySermon > .popUpDailySermonContent{
+	width:100%;
+	height:100%;
+	margin:auto;
+	float:left;
+	z-index:100;
+}
+
+.popUpDailySermonContent > .header{
+	width: 100%;
+	background-color: #ac2222;
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.popUpDailySermonContent > .content {
+	width:100%;
+	height: 80%;
+	background-color: white;
+	padding: 46px 30px 30px 40px;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+.popUpDailySermonContent > .content > .bibleVerse {
+	padding: 35px 0px 32px 0px;
+}
+.popUpDailySermonContent > .content > .title {
+	font-size: 1.2em;
+	padding-bottom: 10px;
+}
+.popUpDailySermonContent > .content > .body {
+	line-height: 1.4em;
+}
+.popUpDailySermonContent > .content > .date{
+
+}

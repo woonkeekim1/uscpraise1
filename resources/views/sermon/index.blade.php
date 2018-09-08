@@ -42,7 +42,7 @@
 						<th style="width:280px">설교 일자</th>
 						<th style="width:136px">설교자</th>
 						<th style="width:384px">설교제목</th>
-						<th style="width:184px">본문</th>
+						<th style="width:184px">성경구절</th>
 						<th style="width:90px">듣기</th>
 						<th> 다운로드 </th>
 						@if (Auth::check() && (Auth::user()->level == 5 || Auth::user()->level == 0))
@@ -144,7 +144,7 @@
 		<div class="fullWidth" style="background-color:#ffde00;height:966px;">
 			<div class="container">
 				<div class="fullWidth">
-					<font size="10px" color="#bf1e2e" style="font-weight:bold">아침 예배</font>
+					<font size="10px" color="#bf1e2e" style="font-weight:bold">아침 기도</font>
 				</div>
 				<div class="middleContentContainer" style="margin-top:42px">
 					<div class="middleContent" style="background-color:white">
@@ -174,8 +174,13 @@
 			        	        <hr class="transLine">
 			        	        <div class="eventBody"  style="color:white; font-weight:bold;">
 			        	        	오늘의 설교 말씀
+			        	        	<div class="more">
+										more >
+									</div>
 			        	        	<br>
-			        	        	하나님으로부터 위대한 것을 기대하라!
+			        	        	@if ($dailySermon && sizeof($dailySermon) > 0)
+			        	        		{{$dailySermon[0]->title}}
+			        	        	@endif
 			        	        </div>
 			        	        <hr class="transLine">
 			        	        <div class="eventBody"  style="color:white; font-weight:bold;">
@@ -385,6 +390,34 @@
 		</div>
 	</div>	
 </div>
+<div class="popUpDailySermonContainer" id="dailySermonPopup">
+	<div class="popUpDailySermonWrapper">
+		<div class="popUpDailySermoncontentContainer">
+			<div class="closeButtonContainer">
+				<div class="closeButton">
+				</div>
+			</div>	
+			<div class="popUpDailySermon">
+				<div class="popUpDailySermonContent">
+					<div class="header">
+						아침 설교
+					</div>
+					<div class="content">
+						<div class="date">
+						</div>
+						<div class="bibleVerse">
+						</div>
+						<div class="title">
+						</div>
+						<div class="body">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 @endsection
 @section('script')
 
@@ -684,6 +717,30 @@ $(document).on('click', "[id^=pastorStoryPage]", function(){
 		var row = e.currentTarget.closest('tr');
 		var storyId = row.dataset.id;
 		window.location.href = '/sermon/editPastorStory/' + storyId;
+	});
+
+	$(document).on('click', '.more', function (e, data) {
+		e.stopPropagation();
+		$.ajax({
+			type: 'GET',
+			url: '/sermon/dailyWord',
+			cache: true,
+			jsonp: false,
+			dataType: 'json',
+			success: function(data) {
+				var content = $('#dailySermonPopup').find('.popUpDailySermonContent');
+				if(data) {
+					var date = new Date(data[0].created_at);
+					content.find('.date')[0].innerHTML = date.getFullYear() + "년 " + eval(date.getMonth()+1) + "월 " + date.getDate() + "일";
+					content.find('.bibleVerse')[0].innerHTML = data[0].bibleverse;
+					content.find('.title')[0].innerHTML = data[0].title;
+					content.find('.body')[0].innerHTML = data[0].body.replace(/(\r\n|\n|\r)/gm, "<br>");;
+				}
+				
+			}
+		});	
+        $('.popUpDailySermonContainer').css('display', 'block');
+        console.log("Complete");
 	});
 </script>
 @endsection

@@ -17,7 +17,7 @@
 			<div class="worshipHeader">Add Pastor Story</div>
 			@include('errors.list')
 			{!! Form::open() !!}
-				@include('sermon.pastorStoryForm', ['submitButtonText' => 'Add'])
+				@include('sermon.pastorStoryForm', ['submitButtonText' => 'Add', 'pastorStory' => null])
 			{!! Form::close() !!}
 		</div>
 	</div>

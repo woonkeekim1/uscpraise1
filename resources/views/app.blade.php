@@ -52,7 +52,7 @@ body{
 			</ul>
 		</li>
 		<li><a href={!! action('AboutController@contactUs') !!}   style="padding:0px">문의</a></li>
-		<li class="facebook"><a href="https://www.facebook.com/USC-Power-of-Praise-Church-969479439781757/"   style="padding:0px"><img src="/images/facebook_logo.png"></a></li>
+		<li class="facebook"><a href="https://www.facebook.com/USC-Power-of-Praise-Church-969479439781757/"  target="_blank" style="padding:0px"><img src="/images/facebook_logo.png"></a></li>
 	</ul>
 </div>
 	@yield('content')
@@ -109,7 +109,6 @@ body{
                 //mainImageList[3] = "image4.jpg";
                 var curImag = 0;
                 
-                var myVal = setInterval(function(){changeMainImage()}, 3000);
                 $(".mainImageNextButton").click(function(){
                     curImag = (curImag+1) % mainImageList.length;
                     $('.mainImageContainer').css('background-image',"url(" +mainImageList[curImag] + ")");
@@ -124,7 +123,8 @@ body{
                                
                 });
                 
-
+                /*
+                var myVal = setInterval(function(){changeMainImage()}, 3000);
                 function changeMainImage()
                 {
                                 $("#ImgCircle" + curImag).removeClass("ImgCircleSelected");
@@ -133,6 +133,7 @@ body{
                                 $(".ImageBody").css("background-image", "url(" +mainImageList[curImag] + ")");
 								
                 }
+                */
                 
                 function hoverNav()
                 {

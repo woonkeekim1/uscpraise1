@@ -3,7 +3,7 @@
 	{!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-	<label for="sermon-content">설교 본문</label>
+	<label for="sermon-content">설교 개요</label>
     {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">

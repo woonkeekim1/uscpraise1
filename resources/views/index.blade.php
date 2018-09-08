@@ -32,7 +32,7 @@
 				<div class="sermon">
 					@if ($latestSermon[0] != null)
 					<div class="sermonHeader">
-						<div class="sermonTitle">{!! $latestSermon[0]->title !!}</div> <div class="sermonDate">{!! $latestSermon[0]->created_at->year !!}.{!! str_pad($latestSermon[0]->created_at->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($latestSermon[0]->created_at->day, 2, 0, STR_PAD_LEFT) !!}</div>
+						<div class="sermonTitle">{!! $latestSermon[0]->title !!}</div> <div class="sermonDate">{!! $latestSermon[0]->sermonDate->year !!}.{!! str_pad($latestSermon[0]->sermonDate->month, 2, 0, STR_PAD_LEFT)!!}.{!!str_pad($latestSermon[0]->sermonDate->day, 2, 0, STR_PAD_LEFT) !!}</div>
 					</div>
 					<hr class="Line">
 					<div class="sermonBody">
@@ -96,13 +96,12 @@
 					<div class="worshipInfoBodyWhere">
 						Worship: Kilgore Chapel<br>
 						University Religious Center<br>
-						(next to Student Health Center)
 					</div>
 					<div class="worshipHeaderWhen">
 						When
 					</div>
 					<div class="worshipInfoBodyWhen">
-						Worship: 11:00 am Sunday(Korean/English)
+						Worship: Sunday 11:00 A.M.(Korean/English)
 					</div>
 				</div>
 			</div>

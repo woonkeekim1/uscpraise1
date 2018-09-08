@@ -248,12 +248,14 @@
 									팀리더: {{$leader->name}}
 								</div>
 							</div>
-							<div data-id="{{$leader->id}}" class="editContainer editLeader" >
-								<img src="/images/edit-icon.png">
-							</div>
-							<div data-id="{{$leader->id}}" class="closeContainer deleteLeader">
-								&times;
-							</div>
+							@if (Auth::check() && (Auth::user()->level == 10 || Auth::user()->level == 0))
+								<div data-id="{{$leader->id}}" class="editContainer editLeader" >
+									<img src="/images/edit-icon.png">
+								</div>
+								<div data-id="{{$leader->id}}" class="closeContainer deleteLeader">
+									&times;
+								</div>
+							@endif
 						</div>
 						<?php $count++; ?>
 						@if ($count == 1 || $count == 2)

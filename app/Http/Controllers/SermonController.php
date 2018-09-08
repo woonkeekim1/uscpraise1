@@ -54,7 +54,8 @@ class SermonController extends Controller
         'count'=> $contents->count(),
         'pastorStoryIndex' => $pastorStoryIndex
         );
-    	return view('sermon.index', compact('returnArray', 'contents', 'returnArrayForPastorStory', 'pastorStoryContents'));
+        $dailySermon = \App\DailySermon::orderBy('created_at', 'desc')->take(1)->get();
+    	return view('sermon.index', compact('returnArray', 'contents', 'returnArrayForPastorStory', 'pastorStoryContents', 'dailySermon'));
     }
     
     public function updateSundaySermon(Request $request)
@@ -347,6 +348,10 @@ class SermonController extends Controller
 
         $pastorStory->content = $content;
 
+        $createdDate = date('Y-m-d H:i:s', strtotime($request['created_at']));
+
+        $pastorStory->created_at =  $createdDate;
+
         $pastorStory->save();
 
         return redirect()->action('SermonController@index');
@@ -535,5 +540,61 @@ class SermonController extends Controller
 
             return $response;
         }
+    }
+
+    public function getDailySermon() {
+        $dailySermon = \App\DailySermon::orderBy('created_at', 'desc')->take(1)->get();
+        return $dailySermon;
+    }
+
+    public function renderDailySermon() {
+        if(!Auth::check())
+            return redirect()->action('UserController@index');
+        return view('sermon.addDailySermon');
+    }
+
+    public function addDailySermon(Request $request) {
+        if(!Auth::check())
+            return redirect()->action('UserController@index');
+        $level = Auth::user()->level;
+        if($level != 0 && $level != 5)
+        {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('You dont have previlege to add dailly sermon.');
+        }
+        
+        $dailySermon = new \App\DailySermon();
+
+        $title = $request['title'];
+        if(!$title)
+        {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('title must not be emtpy.');
+        }
+        $body = $request['body'];
+        if(!$body)
+        {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('Body must not be emtpy.');
+        }
+        $verse = $request['bibleverse'];
+        if(!$verse)
+        {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('verse must not be emtpy.');
+        }
+        $createdBy = Auth::id();
+
+        $dailySermon->title = $title;
+        $dailySermon->body = $body;
+        $dailySermon->bibleverse = $verse;
+        $dailySermon->createdBy = $createdBy;
+        $dailySermon->save();
+
+        return redirect()->action('SermonController@index');
     }
 }

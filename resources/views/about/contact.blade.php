@@ -42,8 +42,8 @@
 				<font size="10px" color="#bf1e2e" style="font-weight:bold">문의</font>
 			</div>
 			<div class="fullWidth" style="margin-top:20px; line-height:1.8em; font-weight:bold;">
-				USC 찬양선교교회는 USC Student Organization에 속에 있습니다. 본 교회는 학생들의 헌금 뿐 아니라 졸업생을 포함한
-				여러 후원자들의 재정적인 도움으로 운영되고 있습니다. <span id="sponsorPopup" class="sponsorEmphsisunderline">후원을 원하시는 분은 (은행 계좌번호)</span> 으로
+				USC 찬양선교교회는 USC Student Organization에 공식 등록된 Student Organization입니다. 본 교회는 학생들의 헌금 뿐 아니라 졸업생을 포함한
+				후원자들의 재정적인 도움으로 운영되고 있습니다. <span id="sponsorPopup" class="sponsorEmphsisunderline">후원을 원하시는 분은 (은행 계좌번호)</span> 으로
 				입금이 가능합니다. 교회에 대한 문의사항이 있으시면 아래의 연락처로 연락바랍니다
 			</div>
 			<div class="fullWidth">
@@ -69,7 +69,7 @@
 						<ul>
 							<li>최그린 학생대표: 213-503-3904, greencho@usc.edu</li>
 							<li>신승호 목사: 213-239-3784, shsynn@usc.edu</li>
-							<li>평신도들의 업그레이드를 위한 헌신과 침묵의 훈련장으로서의 역할</li>
+							<li><font style="color:red">정착하는데 도움이</font> 필요하시면 <a href="/help">여기</a>를 눌려주세요</li>
 						</ul>
 					</div>
 				</div>

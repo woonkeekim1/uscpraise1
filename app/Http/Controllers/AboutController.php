@@ -9,6 +9,7 @@ use Auth;
 use Image;
 use Input;
 use File;
+use Redirect;
 class AboutController extends Controller
 {
     //
@@ -25,7 +26,7 @@ class AboutController extends Controller
         $histories = [];
         $histories['result'] = [];
         for($i = 0; $i < $years->count(); $i++)
-        {   
+        {
             $histories['result'][$i] = $years[$i];
             $yearActivities = \App\History::select('description', 'id')->where('year', '=', $years[$i]->year)->get();
             $histories['result'][$i]['descriptions'] = $yearActivities;
@@ -52,7 +53,7 @@ class AboutController extends Controller
             $histories['result'][$i]['descriptions'] = $yearActivities;
         }
     	return json_encode($histories);
-    	
+
     }
     public function contactUs()
     {
@@ -182,14 +183,14 @@ class AboutController extends Controller
                 $filename = time() . '-' . $request->file('image')->getClientOriginalName();
                 $request->file('image')->move(base_path().'/images/leaders/', $filename);
                 $leader->image =  'uscpraise/images/leaders/' . $filename;
-                
+
                 //local
                 /*
                 $filename = time() . '-' . $request->file('image')->getClientOriginalName();
                 $request->file('image')->move(public_path().'/images/leaders/', $filename);
                 $leader->image =  '/images/leaders/' . $filename;
                 */
-                
+
             }
             else
             {
@@ -244,7 +245,7 @@ class AboutController extends Controller
 
         $image = $request['image'];
 
-        
+
         if($image)
         {
             if($request->file('image')->isValid()){
@@ -257,14 +258,14 @@ class AboutController extends Controller
                 $filename = time() . '-' . $request->file('image')->getClientOriginalName();
                 $request->file('image')->move(base_path().'/images/leaders/', $filename);
                 $leader->image =  'uscpraise/images/leaders/' . $filename;
-                
+
                 //local
                 /*
                 $filename = time() . '-' . $request->file('image')->getClientOriginalName();
                 $request->file('image')->move(public_path().'/images/gallery/', $filename);
                 $leader->image =  '/images/gallery/' . $filename;
                 */
-                
+
             }
             else
             {
@@ -301,5 +302,77 @@ class AboutController extends Controller
         //delete
         $leader->delete();
         return array('status' => 'success', 'message' => 'Successfully removed');
+    }
+
+    public function renderHelp() {
+        return view('about.help');
+    }
+
+    public function addHelp(Request $request) {
+        $help = new \App\Help();
+        $name = $request['name'];
+        if (!$name) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('이름을 입력해 주세요.');
+        }
+        $email = $request['email'];
+        if (!$email) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('Email 주소를 입력해 주세요.');
+        }
+        $requestCount = 0;
+
+        $pickupBool = false;
+        $bankBool = false;
+        $phoneBool = false;
+        $elseBool = false;
+
+        $pickup = $request['pickup'];
+        if($pickup) {
+            $requestCount++;
+            $pickupBool = true;
+        }
+        $bank = $request['bank'];
+        if($bank) {
+            $requestCount++;
+            $bankBool = true;
+        }
+        $phone = $request['phone'];
+        if($pickup) {
+            $requestCount++;
+            $phoneBool = true;
+        }
+        $else = $request['else'];
+        if($else) {
+            $requestCount++;
+            $elseBool = true;
+        }
+        $elseText = $request['elseText'];
+
+        if($requestCount == 0) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors('하나 이상의 도움을 선택해 주세요');
+        }
+
+        $help->name = $name;
+        $help->email = $email;
+        $help->pickup = $pickupBool;
+        $help->phone = $phoneBool;
+        $help->bank = $bankBool;
+        $help->else = $elseBool;
+        $help->elseText = $elseText;
+        $help->status = 0;
+        $help->save();
+        return redirect()->action('LandController@index');
+    }
+
+    public function renderHelpList() {
+        if(!Auth::check() || Auth::user()->level != 0)
+            return Redirect::back();
+        $helps = \App\Help::orderBy('updated_at', 'desc')->paginate(15);
+        return view('about.helplist', compact('helps'));
     }
 }

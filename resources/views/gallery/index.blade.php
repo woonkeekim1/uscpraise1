@@ -39,6 +39,7 @@
 .GalleryBodyWrapper
 {
 	width:100%;
+	background-color: #f4f4f4;
 }
 .GalleryBodyContainer
 {
@@ -173,7 +174,7 @@
 }
 .CloseButtonContainer
 {
-	height:5%;
+	height:42px;
 	width:100%;
 }
 .CloseButton
@@ -181,11 +182,12 @@
 	width:5%;
 	height:100%;
 	float:right;
+	background: url('/images/btn_close.png') no-repeat center center;
 }
 .ImageContentContainer
 {
 	width:100%;
-	height:75%;
+	height:70%;
 	margin:auto;
 }
 .ImageBodyContainer
@@ -236,7 +238,7 @@
 	top:0;
 	left:0;
 	right:0;
-	bottom:0;	
+	bottom:0;
 	width: 1170px;
 	height:95%;
 	margin:auto;
@@ -260,7 +262,7 @@
 	height:100%;
 	width:5%;
 	float:left;
-	
+
 }
 .SmallImageContentContainer
 {
@@ -296,7 +298,7 @@
 	height:5%;
 	width:100%;
 	display:block;
-	
+
 }
 #moreContent:hover
 {
@@ -329,11 +331,11 @@
 {
 	width:100%;
 	height:100%;
-	background: url('/images/image1.jpg') no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: url('/images/image1.jpg') no-repeat center center fixed;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
 	position:relative;
 }
 
@@ -398,7 +400,7 @@
 							@if($contentsPrayAndSermon->count() > 0)
 							<div class="GalleryContentContainer">
 							@endif
-							
+
 							@while($count < 5 && $contentsPrayAndSermon->count() -$count > 0)
 								@if($count == 0)
 								<div class="GalleryVerticalMargin_Side">
@@ -439,14 +441,14 @@
 							@if($contentsPrayAndSermon->count() > 0)
 							</div>
 							@endif
-							
-							
+
+
 							@if($contentsPrayAndSermon->count() > 5)
 							<div class="GalleryContentContainer">
 							@endif
-		
+
 							@while($count < 10 && $contentsPrayAndSermon->count() - $count > 0)
-	
+
 								@if($count % 5 == 0)
 								<div class="GalleryVerticalMargin_Side">
 									&nbsp;
@@ -486,8 +488,8 @@
 							@if($contentsPrayAndSermon->count() > 5)
 							</div>
 							@endif
-							
-							
+
+
 						</div>
 						<!-- 에배설교 끝 -->
 						<!-- 수련회  -->
@@ -501,7 +503,7 @@
 							@if($contentsRetreat->count() > 0)
 							<div class="GalleryContentContainer">
 							@endif
-							
+
 							@while($count < 5 && $contentsRetreat->count() -$count > 0)
 								@if($count == 0)
 								<div class="GalleryVerticalMargin_Side">
@@ -542,14 +544,14 @@
 							@if($contentsRetreat->count() > 0)
 							</div>
 							@endif
-							
-							
+
+
 							@if($contentsRetreat->count() > 5)
 							<div class="GalleryContentContainer">
 							@endif
-		
+
 							@while($count < 10 && $contentsRetreat->count() - $count > 0)
-	
+
 								@if($count % 5 == 0)
 								<div class="GalleryVerticalMargin_Side">
 									&nbsp;
@@ -589,8 +591,8 @@
 							@if($contentsRetreat->count() > 5)
 							</div>
 							@endif
-							
-							
+
+
 						</div>
 						 <!-- 수련회 끝 -->
 						 <!-- 이벤트  -->
@@ -604,7 +606,7 @@
 							@if($contentsEvent->count() > 0)
 							<div class="GalleryContentContainer">
 							@endif
-							
+
 							@while($count < 5 && $contentsEvent->count() -$count > 0)
 								@if($count == 0)
 								<div class="GalleryVerticalMargin_Side">
@@ -645,14 +647,14 @@
 							@if($contentsEvent->count() > 0)
 							</div>
 							@endif
-							
-							
+
+
 							@if($contentsEvent->count() > 5)
 							<div class="GalleryContentContainer">
 							@endif
-		
+
 							@while($count < 10 && $contentsEvent->count() - $count > 0)
-	
+
 								@if($count % 5 == 0)
 								<div class="GalleryVerticalMargin_Side">
 									&nbsp;
@@ -692,8 +694,8 @@
 							@if($contentsEvent->count() > 5)
 							</div>
 							@endif
-							
-							
+
+
 						</div>
 						 <!-- 이벤트 끝 -->
 						 <!--  선교 -->
@@ -707,7 +709,7 @@
 							@if($contentsMission->count() > 0)
 							<div class="GalleryContentContainer">
 							@endif
-							
+
 							@while($count < 5 && $contentsMission->count() -$count > 0)
 								@if($count == 0)
 								<div class="GalleryVerticalMargin_Side">
@@ -748,14 +750,14 @@
 							@if($contentsMission->count() > 0)
 							</div>
 							@endif
-							
-							
+
+
 							@if($contentsMission->count() > 5)
 							<div class="GalleryContentContainer">
 							@endif
-		
+
 							@while($count < 10 && $contentsMission->count() - $count > 0)
-	
+
 								@if($count % 5 == 0)
 								<div class="GalleryVerticalMargin_Side">
 									&nbsp;
@@ -808,7 +810,7 @@
 							@if($contentsBefore2016->count() > 0)
 							<div class="GalleryContentContainer">
 							@endif
-							
+
 							@while($count < 5 && $contentsBefore2016->count() -$count > 0)
 								@if($count == 0)
 								<div class="GalleryVerticalMargin_Side">
@@ -849,14 +851,14 @@
 							@if($contentsBefore2016->count() > 0)
 							</div>
 							@endif
-							
-							
+
+
 							@if($contentsBefore2016->count() > 5)
 							<div class="GalleryContentContainer">
 							@endif
-		
+
 							@while($count < 10 && $contentsBefore2016->count() - $count > 0)
-	
+
 								@if($count % 5 == 0)
 								<div class="GalleryVerticalMargin_Side">
 									&nbsp;
@@ -896,10 +898,10 @@
 							@if($contentsBefore2016->count() > 5)
 							</div>
 							@endif
-							
-							
+
+
 						</div>
-						 <!-- before 2016 끝
+						 <!-- before 2016 끝 -->
 					</div>
 				</div>
 				<div style="width:100%; height:30px; clear:both;">
@@ -912,13 +914,13 @@
 			</div>
 		</div>
 		<div style="width:100%; height:40px; clear:both;">
-				&nbsp;
-				</div>
+			&nbsp;
+		</div>
 		<div class="viewImage" id ="viewImage" onClick="removeImage()">
 		</div>
-			<div id="showImage">
-			</div>
-	</div>	
+		<div id="showImage">
+		</div>
+	</div>
 </div>
 @endsection
 @section('script')
@@ -956,7 +958,7 @@ $(document).on('click', '#moreContent', function(){
 		}
 		$.ajax({
 			url:'/gallery/moreContent' + $id,
-			data: {page : $pageCountPrayAndSermon},
+			data: {page : $count},
 			type: "GET",
 			cache: true,
 			jsonp:false,
@@ -976,7 +978,7 @@ $(document).on('click', '#moreContent', function(){
 					$content += '<div class="GalleryImageContainer" id="' + $id + data.contents[$count].id + '">' +
 									'<div class="GalleryImage">';
 					$content += "<img src='" + data.contents[$count].smallimage + "' width='100%' height='100%'>";
-					
+
 					@if (Auth::check() && (Auth::user()->level == 10 || Auth::user()->level == 0))
 						$content += '<div data-id="' + data.contents[$count].id +  '" class="editContainer" >' +
 						'<img src="/images/edit-icon.png">' +
@@ -985,8 +987,8 @@ $(document).on('click', '#moreContent', function(){
 						'&times;' +
 						'</div>' +
 					@endif
-					
-					'</div>';
+
+					$content += '</div>';
 					$content += '<div class="GalleryImageBody">' + data.contents[$count].body + '</div>';
 					$content += '<div class="GalleryImageTail">' + data.contents[$count].header + ' | ' +
 								data.contents[$count].created_at.split('-').join('.') + '</div> </div>';
@@ -1007,7 +1009,7 @@ $(document).on('click', '#moreContent', function(){
 						$content += '<div class="GalleryVerticalMargin"> &nbsp; </div>';
 					$content += '<div class="GalleryImageContainer" id="' + $id + data.contents[$count].id + '"> <div class="GalleryImage">';
 					$content += '<img src="' + data.contents[$count].smallimage + '" width="100%" height="100%">';
-					
+
 					@if (Auth::check() && (Auth::user()->level == 10 || Auth::user()->level == 0))
 						$content += '<div data-id="' + data.contents[$count].id +  '" class="editContainer" >' +
 						'<img src="/images/edit-icon.png">' +
@@ -1016,8 +1018,8 @@ $(document).on('click', '#moreContent', function(){
 						'&times;' +
 						'</div>' +
 					@endif
-					
-					'</div>';
+
+					$content += '</div>';
 					$content += '<div class="GalleryImageBody">' + data.contents[$count].body + '</div>';
 					$content += '<div class="GalleryImageTail">';
 					$content += data.contents[$count].header + " | " + data.contents[$count].created_at.split('-').join('.') ;

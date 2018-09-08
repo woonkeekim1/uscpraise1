@@ -6,7 +6,7 @@
 @section('content')
 <div class="fullWidth" style="background-color:#444444">
 	<div class="container">
-		<div class="sermonImageContainer"  style="background-image: url('/images/main_img_05.jpg')">
+		<div class="sermonImageContainer"  style="height:297px;background-image: url('/images/main_img_05.jpg')">
 		</div>
 	</div>
 </div>

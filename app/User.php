@@ -16,6 +16,12 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
+    //level 0 is admin, can access all page
+
+    //level 5 is sermon manager, only access sermon edut page
+
+    //level 10 is gallery manager, only access gallery  ediit page
+
     /**
      * The database table used by the model.
      *
